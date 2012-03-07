@@ -1,0 +1,72 @@
+% README (RMCG20120307)
+\input doc \rmcglayout
+
+\title0 README
+
+\title1 English
+
+These are the sources of my book:
+``Sobre la libertad: La teoría de la subjetividad''.
+I have released the book under the license \[cc-by-sa].
+The first edition (2012xxxx) was published under
+\[isbn]: 978-1-xxxx-xxxx-x.
+
+To build the current version of the pdf file, "sll.pdf",
+please follow these instructions:
+
+\beginnumbers
+\item Take a PC with Debian Squeeze.
+ This is not strictly necessary, but,
+ being the system I use,
+ it is the only one where I am sure
+ that everything works properly as being said
+ without any adaptation.
+\item Install "spplain.git"
+ (it is project \URL<https://github.com/ramoncasares/texmf>).
+\item Install "sll.git", this way:
+\begincode
+cd
+git clone git://github.com/ramoncasares/sll.git
+\endcode
+\item Build "sll.pdf", this way:
+\begincode
+cd ~/sll/tex
+~/bin/wpdf sll
+\endcode
+\endnumbers
+
+
+\title0 Español
+
+Estas son las fuentes de mi libro:
+``Sobre la libertad: La teoría de la subjetividad''.
+He liberado el libro con la licencia \[cc-by-sa].
+La 1ª edición (2012xxxx) está publicada con el
+\[isbn]: 978-1-xxxx-xxxx-x.
+
+Para producir la versión actual del fichero pdf, "sll.pdf",
+han de seguirse las siguientes instrucciones:
+
+\beginnumbers
+\item Disponer de una computadora con Debian Squeeze.
+ Esto no es estrictamente necesario, pero,
+ como es el entorno que yo uso,
+ es el único en el que estoy seguro de que todo funciona
+ correctamente, y tal y como lo estoy explicando,
+ sin necesidad de adaptaciones.
+\item Instalar "spplain.git"
+ (es el proyecto \URL<https://github.com/ramoncasares/texmf>).
+\item Instalar "sll.git", así:
+\begincode
+cd
+git clone git://github.com/ramoncasares/sll.git
+\endcode
+\item Obtener "sll.pdf", así:
+\begincode
+cd ~/sll/tex
+~/bin/wpdf edc
+\endcode
+\endnumbers
+
+\bye
+

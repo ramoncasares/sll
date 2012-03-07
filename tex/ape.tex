@@ -1,0 +1,810 @@
+% APE.TEX (RMCG20000104)
+
+\mag1200
+\input crops
+
+\input metatex
+
+\catcode`\@=11
+
+% FONTS
+
+%\let\oldoldstyle=\oldstyle
+\font\tenrmj=cmrj10
+\def\rm{\fam0 \tenrmj}
+\rm
+
+\font\boldstyle=cmmib10
+
+% Fonts for titles
+
+\font\fontzero=cmbx12 scaled\magstep4
+\font\fontone=cmbx12 scaled\magstep2
+\font\fonttwo=cmbx12
+\font\fonttwosym=cmbsy10 scaled\magstep1
+\def\Stitle{{\fonttwosym \char"78}}
+
+\catcode`\ö=13 \defö{\"o}% for Gödel
+
+\font\sc=cmcsc10
+\font\msbm=msbm10
+
+\font\frakx=eufm10
+\font\frakvii=eufm7
+\newfam\frakfam \textfont\frakfam=\frakx \scriptfont\frakfam=\frakvii
+\def\frak{\fam\frakfam\frakx}
+
+\font\logo=logo10
+
+
+% LAYOUT
+
+\nopagenumbers
+
+\def\twodigits#1{\ifnum #1<10 0\fi \number#1}
+\def\todayiso{\number\year \twodigits\month \twodigits\day}
+
+
+\footline={\tenrmj\ifodd\pageno \hfil\folio
+ \else \folio \hfil\fi\strut}
+
+\hsize=10.5cm
+\vsize=39\baselineskip \advance\vsize\topskip % 40 lines
+\parskip=0pt plus 0.0001pt minus 0.0001pt
+
+\def\titulo{Ramón Casares\cr Sobre la libertad}
+\setcrops
+
+\predisplaypenalty=10
+\abovedisplayskip=12pt plus 6pt minus 6pt
+\belowdisplayskip=12pt plus 6pt minus 6pt
+\abovedisplayshortskip=0pt plus 6pt minus 6pt
+\belowdisplayshortskip=12pt plus 6pt minus 6pt
+
+
+% Every point is a period
+\count255=`A \loop\sfcode\count255=1000
+ \ifnum\count255<`Z\advance\count255 1 \repeat
+\def~{\nobreak\ \ignorespaces}
+
+% Emphasis with automatic italic correction (\/).
+% Use: {\em italic, but {\em roman}, text}.
+\def\em{\ifdim \fontdimen1\font>0pt \rm
+ \else \it \expandafter\aftergroup \fi \itcor}
+\def\itcor{\ifhmode \expandafter\itpuncl@ok \fi}
+\def\itpuncl@ok{\begingroup\futurelet\ITCt@mpa\itcort@st}
+\def\itcort@st{\def\ITCt@mpb{\ITCt@mpa}%
+ \ifcat\noexpand\ITCt@mpa,\setbox0=\hbox{\ITCt@mpb}%
+  \ifdim\ht0<0.3ex \let\itc@rdo=\endgroup \fi\fi \itc@rdo}
+\def\itc@rdo{\skip0=\lastskip \ifdim\skip0=0pt \/\else
+ \unskip \/\hskip\skip0 \fi \endgroup}
+
+% Verbatim
+
+\def\uncatcodeall{\deactivate\dospecials\dohigh}
+\def\iverb#1{\begingroup\uncatcodeall\obeyspaces\obeylines\d@iverb#1}
+\def\d@iverb#1#2{\def\next##1#2{\immediate\write#1{##1}\endgroup}\next}
+
+% Other
+
+\def\siglo#1 {\par \noindent\hang {\sc #1} $\cdot$ \ignorespaces}
+
+\def\point{\par\hang\indent\llap{$\bullet$\enspace}}
+\def\goodbreak{\vskip0pt plus 4\baselineskip\penalty-250
+ \vskip0pt plus-4\baselineskip}
+
+\def\breakif#1{\vskip0pt plus #1\baselineskip \penalty-250
+ \vskip0pt plus-#1\baselineskip}
+
+
+% INDEX
+
+% PDFTeX
+
+\def\stringactives{\stringate\doaccents\dosymbols}
+
+\def\nocolor{\let\Red=\relax \let\Green=\relax \let\Blue=\relax
+ \let\Black=\relax}
+
+\ifx\pdfliteral\undefined
+ \def\pdfcode#1\pdfendcode{\relax\closeout-1\relax}
+ %\closeout-1 is just a whatsit, i.e. an extension as pdf commands are
+ \let\colors=\nocolor
+\else
+ \let\pdfcode=\relax \let\pdfendcode=\relax
+ \def\pdfRed{\pdfliteral{0 1 1 0 k}}
+ \def\pdfGreen{\pdfliteral{1 0 1 0 k}}
+ \def\pdfBlue{\pdfliteral{1 1 0 0 k}}
+ \def\pdfBlack{\pdfliteral{0 0 0 1 k}}
+ \def\colors{\let\Red=\pdfRed \let\Green=\pdfGreen \let\Blue=\pdfBlue
+  \let\Black=\pdfBlack}
+\fi
+
+%%% OPTION
+\nocolor % default value
+%\colors
+
+\def\pdfgoto#1#2{\pdfcode
+ \pdfstartlink attr{/Border [0 0 0]} goto num #2\pdfendcode
+ \Red#1\Black \pdfcode\pdfendlink\pdfendcode}
+
+% Numbered footnotes for PDFTeX
+
+\newcount\footnoteno
+
+% adapted from [416]
+\def\footnote{\edef\@sf{\spacefactor\the\spacefactor}%
+  \global\advance\footnoteno1 \global\advance\d@stno1
+  \pdfgoto{$^{\number\footnoteno}$}{\number\d@stno}\@sf
+  \insert\footins\bgroup \let\par=\endgraf
+  %\interlinepenalty100
+  \interlinepenalty10000 \floatingpenalty20000
+  \def\"##1{\setbox0=\hbox{\accent"7F ##1}\ht0=\ht\strutbox\box0} % \"Uber
+  \splittopskip\ht\strutbox \splitmaxdepth\dp\strutbox
+  \lineskiplimit=-10pt %\parskip=0pt
+  \leftskip\z@skip \rightskip\z@skip \spaceskip\z@skip \xspaceskip\z@skip
+  \pdfcode\pdfdest num \number\d@stno fitbh\pdfendcode
+  \indent\llap{$^{\the\footnoteno}\;$}\strut\futurelet\next\fo@t}
+
+\dimen\footins=0.5\vsize
+\skip\footins=\baselineskip
+\def\footnoterule{\kern-3pt\hrule height 0.4pt width 3cm depth 0pt\kern2.6pt}
+
+% OUTPUT ROUTINE
+
+\def\pagecontents{\dimen@=\dp\strutbox \advance\dimen@-\dp\@cclv
+ \advance\dimen@\ht\strutbox \advance\dimen@\dp\strutbox
+ \ifnum\pageno=136 \global\tracingpages=1
+  \global\showboxbreadth=\maxdimen \global\showboxdepth=1 \fi
+ \ifnum\pageno=138 \global\tracingpages=0
+  \global\showboxbreadth=2 \global\showboxdepth=2 \fi
+ \unvbox\@cclv
+ \ifvoid\footins\else\kern\dimen@\footnoterule\unvbox\footins\fi}
+
+%\saveplain\pagebody
+%\def\pagebody{\hbox{\plain\pagebody
+% \ifvoid\margin\else\kern3pt\vbox to0pt{\vss\unvbox\margin}\fi}}
+
+% PDFTOC
+
+\newtoks\pdft@k \pdft@k{}
+\def\pdft@toc#1{\global\pdft@k=\expandafter{\the\pdft@k#1}}
+\newcount\@utno
+
+\newcount\@uts
+\newcount\@utss
+\newcount\@utt
+
+\def\c@rcdr#1#2,{\edef\car{#1}\edef\cdr{#2}\ifx\cdr\empty\edef\cdr{0}\fi}
+
+\def\pdf@ut{\expandafter\c@rcdr\the\pdft@k,\@uts=\car
+ \global\pdft@k=\expandafter{\cdr}\toks0=\expandafter{\cdr}%
+ \@utno=0 \@utss=\car \advance\@utss1
+ \loop \expandafter\c@rcdr\the\toks0,\@utt=\car\toks0=\expandafter{\cdr}%
+  \ifnum\@uts<\@utt \ifnum\@utss=\@utt\advance\@utno1\fi \repeat}
+
+% Sectioning
+
+\outer\def\Part#1 \par{\vfill\break \null\setdest
+ \nointerlineskip\vbox to7\baselineskip{\vfil
+  \centerline{\fontone #1\label{#1}\toc0{#1}}\vfil}}
+
+\newcount\s@one
+
+\outer\def\Section#1 \par{\vskip0pt plus 4\baselineskip\penalty-250
+ \vskip0pt plus-4\baselineskip
+ \vskip\baselineskip \advance\s@one1 \setdest
+ \noindent{\fonttwo\Stitle\the\s@one\space#1\label{#1}}\toc1{#1}\par
+ \nobreak}
+
+% Indexing
+
+\newcount\d@stno \newcount\p@rno \d@stno=1 \p@rno=1
+
+\def\setdest{\global\advance\d@stno1 \global\p@rno=\d@stno
+ \pdfcode \pdfdest num \number\d@stno fitbh\pdfendcode}
+\def\destpar{\ifhmode \let\next=\setdest \else \let\next=\relax \fi
+ \endgraf \next}
+
+\def\ref#1{??} \def\refsc#1{??} \def\refpg#1{??}
+\let\toc=\gobbletwo \let\lbl=\gobbletwo \let\ndx=\gobbletwo
+
+\def\stringall{\stringate\dohigh\stringaccents}
+
+\def\fourdigits#1{\ifnum#1>9999 \message{max is 9999}\else
+                  \ifnum#1<0 \message{min is 0}\else
+ \ifnum#1<1000 0\fi \ifnum#1<100 0\fi \ifnum#1<10 0\fi\fi\fi \number#1}
+
+\def\save#1{{\def\\{\string\\}\def~{\string~}\stringall
+  \edef\next{\write\auxf{#1\string{\fourdigits\p@rno\string}%
+    \string{\number\s@one\string}%
+    \string{\noexpand\folio\string}}}\next}}
+
+\newwrite\auxf \newwrite\tocf \newwrite\ndxf
+\def\files{\begingroup \stringall
+ \def~{\string~}\def\\{\string\\}% \catcode`\@=11
+ \def\ftoc##1##2##3##4##5{\pdft@toc{##1}%
+  \immediate\write\tocf{\string\tocline
+   \string{##1\string}\string{##2\string}%
+   \string{##3\string}\string{##4\string}\string{##5\string}}}
+ \def\fndx##1##2##3##4##5{\immediate\write\ndxf{\string\ndxline
+  \string{##1\string}\string{##2\string}%
+  \string{##3\string}\string{##4\string}\string{##5\string}}}
+ \def\flbl##1##2##3##4##5{\setbox0=\hbox{\csname ^^03##1\endcsname}%
+  \ifdim\wd0=0pt
+   \expandafter\gdef\csname ^^02##1\endcsname{##2}%
+   \expandafter\gdef\csname ^^03##1\endcsname{##3}%
+   \expandafter\gdef\csname ^^04##1\endcsname{##4}%
+   \expandafter\gdef\csname ^^05##1\endcsname{##5}%
+  \else\errmessage{label ##1 redefined}\fi}
+ \immediate\openout\tocf=auxiliar.toc
+ \immediate\openout\ndxf=auxiliar.ind
+ \input auxiliar.aux
+ \immediate\closeout\tocf \immediate\closeout\ndxf
+ \endgroup
+ \openout\auxf=auxiliar.aux
+ \def\ref##1{{\stringall
+  \expandafter\global\expandafter\let\expandafter\next
+   \csname ^^02##1\endcsname
+  \expandafter\global\expandafter\let\expandafter\n@xt
+   \csname ^^03##1\endcsname}\setbox0=\hbox{\next}%
+  \ifdim\wd0=0pt \errmessage{label ##1 undefined}\else % ERROR \string please
+   \pdfgoto{\next}{\n@xt}\fi}
+ \def\refsc##1{{\stringall
+  \setbox0=\hbox{\tenrm\csname ^^04##1\endcsname}%
+  \ifdim\wd0=0pt \errmessage{label ##1 undefined}\else
+  \pdfgoto{\box0}{\csname ^^03##1\endcsname}\fi}}
+ \def\refpg##1{{\stringall
+  \setbox0=\hbox{\tenrmj\csname ^^05##1\endcsname}%
+  \ifdim\wd0=0pt \errmessage{label ##1 undefined}\else
+  \pdfgoto{\box0}{\csname ^^03##1\endcsname}\fi}}
+ \def\toc##1##2{\save{\string\ftoc\string{##1\string}%
+   \string{##2\string}}}%   level, text
+ \def\lbl##1##2{\save{\string\flbl\string{##1\string}%
+   \string{##2\string}}}%  label, count
+ \def\ndx##1##2{\save{\string\fndx\string{##1\string}%
+   \string{##2\string}}}% text, type
+ \pdft@toc0 }
+
+\def\label#1{\lbl{#1}{\number\s@one}}
+\def\index#1{\ndx{#1}{1}}
+
+\files
+
+% end index
+
+% DIAGRAMS
+
+\def\onitself#1{\leavevmode\vbox{
+ \baselineskip=0pt \lineskip=0.25ex \everycr={}\tabskip=0pt
+ \halign{\hfil##\hfil\cr\msbm\char"78\cr#1\crcr}}}
+\def\column#1{\leavevmode\vtop{
+ \baselineskip=0pt \lineskip=0.25ex \everycr={}\tabskip=0pt
+ \halign{\hfil##\hfil\cr#1\crcr}}}
+\def\base#1{\leavevmode\vbox{
+ \baselineskip=0pt \lineskip=0.25ex \everycr={}\tabskip=0pt
+ \halign{\hfil##\hfil\cr#1\crcr}}}
+
+\def\subject{\leavevmode
+ \vbox{\everycr={}\tabskip=0pt \lineskip=0pt
+  \halign{\hfil##\hfil\cr
+   \hidewidth\strut Idea\hidewidth\cr
+   \hfil\hfil\vbox{\hbox{\big\downarrow}\nointerlineskip\null}\hfil
+   \hbox{\msbm\char"78}\hfil
+   \vbox{\hbox{\big\uparrow}\nointerlineskip\null}\hfil\hfil\cr
+   \noalign{\kern-3pt}
+   \column{
+    \strut Objeto\cr
+    $\uparrow$\cr
+    \hidewidth\strut Sentimiento\hidewidth\cr
+    $\uparrow$\cr
+    \strut Libido\cr}\cr}}}
+
+% Bibliography
+
+\def\cite#1{\ndx{#1}0\footnote{\ref{#1}.}}
+\def\citation#1{\footnote{{\def\cite##1{\ndx{##1}0\ref{##1}}#1}}}
+
+\newtoks\TITLE \newtoks\SUBTITLE \newtoks\AUTHOR \newtoks\YEAR
+\newtoks\PUBLISHER \newtoks\ADDRESS \newtoks\YEAREDITION\newtoks\ISBN
+\newtoks\EDITOR \newtoks\BOOKTITLE \newtoks\EDITION \newtoks\NOTE
+\newtoks\JOURNAL \newtoks\VOLUME \newtoks\MONTH \newtoks\PAGES
+\def\cleantoks{%
+ \TITLE={}\SUBTITLE={}\AUTHOR={}\YEAR={}%
+ \PUBLISHER={}\ADDRESS={}\YEAREDITION={}\ISBN={}%
+ \EDITOR={}\BOOKTITLE={}\EDITION={}\NOTE={}%
+ \JOURNAL={}\VOLUME={}\MONTH={}\PAGES{}}
+
+% METATeX
+
+\def\MTendmark{:::}
+
+\MTcode
+pickup pencircle scaled 0.3pt; thin_pen:=savepen;
+pickup pencircle scaled 0.6pt; med_pen:=savepen;
+pickup pencircle scaled 1.2pt; thick_pen:=savepen;
+
+arrow_head_length := 6pt; arrow_head_width := 2.4pt;
+point_diameter := 2.4pt; aperture := 3pt; jot := 2pt;
+u := 1pt; v := 1pt;
+
+def rectangle(suffix s)(expr width,height) =
+ x.s.l = x.s - width/2;
+ x.s.r = x.s + width/2;
+ y.s.t = y.s + height/2;
+ y.s.b = y.s - height/2;
+ draw (x.s.l,y.s.b) -- (x.s.r,y.s.b) --
+  (x.s.r,y.s.t) -- (x.s.l,y.s.t) -- cycle;
+enddef;
+
+def square(suffix s)(expr side) =
+ x.s.l = x.s - side/2;
+ x.s.r = x.s + side/2;
+ y.s.t = y.s + side/2;
+ y.s.b = y.s - side/2;
+ draw (x.s.l,y.s.b) -- (x.s.r,y.s.b) --
+  (x.s.r,y.s.t) -- (x.s.l,y.s.t) -- cycle;
+enddef;
+
+def circle(suffix s)(expr diameter) =
+ x.s.l = x.s - diameter/2;
+ x.s.r = x.s + diameter/2;
+ y.s.t = y.s + diameter/2;
+ y.s.b = y.s - diameter/2;
+ draw (fullcircle scaled diameter shifted z.s);
+enddef;
+
+% point_diameter;
+
+def point(suffix s) =
+ fill fullcircle scaled point_diameter shifted z.s;
+enddef;
+
+% arrow_head_length, arrow_head_width;
+
+def arrowhead(suffix orig,dest) =
+ z.dest.head  = (arrow_head_length/length(z.dest-z.orig))[z.dest,z.orig];
+ z.dest.right = z.dest.head + arrow_head_width / 2 *
+                dir(angle(z.dest-z.orig)+90);
+ z.dest.left  = z.dest.head + arrow_head_width / 2 *
+                dir(angle(z.dest-z.orig)-90);
+ fill z.dest -- z.dest.right -- z.dest.left -- cycle;
+enddef;
+
+def arrow(suffix orig,dest) =
+ arrowhead(orig,dest); draw z.orig .. z.dest.head;
+enddef;
+
+% aperture;
+
+def soft(suffix orig,med,dest) =
+ z.med.o = (aperture/length(z.med-z.orig))[z.med,z.orig];
+ z.med.d = (aperture/length(z.med-z.dest))[z.med,z.dest];
+ draw z.orig --- z.med.o ... z.med.d --- z.dest;
+enddef;
+
+def softt(suffix orig,medone,medtwo,dest) =
+ z.medone.o = (aperture/length(z.medone-z.orig))[z.medone,z.orig];
+ z.medone.d = (aperture/length(z.medone-z.medtwo))[z.medone,z.medtwo];
+ z.medtwo.o = (aperture/length(z.medtwo-z.medone))[z.medtwo,z.medone];
+ z.medtwo.d = (aperture/length(z.medtwo-z.dest))[z.medtwo,z.dest];
+ draw z.orig --- z.medone.o ... z.medone.d
+  --- z.medtwo.o ... z.medtwo.d --- z.dest;
+enddef;
+
+def fork(suffix orig,med,dest) =
+ arrowhead(med,dest); point(orig); soft(orig,med,dest.head);
+enddef;
+
+def arroww(suffix orig,med,dest) =
+ arrowhead(med,dest); soft(orig,med,dest.head);
+enddef;
+
+def arrowww(suffix orig,medone,medtwo,dest) =
+ arrowhead(medtwo,dest); softt(orig,medone,medtwo,dest.head);
+enddef;
+
+def back(suffix s,o,d)(expr upper,size,margin) =
+ pickup thick_pen;
+ y.s.del.t = upper; y.s.del.t - y.s.del.b = size;
+ y.s.del.l = y.s.del.r = 1/2[y.s.del.b,y.s.del.t];
+ x.s.del.r + x.s.del.l = x.o + x.d;
+ x.s.del.r - x.s.del.l = size;
+ x.s.del.t = x.s.del.b = x.s.del.r;
+ draw z.s.del.l -- z.s.del.b -- z.s.del.t -- cycle;
+ pickup med_pen;
+ z.s.tr = (x.o,y.s.del.r);
+ z.s.r =  (x.o+margin,1/2[y.o,y.s.del.r]);
+ z.s.tl = (x.d,y.s.del.l);
+ z.s.l =  (x.d-margin,1/2[y.d,y.s.del.l]);
+ draw z.o {right} .. z.s.r {up} .. z.s.tr {left};
+ arrow(s.tr,s.del.r);
+ draw z.s.del.l --- z.s.tl {left} .. z.s.l {down} .. z.d {right};
+enddef;
+
+def feedback(suffix s,orig,dest)(expr upper,size,margin) =
+ z.s.br = z.orig + (margin,0); z.s.bl = z.dest - (margin,0);
+ back(s,s.br,s.bl,upper,size,margin);
+ draw z.orig .. z.s.br; arrow(s.bl,dest);
+enddef;
+
+def arrowlessfeedback(suffix s,orig,dest)(expr upper,size,margin) =
+ z.s.br = z.orig + (margin,0); z.s.bl = z.dest - (margin,0);
+ back(s,s.br,s.bl,upper,size,margin);
+ draw z.orig .. z.s.br; draw z.s.bl .. z.dest;
+enddef;
+
+def forkback(suffix s,orig,dest)(expr upper,size,margin) =
+ z.s.bl = z.dest - (margin,0); point(orig);
+ back(s,orig,s.bl,upper,size,margin); arrow(s.bl,dest);
+enddef;
+
+def shortforkback(suffix s,orig,dest)(expr upper,size,margin) =
+ z.s.bl = z.dest - (1/2margin,0); point(orig);
+ back(s,orig,s.bl,upper,size,margin); arrow(s.bl,dest);
+enddef;
+
+:::
+% end METATeX
+
+% Maths
+
+\def\Metric{\ifmmode {\cal M}^{\circ} \else ${\cal M}^{\circ}$\fi}
+\def\no#1{{\bf #1}}
+
+\def\inmmode$#1${\ifmmode #1\else $#1$\fi}
+
+\def\aut#1{\inmmode$\mathop{\cal #1}\nolimits$}
+\def\syn#1{\inmmode$\mathop{\frak #1}\nolimits$}
+
+\def\universo{\vindex{universo}~$\aut U$}
+\def\mecanismo{\vindex{mecanismo}~$\aut A_0$}
+\def\adaptador{\vindex{adaptador}~$\!\aut A_1$}
+ \def\gobernador{\vindex{gobernador}~$\aut G$}
+ \def\cuerpo{\vindex{cuerpo}~$\aut B$}
+\def\aprendiz{\vindex{aprendiz}~$\aut A_2$}
+ \def\modelador{\vindex{modelador}~$\!\aut M$}
+ \def\simulador{\vindex{simulador}~$\!\aut S$}
+ \def\realidad{\vindex{realidad}~$\aut R$}
+\def\conocedor{\vindex{conocedor}~$\!\aut A_3$}
+ \def\inteligencia{\vindex{inteligencia}~$\syn A$}
+ \def\mente{\vindex{mente}~$\syn M$} % $\Re$
+\def\sujeto{\vindex{sujeto}~$\aut A_4$}
+ \def\inquisidor{\vindex{inquisidor}~$\syn I$}
+ \def\razon{\vindex{razón}~$\syn R$}
+ \def\yo{\vindex{yo}~$\syn X$}
+
+\def\Corporal#1$#2#3${\vindex{#1}~${\aut #2}#3$}
+\def\corporal#1$#2#3${#1~${\aut #2}#3$}
+\def\Mental#1$#2#3${\vindex{#1}~${\syn #2}#3$}
+\def\mental#1$#2#3${#1~${\syn #2}#3$}
+\def\TM{máquina de \vperson[Turing]%
+ \hindex{máquina de \string\string\string\vperson[Turing]}~$\mathop{\frak T}$}
+\def\TMes{máquinas de \vperson[Turing]%
+ \hindex{máquina de \string\string\string\vperson[Turing]}~$\mathop{\frak T}$}
+\def\UTM{máquina universal de \vperson[Turing]%
+ \hindex{máquina universal de \string\string\string\vperson[Turing]}~$\mathop{\frak U}$}
+\def\UTMes{máquinas universales de \vperson[Turing]%
+ \hindex{máquina universal de \string\string\string\vperson[Turing]}~$\mathop{\frak U}$}
+\def\procesador$#1${procesador~${\cal P}_{\frak #1}$}
+\def\Procesador$#1${\vindex{procesador}~${\cal P}_{\frak #1}$}
+\def\UP{\vindex{procesador universal}~${\cal P}_{\frak U}$} % cal
+
+\def\true{\hbox{\sc true}}
+\def\false{\hbox{\sc false}}
+
+\def\llave#1{\inmmode$\left\lbrace\vcenter{
+ \halign{&\hbox{\rm\strut##}\hfil\cr#1\crcr}}\right.$}
+\def\lopen#1#2{\inmmode$\left#1\vcenter{
+ \halign{&\hbox{\rm\strut##}\hfil\cr#2\crcr}}\right.$}
+
+\def\etapa{\inmmode$\mapstochar\Rightarrow$} % for the reader's guide
+\def\etapa{\inmmode$\mathrel{\vrule height 3.5pt depth-1.5pt}\kern-1pt
+  =\kern-1pt\mathrel{\triangleright}$}
+
+% KEYS
+
+\def\meaning#1{{\it#1\aftergroup\itcor}}
+\def\latin#1{{\it#1}\itcor}
+\def\booktitle#1{{\sl#1}\itcor}
+
+% Index: 0, for cite, 1 for definition, 2 for person, 3 for index.
+
+% VISIBLE       HIDDEN
+% ^{index}      _{index}
+% ^[Person]     _[Person]
+% ^(cite1999)   _(cite1999)
+% ^|definition| _|definition|
+% ^<booktitle>  _<label>
+% ^>ref>        _>ref>   ( V = \S2.1, pág.~123     H = \S2.1 )
+
+\def\specialhat{\ifmmode\def\next{^}\else\let\next=\beginvref\fi\next}
+\def\specialund{\ifmmode\def\next{_}\else\let\next=\beginhref\fi\next}
+\catcode`\^=13 \let^\specialhat \catcode`\_=13 \let_\specialund
+
+\def\beginvref{\futurelet\next\beginvrefx}
+\def\beginhref{\futurelet\next\beginhrefx}
+
+\def\beginvrefx{\begingroup
+ \ifx\next[\aftergroup\vperson \else
+ \ifx\next(\aftergroup\vcite \else
+ \ifx\next|\aftergroup\vdefinition \else
+ \ifx\next<\aftergroup\vlabel \else
+ \ifx\next>\aftergroup\vref \else
+ \aftergroup\vindex \fi\fi\fi\fi\fi \endgroup}
+\def\beginhrefx{\begingroup
+ \ifx\next[\aftergroup\hperson \else
+ \ifx\next(\aftergroup\hcite \else
+ \ifx\next|\aftergroup\hdefinition \else
+ \ifx\next<\aftergroup\hlabel \else
+ \ifx\next>\aftergroup\href \else
+ \aftergroup\hindex \fi\fi\fi\fi\fi \endgroup}
+
+\def\allowhyphens{\nobreak\hskip\z@skip}
+
+\def\vperson[#1]{\leavevmode\ndx{#1}{2}\allowhyphens{\sc#1}}
+\def\hperson[#1]{\allowhyphens{\sc#1}}
+\def\vcite(#1){\ndx{#1}0\footnote{\ref{#1}.}}
+\def\hcite(#1){\ndx{#1}0\ref{#1}}
+\def\vdefinition|#1|{\leavevmode\Presignal\ndx{#1}{1}%
+ \Green\allowhyphens#1\allowhyphens\Black\Signal}
+\def\hdefinition|#1|{\allowhyphens\ndx{#1}{1}}%\tomargin{\it#1}}
+\def\vlabel<#1>{{\sl#1}\itcor} % used for book titles only
+%\def\hlabel<#1>{\label{#1}}
+\def\vref>#1>{la~\S\refsc{#1}, pá\-gi\-na~\refpg{#1}}
+\def\href>#1>{la~\S\refsc{#1}}
+\def\vindex#1{\leavevmode\presignal\ndx{#1}{3}%
+ \Blue\allowhyphens#1\allowhyphens\Black\signal}
+\def\hindex#1{\allowhyphens\ndx{#1}{3}\hsignal}
+
+%\def\signal{\hbox to0pt{\Blue\hss\vbox to0pt{
+% \hbox{$\longleftarrow$}\vss}\Black}}
+\def\Signal{\hbox to0pt{\hss\vrule width10pt height-2pt depth2.4pt
+ \vrule width0.4pt height4pt depth2pt}}
+\def\Presignal{\hbox to0pt{\vrule width0.4pt height4pt depth2pt
+ \vrule width10pt height-2pt depth2.4pt\hss}}
+\def\signal{\hbox to0pt{\hss\vrule width10pt height-2pt depth2.4pt}}
+\def\hsignal{\hbox to0pt{\hss\vrule width10pt height-2pt depth2.4pt}}
+\def\presignal{\hbox to0pt{\vrule width10pt height-2pt depth2.4pt\hss}}
+
+
+%% OPTION comment out to get signals
+\let\Signal=\null \let\Presignal=\null
+\let\signal=\null \let\presignal=\null
+\let\hsignal=\null
+
+\def\EPA#1{{\sc epa}\ndx{Casares1999}0~\S{\tenrm#1}} %%%%%%%%%% Provisional
+
+% TEXT
+
+\catcode`\@=12
+
+\input ape0.tex
+
+\setdest \let\par=\destpar
+
+\input ape1.tex
+\input ape2.tex
+\input ape3.tex
+\input ape4.tex
+\input ape5.tex
+\input ape6.tex
+
+\let\par=\endgraf
+
+\catcode`\@=11
+
+\vfill\break %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setdest
+\vbox to22pt{\centerline{\fontone Referencias}\toc3{Referencias}\vss}
+\vskip 1pc plus1pc minus6pt
+
+Se señalan las ediciones de las obras consultadas. Los números que
+aparecen al final de cada reseña, detrás del triángulo~{\teni.}, indican
+las páginas en las que la obra está citada, así {\teni.}\refpg{La
+jerarquía de Chomsky} significa que la cita se encuentra en la
+página~\refpg{La jerarquía de Chomsky}.
+
+\newwrite\bibnotes \immediate\openout\bibnotes=auxiliar.bdb
+\iverb\bibnotes"% AUXILIAR.BDB"
+\iverb\bibnotes"\record{Lettvin1959}{INCOLLECTION}{"
+\iverb\bibnotes" \AUTHOR{Lettvin, J.\kern-1pt Y\kern-1pt.; "
+\iverb\bibnotes" Maturana, H.R.; McCulloch, \kern-1ptW\kern-2pt.S.; "
+\iverb\bibnotes" Pitts, W\kern-2pt.H.}}"
+\iverb\bibnotes"\record{Descartes1641}{BOOK}{"
+\iverb\bibnotes" \YEAR{\kern-1.5pt 1\kern-0.3pt 6\kern-0.2pt 3\kern-0.2pt 7\kern-1pt , "
+\iverb\bibnotes"  \kern-1pt 1641\kern-1pt}}"
+\iverb\bibnotes"\record{Freud1900}{BOOK}{\YEAREDITION{\kern-1pt 1966}"
+\iverb\bibnotes" \EDITION{Traducción de Luis López-Ballesteros y de Torres (\kern-1pt1923)}}"
+\iverb\bibnotes"\record{Rumelhart1986}{BOOK}{"
+\iverb\bibnotes" \AUTHOR{Rumelhart, D.E.; McClelland, J.L.; \& the PDP Research Group}}"
+\iverb\bibnotes"\endinput"
+\immediate\closeout\bibnotes
+
+\newcount\lastpgno \newcount\thispgno
+\newif\ifrange
+
+\def\gobblethree#1#2#3{\ignorespaces}
+
+\def\ndxline#1#2{\ifnum#2=0 \let\oldk@y=\newk@y \def\newk@y{#1}%
+ \let\next=\bibline \else \let\next\gobblethree \fi \next}
+
+%\def\bibbreak{\ifdim\lastskip<\smallskipamount \removelastskip
+% \penalty-200 \vskip3pt plus 2pt \relax\fi} %plus 1.5pt minus 1pt \fi}
+%\let\bibbreak=\filbreak
+\def\bibbreak{\par\vskip-2pt plus 1fil \penalty-200 \vskip2pt plus -1fil\relax }
+
+\def\bibline#1#2#3{\ifx\newk@y\oldk@y \thispgno=#3
+ \ifnum\lastpgno=\thispgno \else \advance\lastpgno1
+  \ifnum\lastpgno=\thispgno \rangetrue \else
+   \ifrange \advance\lastpgno-1 --\number\lastpgno\fi
+   \lastpgno=#3\rangefalse
+   , \pdfgoto{#3}{#1}%
+  \fi\fi
+ \else % \newk@y<>\oldk@y
+ \ifrange --\number\lastpgno\rangefalse \fi
+ \bibbreak
+ \setdest \cleantoks \lastpgno=0
+ \def\record##1##2##3{\def\secondk@y{##1}\ifx\newk@y\secondk@y##3\fi}
+ \input ape.bdb
+ \input auxiliar.bdb
+ \hang\noindent\rm{\sc\the\AUTHOR}:%
+ {\def\em{\string\em\space}\def~{\string~}\def\it{\string\it\space}%
+  \def\sc{\string\sc\space}%
+  \lbl{\newk@y}{\string\rm{\string\sc\space
+  \expandafter\expandafter\the\AUTHOR}\space
+  (\expandafter\expandafter\the\YEAR):\space
+  {\string\sl\space\expandafter\expandafter\the\TITLE}}}%
+ {\sl\null{ }\the\TITLE
+ \setbox0=\hbox{\the\SUBTITLE}\ifdim\wd0=0pt\else\the\SUBTITLE\fi}%
+ \setbox0=\hbox{\the\YEAREDITION}\ifdim\wd0=0pt
+  \YEAREDITION={\the\YEAR}\else\ (\the\YEAR)\fi
+ \setbox0=\hbox{\the\EDITOR}\ifdim\wd0=0pt\else.
+   Recopilado por \the\EDITOR\fi
+ \setbox0=\hbox{\the\BOOKTITLE}\ifdim\wd0=0pt\else
+   \ en ``\the\BOOKTITLE''\fi
+ \setbox0=\hbox{\the\EDITION}\ifdim\wd0=0pt\else. \the\EDITION\fi
+ \setbox0=\hbox{\the\PUBLISHER}\ifdim\wd0=0pt\else, \the\PUBLISHER\fi
+ \setbox0=\hbox{\the\ADDRESS}\ifdim\wd0=0pt\else, \the\ADDRESS\fi
+ \setbox0=\hbox{\the\JOURNAL}\ifdim\wd0=0pt\else, \the\JOURNAL\fi
+ \setbox0=\hbox{\the\VOLUME}\ifdim\wd0=0pt\else, vol.~\the\VOLUME\fi
+ \setbox0=\hbox{\the\MONTH}\ifdim\wd0=0pt
+  \setbox0=\hbox{\the\YEAREDITION}\ifdim\wd0=0pt\else, \the\YEAREDITION\fi
+  \else, \the\MONTH\ de \the\YEAREDITION\fi
+ \setbox0=\hbox{\the\PAGES}\ifdim\wd0=0pt\else, pp.~\the\PAGES\fi
+ \setbox0=\hbox{\the\ISBN}\ifdim\wd0=0pt\else, {\sc isbn} {\the\ISBN}\fi.
+ \setbox0=\hbox{\the\NOTE}\ifdim\wd0=0pt\else \the\NOTE. \fi
+ {\teni.}\pdfgoto{#3}{#1}\fi
+ \ignorespaces}
+
+\bigskip
+
+\input auxiliar.abc
+
+
+\vfill\break %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Output for INDEX adapted from [417]
+
+\newdimen\fullhsize \fullhsize=\hsize
+\newdimen\fullvsize \fullvsize=\vsize
+\def\fullline{\hbox to\fullhsize}
+
+\newdimen\gutter \gutter=1pc
+\newbox\partialpage
+\def\begindoublecolumns{\begingroup
+ \output={\global\setbox\partialpage=\vbox{\unvbox255\bigskip}}\eject
+ \output={\doublecolumnout}%
+ \hsize=\fullhsize \advance\hsize by-\gutter \divide\hsize by2
+ \vsize=\fullvsize \multiply\vsize by2 \advance\vsize by2pc}
+\def\enddoublecolumns{\output={\balancecolumns}\eject
+ \endgroup \pagegoal=\vsize}
+
+\def\doublecolumnout{\splittopskip=\topskip \splitmaxdepth=\maxdepth
+ \dimen0=\fullvsize \advance\dimen0 by-\ht\partialpage
+ \setbox0=\vsplit255 to\dimen0 \setbox2=\vsplit255 to\dimen0
+ \shipout\vbox{\vbox to 0pt{\vskip-22.5pt
+  \fullline{\vbox to8.5pt{}\the\headline}\vss}\nointerlineskip
+  \vbox to\fullvsize{\boxmaxdepth=\maxdepth \pagesofar}
+  \baselineskip=24pt \fullline{\the\footline}}\advancepageno
+ \unvbox255 \penalty\outputpenalty}
+\def\balancecolumns{\setbox0=\vbox{\unvbox255}\dimen0=\ht0
+ \advance\dimen0 by\topskip \advance\dimen0 by-\baselineskip
+ \divide\dimen0 by2 \splittopskip=\topskip
+ {\vbadness=10000 \loop \global\setbox3=\copy0
+  \global\setbox1=\vsplit3 to\dimen0
+  \ifdim\ht3>\dimen0 \global\advance\dimen0 by1pt \repeat}
+ \setbox0=\vbox to\dimen0{\unvbox1}%
+ \setbox2=\vbox to\dimen0{\dimen2=\dp3 \unvbox3 \kern-\dimen2 \vfil}%
+ \pagesofar}
+\def\pagesofar{\unvbox\partialpage
+ \wd0=\hsize \wd2=\hsize \fullline{\box0\hfil\box2}}
+
+%%%
+
+\setdest
+\vbox to22pt{\centerline{\fontone Índice temático}\toc3{Índice temático}\vss}
+\vskip 1pc plus1pc minus6pt
+%\vskip 5.87955pt % just to make exact room for columns
+
+Los conceptos escritos en letra negrilla son los más importantes de la
+teoría de la subjetividad, y los números escritos también en negrilla
+indican las páginas en las que están definidos. Los otros conceptos son
+menos importantes, y los otros números señalan las páginas en las que
+aparecen, independentemente de su importancia, los distintos conceptos y
+autores.
+
+\lastpgno=0 \thispgno=0 \rangefalse
+
+\def\ndxline#1{\let\oldkey=\newkey \def\newkey{#1}\defline}
+\def\defline#1#2#3#4{\ifnum#1=0 \else % not biblio
+ \ifx\newkey\oldkey \thispgno=#4
+  \ifnum\lastpgno=\thispgno \else \advance\lastpgno1
+   \ifnum\lastpgno=\thispgno \rangetrue \else
+    \ifrange \advance\lastpgno-1 --\number\lastpgno\fi
+    \lastpgno=#4\rangefalse
+    , \pdfgoto{\ifnum#1=1 {\boldstyle#4}\else #4\fi}{#2}%
+   \fi\fi
+ \else % \newkey<>\oldkey
+  \ifrange --\number\lastpgno\fi
+  \bibbreak\hang\noindent \lastpgno=#4\rangefalse
+  \ifcase#1 {\tt\newkey}\or{\bf\newkey}\or{\sc\newkey}\or{\rm\newkey}\else
+   {\it\Red \newkey\Black}\fi
+ ,\space\space
+ \pdfgoto{\ifnum#1=1 {\boldstyle#4}\else #4\fi}{#2}\fi\fi\ignorespaces}
+
+\begindoublecolumns
+\parindent=12pt \rightskip=0pt plus 4pc \hyphenpenalty=250
+\input auxiliar.abc
+ \ifrange --\number\lastpgno \fi
+\enddoublecolumns
+
+\vfill\break %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setdest
+\vbox to22pt{\centerline{\fontone Índice}\toc3{Índice}\vss}
+\vskip 2pc plus1pc minus6pt
+
+\def\tocline#1{\ifcase #1\let\next=\toclinezero \or
+ \let\next=\toclineone \else \let\next=\toclineindex \fi \next}
+
+\def\toclinezero#1#2#3#4{\bigbreak
+ {\pdfcode \pdf@ut \stringactives \pdfoutline goto num #2
+  count -\number\@utno {#1}\pdfendcode}%
+ \line{\bf\pdfgoto{#1}{#2}\hfil}\ignorespaces}
+\def\toclineone#1#2#3#4{\par
+ {\pdfcode \pdf@ut \stringactives \pdfoutline goto num #2
+  count -\number\@utno {\noexpand§#3 #1}\pdfendcode}%
+ \contentsline{#1}{#2}{$\S#3$\quad}{#4}\ignorespaces}
+
+\def\Referencias{Referencias}
+\def\toclineindex#1#2#3#4{\par\def\1{#1}\ifx\1\Referencias\bigbreak\fi
+ {\pdfcode \pdf@ut \stringactives \pdfoutline goto num #2
+  count -\number\@utno {#1}\pdfendcode}%
+ \contentsline{{\bf #1}}{#2}{}{#4}\ignorespaces}
+
+\newdimen\tridig \setbox0=\hbox{$\S123$\quad}\tridig=\wd0
+
+\def\contentsline#1#2#3#4{\setbox0\hbox to\tridig{\hfil#3}\setbox2\hbox{#1}%
+ \dimen0=\hsize \advance\dimen0 by -\wd0
+ \multiply\dimen0 by 8 \divide\dimen0 by 10
+ \ifdim\dimen0>\wd2 \line{\box0 #1\tocleaders \pdfgoto{#4}{#2}}\else
+  \line{\box0 \vtop{\hsize=\dimen0 \raggedright \normalbaselines
+   \let\\=\ \noindent #1\strut}\tocleaders \pdfgoto{#4}{#2}}\fi}
+\def\tocleaders{\leaders\hbox to\baselineskip{\hss\bf.\hss}\hfil}
+
+\raggedbottom \openup3pt
+\input auxiliar.toc
+
+ \vfill % Colofón
+ {\parindent=0pt \obeylines \normalbottom %\baselineskip=12pt
+ Este libro ha sido compuesto por el autor
+ utilizando el programa {\TeX}
+ del Profesor Knuth (Stanford University).
+ Los tipos son de la familia Computer Modern.
+ Las figuras están descritas en {\logo METAFONT}.
+ \par}
+
+\let\vfill=\relax
+\bye

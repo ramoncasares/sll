@@ -2,22 +2,22 @@
 
 \Section El problema aparente formalizado
 
-Utilizando el ^{·lgebra autom·tica} para formalizar el ^{problema
-aparente}, la ^{soluciÛn} buscada ha de ser un ^{autÛmata} finito y
-probabilÌstico, o sea, un ^{comportamiento}, que denominaremos~$\aut A$,
-y que en el problema ocupa el lugar de la ^{incÛgnita}, por lo que lo
+Utilizando el ^{√°lgebra autom√°tica} para formalizar el ^{problema
+aparente}, la ^{soluci√≥n} buscada ha de ser un ^{aut√≥mata} finito y
+probabil√≠stico, o sea, un ^{comportamiento}, que denominaremos~$\aut A$,
+y que en el problema ocupa el lugar de la ^{inc√≥gnita}, por lo que lo
 anotaremos~$\aut A?$. Del ^{universo}, que notaremos~$\aut U$, sabemos
-que es otro autÛmata finito y probabilÌstico, pero nada m·s, de manera
-que puede ser cualquier autÛmata finito y probabilÌstico, lo que se
-indica $\forall \aut U$. Adem·s, sabemos que en el problema aparente la
-incÛgnita y el universo interact˙an. Por ˙ltimo, hay que comprobar que
+que es otro aut√≥mata finito y probabil√≠stico, pero nada m√°s, de manera
+que puede ser cualquier aut√≥mata finito y probabil√≠stico, lo que se
+indica $\forall \aut U$. Adem√°s, sabemos que en el problema aparente la
+inc√≥gnita y el universo interact√∫an. Por √∫ltimo, hay que comprobar que
 las reacciones del universo son buenas, para lo que utilizaremos una
-^{mediciÛn} conocida que ser· otro autÛmata finito y probabilÌstico,
+^{medici√≥n} conocida que ser√° otro aut√≥mata finito y probabil√≠stico,
 {\Metric}.
 
-Todos estos autÛmatas dibujan el siguiente circuito que representa el
-^{problema aparente formalizado} en el ·lgebra autom·tica (\EPA{1.4.1}).
-% InteracciÛn total y medida externa
+Todos estos aut√≥matas dibujan el siguiente circuito que representa el
+^{problema aparente formalizado} en el √°lgebra autom√°tica (\EPA{1.4.1}).
+% Interacci√≥n total y medida externa
 $$\MTbeginchar(110pt,70pt,0pt);
  \MT: pickup thick_pen;
  \MT: x1 + x2 = w; x2 = x1 + 50u; y1b = y2b = 30v;
@@ -52,25 +52,25 @@ $$\MTbeginchar(110pt,70pt,0pt);
 \box\MTbox$$
 
 La letra negrilla~$\no n$ indica la parte de los ^{datos de entrada} que
-no influye directamente en la soluciÛn del problema; son los ^{datos
-neutros}. Los ^{datos} de entrada que sÌ influyen est·n seÒalados con la
+no influye directamente en la soluci√≥n del problema; son los ^{datos
+neutros}. Los ^{datos} de entrada que s√≠ influyen est√°n se√±alados con la
 letra negrilla~$\no v$; son los ^{datos valorados}. Los ^{datos de
-salida} est·n seÒalados con la letra negrilla~$\no m$.
+salida} est√°n se√±alados con la letra negrilla~$\no m$.
 
-La ^{mediciÛn} {\Metric} utiliza una copia de los datos valorados~$\no
-v$ y en cuanto su salida tome el valor $0$, el autÛmata \aut A habr·
-fracasado como soluciÛn del problema. De {\Metric} solamente hemos dicho
-que es un autÛmata conocido, lo que resulta demasiado genÈrico. Para
-fijar las explicaciones tomaremos un caso v·lido pero sencillo de
+La ^{medici√≥n} {\Metric} utiliza una copia de los datos valorados~$\no
+v$ y en cuanto su salida tome el valor $0$, el aut√≥mata \aut A habr√°
+fracasado como soluci√≥n del problema. De {\Metric} solamente hemos dicho
+que es un aut√≥mata conocido, lo que resulta demasiado gen√©rico. Para
+fijar las explicaciones tomaremos un caso v√°lido pero sencillo de
 {\Metric}: pone a su salida un $1$ si a su entrada, en ese instante, son
-mayorÌa los valores $1$, y un $0$ si no.
+mayor√≠a los valores $1$, y un $0$ si no.
 
-AsÌ las cosas, la soluciÛn del problema, $\aut A$, deber· ser capaz de
-generar en cada instante, y sea como sea $\aut U$, una mayorÌa de
+As√≠ las cosas, la soluci√≥n del problema, $\aut A$, deber√° ser capaz de
+generar en cada instante, y sea como sea $\aut U$, una mayor√≠a de
 valores~$1$ en los datos valorados~$\no v$. De todo el ^{problema
 aparente formalizado}, en esto lo hemos dejado, y con esto es suficiente
 para seguir las explicaciones que vienen.
-% InteracciÛn total con sem·ntica mÌnima
+% Interacci√≥n total con sem√°ntica m√≠nima
 $$\MTbeginchar(100pt,40pt,0pt);
  \MT: pickup thick_pen;
  \MT: x1 + x2 = w; x2 = x1 + 40u; y1b = y2b = 0;
@@ -96,25 +96,25 @@ $$\MTbeginchar(100pt,40pt,0pt);
 $$
 
 
-\Section La notaciÛn
+\Section La notaci√≥n
 
-Puede que a usted le incomoden las letras caligr·ficas que acompaÒan a
-algunas palabras. Sirven para seÒalar los conceptos formales definidos
-matem·ticamente y, asÌ, por ejemplo, con un simple golpe de vista, puede
+Puede que a usted le incomoden las letras caligr√°ficas que acompa√±an a
+algunas palabras. Sirven para se√±alar los conceptos formales definidos
+matem√°ticamente y, as√≠, por ejemplo, con un simple golpe de vista, puede
 usted determinar que el {\cuerpo} al que me refiero es el cuerpo
-definido en la teorÌa, y no otro. Merecen ser toleradas porque reducen
-la ambig¸edad del texto a cambio de entorpecer algo la lectura o,
+definido en la teor√≠a, y no otro. Merecen ser toleradas porque reducen
+la ambig√ºedad del texto a cambio de entorpecer algo la lectura o,
 incluso, a cambio de nada si, con un poco de ejercicio, aprende usted a
 ignorarlas.
 
-Y, con estas precisiones, estamos ya en disposiciÛn de resolver el
-^{problema aparente formalizado}, como nos habÌamos propuesto en ^>La
-evoluciÛn y la resoluciÛn>. Recordemos que se trata de diseÒar un
-^{autÛmata}~\aut A capaz de generar en cada instante, y sea como sea el
-^{universo}~\aut U al que se enfrente, una mayorÌa de valores~$1$ en los
+Y, con estas precisiones, estamos ya en disposici√≥n de resolver el
+^{problema aparente formalizado}, como nos hab√≠amos propuesto en ^>La
+evoluci√≥n y la resoluci√≥n>. Recordemos que se trata de dise√±ar un
+^{aut√≥mata}~\aut A capaz de generar en cada instante, y sea como sea el
+^{universo}~\aut U al que se enfrente, una mayor√≠a de valores~$1$ en los
 ^{datos valorados}~{\no v}.
  $$\hbox{Problema aparente formalizado} \etapa
-   \hbox{ResoluciÛn}
+   \hbox{Resoluci√≥n}
 \abovedisplayskip=12pt minus 3pt
 \belowdisplayskip=0pt plus 3pt
 $$
@@ -123,50 +123,50 @@ $$
 \Section El mecanismo formal
 
 Para formalizar que nada se sabe del ^{universo}, hemos dicho que el
-{\universo} podÌa ser cualquier ^{autÛmata} finito. Puede ser, por
-ejemplo, el autÛmata que siempre produce a su salida valores~$0$. A este
-{\universo} que sÛlo produce valores $0$ lo denominaremos \corporal
-universo$U_0$. Y al que siempre produce valores~$1$, que tambiÈn podrÌa
+{\universo} pod√≠a ser cualquier ^{aut√≥mata} finito. Puede ser, por
+ejemplo, el aut√≥mata que siempre produce a su salida valores~$0$. A este
+{\universo} que s√≥lo produce valores $0$ lo denominaremos \corporal
+universo$U_0$. Y al que siempre produce valores~$1$, que tambi√©n podr√≠a
 ser ya que puede ser cualquiera, lo denominaremos \corporal
 universo$U_1$.
 
 \penalty-5000
 
-Pues bien, dado que el {\universo} puede ser cualquiera, tambiÈn podrÌa
+Pues bien, dado que el {\universo} puede ser cualquiera, tambi√©n podr√≠a
 ser el \corporal universo$U_0$. Y si el {\universo} fuera el \corporal
-universo$U_0$, entonces ning˙n autÛmata~$\aut A$ podrÌa solucionar el
-problema, porque nunca habrÌa mayorÌa de valores~$1$ en los datos
-valorados. Justo lo contrario es lo que sucederÌa si el {\universo}
-fuera el benÈvolo \corporal universo$U_1$, ya que, entonces, cualquier
-\corporal autÛmata$A$ lo solucionarÌa.
+universo$U_0$, entonces ning√∫n aut√≥mata~$\aut A$ podr√≠a solucionar el
+problema, porque nunca habr√≠a mayor√≠a de valores~$1$ en los datos
+valorados. Justo lo contrario es lo que suceder√≠a si el {\universo}
+fuera el ben√©volo \corporal universo$U_1$, ya que, entonces, cualquier
+\corporal aut√≥mata$A$ lo solucionar√≠a.
 
 Ocurre, pues, que el ^{problema aparente formalizado} no tiene una
-^{soluciÛn} definitiva, sino que depende de cÛmo sea el {\universo} del
+^{soluci√≥n} definitiva, sino que depende de c√≥mo sea el {\universo} del
 que nada sabemos. Esto no nos descubre nada nuevo, excepto que la
-formalizaciÛn conserva esta caracterÌstica fundamental del problema
-aparente, a saber, que el problema aparente es paradÛjico, tal como
-hemos visto en ^>La vida es paradÛjica>.
+formalizaci√≥n conserva esta caracter√≠stica fundamental del problema
+aparente, a saber, que el problema aparente es parad√≥jico, tal como
+hemos visto en ^>La vida es parad√≥jica>.
 
-Estupendo, pero øcÛmo resolver el problema con tanta indeterminaciÛn?
-Aunque no haya una soluciÛn definitiva v·lida en cualquier posible
-{\universo}, cada \corporal autÛmata$A$ concreto lo solucionar· en
+Estupendo, pero ¬øc√≥mo resolver el problema con tanta indeterminaci√≥n?
+Aunque no haya una soluci√≥n definitiva v√°lida en cualquier posible
+{\universo}, cada \corporal aut√≥mata$A$ concreto lo solucionar√° en
 determinados \corporal universos$U$ del total de los posibles. Tomemos
-dos autÛmatas, por ejemplo~$\aut A_a$ y~$\aut A_b$, y supongamos que el
-autÛmata~$\aut A_b$ soluciona el problema en todos los universos
-posibles en los que el autÛmata~$\aut A_a$ lo soluciona y, adem·s, en
+dos aut√≥matas, por ejemplo~$\aut A_a$ y~$\aut A_b$, y supongamos que el
+aut√≥mata~$\aut A_b$ soluciona el problema en todos los universos
+posibles en los que el aut√≥mata~$\aut A_a$ lo soluciona y, adem√°s, en
 otros. En este caso podemos afirmar que, a pesar de todas las
-indeterminaciones, el autÛmata~$\aut A_b$ es mejor que el autÛmata~$\aut
+indeterminaciones, el aut√≥mata~$\aut A_b$ es mejor que el aut√≥mata~$\aut
 A_a$.
 
 Lo que vamos a hacer, pues, para resolver cada vez mejor el problema
-aparente formalizado, ser· mostrar que, si un determinado autÛmata lo
-soluciona en ciertos universos, entonces podemos construir otro autÛmata
-que tambiÈn lo soluciona en esos mismos universos y, por aÒadidura, en
-otros (\EPA{1.5}). Y, para empezar la secuencia, tomaremos un autÛmata
+aparente formalizado, ser√° mostrar que, si un determinado aut√≥mata lo
+soluciona en ciertos universos, entonces podemos construir otro aut√≥mata
+que tambi√©n lo soluciona en esos mismos universos y, por a√±adidura, en
+otros (\EPA{1.5}). Y, para empezar la secuencia, tomaremos un aut√≥mata
 cualquiera, al que denominaremos ^|mecanismo|, y que notaremos
-como~$\aut A_0$ porque nos servir· de referencia. La forma del
-{\mecanismo} es la mÌnima suficiente para poder ocupar el lugar de la
-^{incÛgnita}~$\aut A?$ en el problema aparente formalizado (\EPA{1.6}).
+como~$\aut A_0$ porque nos servir√° de referencia. La forma del
+{\mecanismo} es la m√≠nima suficiente para poder ocupar el lugar de la
+^{inc√≥gnita}~$\aut A?$ en el problema aparente formalizado (\EPA{1.6}).
 % Mecanismo
 $$\MTbeginchar(80pt,20pt,0pt);
  \MT: pickup thick_pen;
@@ -189,40 +189,40 @@ $$
 
 \Section El adaptador formal
 
-El {\mecanismo} tiene un comportamiento que solucionar· determinados
+El {\mecanismo} tiene un comportamiento que solucionar√° determinados
 \corporal universos$U$, de modo que un {\adaptador} capaz de comportarse
-como el {\mecanismo} y, adem·s, de otras maneras, podr· solucionar m·s
-universos. Esta observaciÛn nos permite diseÒar un {\adaptador} que
-mejora al {\mecanismo}. Ve·moslo.
+como el {\mecanismo} y, adem√°s, de otras maneras, podr√° solucionar m√°s
+universos. Esta observaci√≥n nos permite dise√±ar un {\adaptador} que
+mejora al {\mecanismo}. Ve√°moslo.
 
 \penalty-5000
 
 El ^|adaptador|~$\aut A_1$ se compone de un {\cuerpo}, capaz de varios
-comportamientos, y de un {\gobernador}, que elige cu·l de los
+comportamientos, y de un {\gobernador}, que elige cu√°l de los
 comportamientos se ejecuta.
 
-\point El ^|cuerpo|~$\aut B$ es un autÛmata capaz de comportarse como el
-{\mecanismo} y, adem·s, de otras maneras, por lo que es, tÈcnicamente,
-una ^{ampliaciÛn} del {\mecanismo}. Aunque aquÌ no nos interesan los
-tecnicismos, es importante conocer que dado cualquier autÛmata finito es
-siempre posible construir una ampliaciÛn de Èl y, puesto que no depende
-de condiciÛn alguna, decimos que el diseÒo del {\cuerpo} est·
+\point El ^|cuerpo|~$\aut B$ es un aut√≥mata capaz de comportarse como el
+{\mecanismo} y, adem√°s, de otras maneras, por lo que es, t√©cnicamente,
+una ^{ampliaci√≥n} del {\mecanismo}. Aunque aqu√≠ no nos interesan los
+tecnicismos, es importante conocer que dado cualquier aut√≥mata finito es
+siempre posible construir una ampliaci√≥n de √©l y, puesto que no depende
+de condici√≥n alguna, decimos que el dise√±o del {\cuerpo} est√°
 especificado.
 
-\point El ^|gobernador|~$\aut G$ es otro autÛmata cuyo cometido es
-disponer el ^{comportamiento} del {\cuerpo}. El diseÒo del {\gobernador}
-no est· especificado, pero si cumple una condiciÛn, que llamaremos
-condiciÛn del gobernador, entonces el {\adaptador} soluciona, por lo
-menos, todos los \corporal universos$U$ que el {\mecanismo} tambiÈn
+\point El ^|gobernador|~$\aut G$ es otro aut√≥mata cuyo cometido es
+disponer el ^{comportamiento} del {\cuerpo}. El dise√±o del {\gobernador}
+no est√° especificado, pero si cumple una condici√≥n, que llamaremos
+condici√≥n del gobernador, entonces el {\adaptador} soluciona, por lo
+menos, todos los \corporal universos$U$ que el {\mecanismo} tambi√©n
 soluciona y, en consecuencia, queda asegurado que el {\adaptador} es tan
-bueno o mejor que el {\mecanismo}. La ^{condiciÛn del gobernador} se
+bueno o mejor que el {\mecanismo}. La ^{condici√≥n del gobernador} se
 verifica si, cuando el {\adaptador} se enfrenta a un {\universo} que el
 {\mecanismo} soluciona, su {\gobernador} manda que el {\cuerpo} se
 comporte, precisamente, como el {\mecanismo}.
 
-\noindent Por ˙ltimo, para que el {\gobernador} estÈ en la mejor de las
-disposiciones para cumplir la condiciÛn del gobernador, debe recibir
-todos los ^{datos}. AsÌ alcanzamos a definir la forma del {\adaptador}
+\noindent Por √∫ltimo, para que el {\gobernador} est√© en la mejor de las
+disposiciones para cumplir la condici√≥n del gobernador, debe recibir
+todos los ^{datos}. As√≠ alcanzamos a definir la forma del {\adaptador}
 (\EPA{2}).
 % Adaptador
 $$\MTbeginchar(140pt,60pt,0pt);
@@ -254,140 +254,140 @@ $$\MTbeginchar(140pt,60pt,0pt);
 \MTendchar;
 \box\MTbox$$
 
-AquÌ hemos utilizado un autÛmata, el {\cuerpo}, con varios
+Aqu√≠ hemos utilizado un aut√≥mata, el {\cuerpo}, con varios
 comportamientos, como adelantamos en ^>El comportamiento>. Los
 datos~$\no b$, que son los que elabora el {\gobernador}, constituyen el
 ^{programa} del {\cuerpo}, mientras que los datos neutros~$\no n$ y los
 valorados~$\no v$ son, en este caso, los datos de entrada ordinarios.
 
 
-\Section ComparaciÛn de adaptadores
+\Section Comparaci√≥n de adaptadores
 
 Para mostrar que efectivamente se verifica la equivalencia, propuesta en
-^>La evoluciÛn y la resoluciÛn>, entre la resoluciÛn del problema
-aparente y la evoluciÛn darviniana, veremos que el {\adaptador} formal
+^>La evoluci√≥n y la resoluci√≥n>, entre la resoluci√≥n del problema
+aparente y la evoluci√≥n darviniana, veremos que el {\adaptador} formal
 se corresponde con el adaptador evolutivo presentado entre _>El
 adaptador> y _>La realidad del adaptador es objetiva> del camino de
 entrada.
 
-Un {\adaptador} formal es un autÛmata finito dividido en dos partes, un
+Un {\adaptador} formal es un aut√≥mata finito dividido en dos partes, un
 {\cuerpo} capaz de varios comportamientos y un {\gobernador} que elige
-el comportamiento del cuerpo. AsÌ definido, este {\adaptador}
-formalizado se parece poco al adaptador evolutivo que interponÌa una red
-de objetos entre el fenÛmeno y la acciÛn. Lo que sucede es que el
-{\adaptador} resolutivo y formal es m·s general que el adaptador
+el comportamiento del cuerpo. As√≠ definido, este {\adaptador}
+formalizado se parece poco al adaptador evolutivo que interpon√≠a una red
+de objetos entre el fen√≥meno y la acci√≥n. Lo que sucede es que el
+{\adaptador} resolutivo y formal es m√°s general que el adaptador
 evolutivo de entrada, al que incluye. Porque el adaptador evolutivo
-elegÌa el comportamiento en funciÛn de los objetos presentes y, por lo
-tanto, la percepciÛn, que era la parte que determinaba quÈ objetos
-estaban presentes, era la que, al determinarlos, elegÌa el
-comportamiento del adaptador. De modo que, seg˙n la formalizaciÛn
-efectuada, la percepciÛn hace la funciÛn de {\gobernador}, pero de una
+eleg√≠a el comportamiento en funci√≥n de los objetos presentes y, por lo
+tanto, la percepci√≥n, que era la parte que determinaba qu√© objetos
+estaban presentes, era la que, al determinarlos, eleg√≠a el
+comportamiento del adaptador. De modo que, seg√∫n la formalizaci√≥n
+efectuada, la percepci√≥n hace la funci√≥n de {\gobernador}, pero de una
 manera concreta, usando objetos.
 
-La relaciÛn entre ambos adaptadores queda patente al indicar, sobre el
+La relaci√≥n entre ambos adaptadores queda patente al indicar, sobre el
 diagrama del adaptador evolutivo mostrado en ^>El adaptador>, las partes
 del {\adaptador} formal que realizan el tratamiento de los datos
 representado por cada flecha.
-$$\hbox{FenÛmeno}
+$$\hbox{Fen√≥meno}
   \underbrace{
    \base{$\aut G\;\;$\cr$\longrightarrow\;$}
    \hbox{\strut Objeto}
    \base{$\aut B$\cr$\;\longrightarrow$}}_{\hbox{\strut Adaptador}}
-  \hbox{AcciÛn}
+  \hbox{Acci√≥n}
 $$
 
 
 \Section La mejora del cuerpo
 
-La resoluciÛn formal del problema aparente nos llevÛ del {\mecanismo},
+La resoluci√≥n formal del problema aparente nos llev√≥ del {\mecanismo},
 con un solo comportamiento, al {\adaptador}, que lo mejoraba porque era
 capaz de varios comportamientos. Del mismo modo puede un {\adaptador}
-mejorar a otro si es capaz de m·s comportamientos. No hay mucho m·s que
-decir de esta lÌnea de resoluciÛn de mejora cuantitativa, que tiende a
+mejorar a otro si es capaz de m√°s comportamientos. No hay mucho m√°s que
+decir de esta l√≠nea de resoluci√≥n de mejora cuantitativa, que tiende a
 aumentar la versatilidad del {\cuerpo}, pero no debe olvidarse cuando
-demos el prÛximo salto cualitativo, aunque sea mucho m·s espectacular.
+demos el pr√≥ximo salto cualitativo, aunque sea mucho m√°s espectacular.
 
 
-\Section La previsiÛn
+\Section La previsi√≥n
 
-Al definir el {\adaptador} formal, su {\cuerpo} quedÛ especificado,
+Al definir el {\adaptador} formal, su {\cuerpo} qued√≥ especificado,
 pero, en cambio, de su {\gobernador} solamente establecimos una
-condiciÛn suficiente para mejorar al {\mecanismo}, la ^{condiciÛn del
-gobernador}. AsÌ que ahora, para diseÒar un {\aprendiz} que mejore al
+condici√≥n suficiente para mejorar al {\mecanismo}, la ^{condici√≥n del
+gobernador}. As√≠ que ahora, para dise√±ar un {\aprendiz} que mejore al
 {\adaptador}, nos centraremos en la mejora del {\gobernador}.
 
 La tarea del {\gobernador}, que consiste en elegir el comportamiento del
 {\cuerpo}, puede hacerse de varios modos. Si el {\universo} fuera
 completamente conocido, que no es el caso frente a un problema aparente,
-entonces se podrÌa diseÒar un {\gobernador} que eligiera
-sistem·ticamente el comportamiento Ûptimo, sin errar jam·s y, por
-consiguiente, sin necesidad de rectificar nunca su elecciÛn.
+entonces se podr√≠a dise√±ar un {\gobernador} que eligiera
+sistem√°ticamente el comportamiento √≥ptimo, sin errar jam√°s y, por
+consiguiente, sin necesidad de rectificar nunca su elecci√≥n.
 Denominaremos, a cualquier gobernador que no rectifica, ^{gobernador
-mec·nico}. En el otro extremo se encuentra el ^{homeostato} de
+mec√°nico}. En el otro extremo se encuentra el ^{homeostato} de
 ^[Ashby]^(Ashby1956), que elige el comportamiento al azar, pero que
 rectifica el comportamiento, eligiendo otro igualmente al azar, en
-cuanto la valoraciÛn obtenida no alcanza un determinado umbral. De esta
-manera, es seguro que sÛlo son estables aquellos comportamientos del
-homeostato cuya valoraciÛn supera dicho umbral.
+cuanto la valoraci√≥n obtenida no alcanza un determinado umbral. De esta
+manera, es seguro que s√≥lo son estables aquellos comportamientos del
+homeostato cuya valoraci√≥n supera dicho umbral.
 
-Puede establecerse un continuo desde el gobernador mec·nico, que nunca
-rectifica, hasta el homeostato, que todo lo fÌa a la rectificaciÛn, ya
+Puede establecerse un continuo desde el gobernador mec√°nico, que nunca
+rectifica, hasta el homeostato, que todo lo f√≠a a la rectificaci√≥n, ya
 que elige sin criterio. Llamaremos tanteador_{tantear} a aquel
 {\gobernador} que tantea, es decir, que emplea un procedimiento de
 prueba y error. El homeostato es un ejemplo extremo de tanteador.
 
-Un {\gobernador} que tantea no prevÈ, sino que intenta un comportamiento
-y, si Èste no soluciona, prueba otro. Peor es el caso del {\gobernador}
-mec·nico que, adem·s de no prever, es incapaz de rectificar si el
-comportamiento es malo, como sÌ hace el que tantea. Una manera mejor de
-elegir el comportamiento consiste en prever_{previsiÛn} su efecto antes
-de ejecutarlo, porque, si el pronÛstico es exacto, evita sufrir los
-errores inherentes a los procedimientos de prueba y error. AsÌ que la
-diferencia entre un {\aprendiz} y un {\adaptador} ser· que el
-{\aprendiz} prevÈ el futuro, y el {\adaptador} no. Para prever el
+Un {\gobernador} que tantea no prev√©, sino que intenta un comportamiento
+y, si √©ste no soluciona, prueba otro. Peor es el caso del {\gobernador}
+mec√°nico que, adem√°s de no prever, es incapaz de rectificar si el
+comportamiento es malo, como s√≠ hace el que tantea. Una manera mejor de
+elegir el comportamiento consiste en prever_{previsi√≥n} su efecto antes
+de ejecutarlo, porque, si el pron√≥stico es exacto, evita sufrir los
+errores inherentes a los procedimientos de prueba y error. As√≠ que la
+diferencia entre un {\aprendiz} y un {\adaptador} ser√° que el
+{\aprendiz} prev√© el futuro, y el {\adaptador} no. Para prever el
 resultado de ejecutar un comportamiento es preciso disponer internamente
 de un modelo del exterior, modelo que llamaremos {\realidad}. Y, con
-estos razonamientos, ya podemos diseÒar un {\aprendiz}.
+estos razonamientos, ya podemos dise√±ar un {\aprendiz}.
 
 
 \Section El aprendiz formal
 
 El ^|aprendiz|~$\aut A_2$ tiene tres partes: un {\cuerpo}, capaz de
 varios comportamientos, un {\modelador}, que modela el exterior, y un
-{\simulador}, que elige el comportamiento actual valiÈndose del modelo
-para hacer pronÛsticos con los que compara los comportamientos posibles.
+{\simulador}, que elige el comportamiento actual vali√©ndose del modelo
+para hacer pron√≥sticos con los que compara los comportamientos posibles.
 
 \point El {\cuerpo} del {\aprendiz} es capaz de varios comportamientos,
-cuantos m·s mejor, seg˙n hemos visto en ^>La mejora del cuerpo>, pero al
-menos y para superar al {\adaptador}, todos los de Èste. TÈcnicamente,
-el {\cuerpo} del {\aprendiz} es una ^{ampliaciÛn} del {\cuerpo} del
-{\adaptador} y, por consiguiente, su diseÒo est· especificado.
+cuantos m√°s mejor, seg√∫n hemos visto en ^>La mejora del cuerpo>, pero al
+menos y para superar al {\adaptador}, todos los de √©ste. T√©cnicamente,
+el {\cuerpo} del {\aprendiz} es una ^{ampliaci√≥n} del {\cuerpo} del
+{\adaptador} y, por consiguiente, su dise√±o est√° especificado.
 
 \point La tarea del ^|modelador|~$\aut M$ consiste en buscar un modelo
 del {\universo} exterior, modelo que denominamos ^|realidad|~$\aut R$.
 El {\modelador} observa las acciones que el propio {\aprendiz} realiza
-sobre el {\universo} y las reacciones de Èste, y, con estos datos,
-elabora la realidad, que es un comportamiento, o sea, un autÛmata~$\aut
+sobre el {\universo} y las reacciones de √©ste, y, con estos datos,
+elabora la realidad, que es un comportamiento, o sea, un aut√≥mata~$\aut
 R$. Si la {\realidad} es indistinguible del {\universo} exterior,
-entonces sirve para hacer pronÛsticos acertados y decimos que se cumple
-la ^{condiciÛn del modelador}.
+entonces sirve para hacer pron√≥sticos acertados y decimos que se cumple
+la ^{condici√≥n del modelador}.
 
 \point El ^|simulador|~$\aut S$ dispone el comportamiento y, para
-elegirlo, puede utilizar la {\realidad} y asÌ prever_{previsiÛn} sus
-consecuencias antes de ejecutarlo. La simulaciÛn es completamente
+elegirlo, puede utilizar la {\realidad} y as√≠ prever_{previsi√≥n} sus
+consecuencias antes de ejecutarlo. La simulaci√≥n es completamente
 interna al {\aprendiz}; recibe la {\realidad} del {\modelador} y entrega
-el comportamiento al {\cuerpo}; y, por esta razÛn, su diseÒo est·
+el comportamiento al {\cuerpo}; y, por esta raz√≥n, su dise√±o est√°
 completamente especificado.
 
-\noindent La condiciÛn del modelador es una condiciÛn suficiente para
+\noindent La condici√≥n del modelador es una condici√≥n suficiente para
 que el {\aprendiz} supere al {\adaptador}. Porque, si se cumple la
-condiciÛn del modelador, o sea, si los pronÛsticos de la {\realidad} son
+condici√≥n del modelador, o sea, si los pron√≥sticos de la {\realidad} son
 acertados, entonces el {\aprendiz} puede simular perfectamente la
-situaciÛn a la que se enfrenta el {\adaptador} que est· intentando
-superar, pero con la ventaja de evitar la ejecuciÛn actual contra el
+situaci√≥n a la que se enfrenta el {\adaptador} que est√° intentando
+superar, pero con la ventaja de evitar la ejecuci√≥n actual contra el
 {\universo} exterior de los comportamientos previsiblemente peores, que
 coinciden con los comportamientos peores porque estamos suponiendo que
-los pronÛsticos son certeros.
+los pron√≥sticos son certeros.
 
 \breakif6
 
@@ -431,31 +431,31 @@ $$\MTbeginchar(170pt,60pt,0pt);
 $$
 
 Los datos~$\no r$ sirven para que el {\modelador} comunique al
-{\simulador} cÛmo es la {\realidad}. Como la {\realidad} es un autÛmata,
+{\simulador} c√≥mo es la {\realidad}. Como la {\realidad} es un aut√≥mata,
 los datos~$\no r$ especifican un comportamiento, por lo que son
-programa, vÈase ^>El comportamiento>. AsÌ que el {\simulador} recibe un
+programa, v√©ase ^>El comportamiento>. As√≠ que el {\simulador} recibe un
 programa~$\no r$ que describe el comportamiento del {\universo} externo,
-y en respuesta entrega otro programa~$\no b$ que describe cÛmo ha de ser
+y en respuesta entrega otro programa~$\no b$ que describe c√≥mo ha de ser
 el comportamiento del propio {\cuerpo}.
 
 
-\Section La lÛgica interna
+\Section La l√≥gica interna
 
-El {\aprendiz} ha de tener varias representaciones posibles, cuantas m·s
+El {\aprendiz} ha de tener varias representaciones posibles, cuantas m√°s
 mejor, del {\universo} exterior, que puede ser de cualquier modo,
-porque, cuantas m·s tenga, m·s probable ser· que disponga de una que se
-comporte hasta el momento como el {\universo}, y asÌ pronostique
+porque, cuantas m√°s tenga, m√°s probable ser√° que disponga de una que se
+comporte hasta el momento como el {\universo}, y as√≠ pronostique
 probablemente mejor, y sirva como {\realidad}. Es decir, el {\aprendiz}
-tiene que disponer de un sistema de representaciÛn interno al que
-denominaremos ^|lÛgica interna|. Esta lÛgica interna tambiÈn tiene que
+tiene que disponer de un sistema de representaci√≥n interno al que
+denominaremos ^|l√≥gica interna|. Esta l√≥gica interna tambi√©n tiene que
 representar internamente los comportamientos de su {\cuerpo} para poder
-simular su efecto, lo que explica la existencia de mapas som·ticos_{mapa
-som·tico} en los cerebros_{cerebro} de los aprendices.
+simular su efecto, lo que explica la existencia de mapas som√°ticos_{mapa
+som√°tico} en los cerebros_{cerebro} de los aprendices.
 
-Como en el ^{·lgebra autom·tica} tanto el {\universo} como el {\cuerpo}
-son autÛmatas_{autÛmata} finitos, la lÛgica interna del {\aprendiz} ha
-de ser capaz de representar autÛmatas finitos, o
-comportamientos_{comportamiento}, y cuantos m·s, mejor.
+Como en el ^{√°lgebra autom√°tica} tanto el {\universo} como el {\cuerpo}
+son aut√≥matas_{aut√≥mata} finitos, la l√≥gica interna del {\aprendiz} ha
+de ser capaz de representar aut√≥matas finitos, o
+comportamientos_{comportamiento}, y cuantos m√°s, mejor.
 
 
 \Section El problema del aprendiz
@@ -465,70 +465,70 @@ supervivencia pero, en vez de ser contra cualquier universo, $\forall
 \aut U$, es contra el mejor modelo encontrado por el {\modelador}, modelo
 que denominamos {\realidad}. Este problema, que denominaremos ^|problema
 del aprendiz|, no es aparente_{problema aparente}, ya que el
-{\simulador} cuenta con la {\realidad} como ^{informaciÛn}.
+{\simulador} cuenta con la {\realidad} como ^{informaci√≥n}.
 
 El problema del aprendiz no es aparente, porque la apariencia se queda
 en el problema al que se enfrenta el {\modelador}. Si olvidamos esto,
 podemos confundir la {\realidad} con el {\universo} exterior, pecado que
 denominaremos ^{logicismo}. Es un pecado porque, aunque la {\realidad}
 haya pronosticado hasta ahora con exactitud, nunca podremos estar
-seguros de que el siguiente pronÛstico ser· acertado ya que el universo
+seguros de que el siguiente pron√≥stico ser√° acertado ya que el universo
 sigue siendo absolutamente desconocido, o sea, puede ser cualquiera,
-$\forall \aut U$. El {\universo} puede ser, por ejemplo, aquÈl que se
+$\forall \aut U$. El {\universo} puede ser, por ejemplo, aqu√©l que se
 comporta tal como la {\realidad} hasta el instante siguiente, en que
-dejar· de comportarse como ella. Otra consecuencia de este argumento es
-que no es posible verificar si se cumple, o no se cumple, la ^{condiciÛn
+dejar√° de comportarse como ella. Otra consecuencia de este argumento es
+que no es posible verificar si se cumple, o no se cumple, la ^{condici√≥n
 del modelador}.
 
-Pero, aunque sea un pecado, el {\simulador} trabaja bajo la hipÛtesis
+Pero, aunque sea un pecado, el {\simulador} trabaja bajo la hip√≥tesis
 logicista, esto es, como si la {\realidad} fuera el {\universo}
-exterior, porque no tiene otra hipÛtesis mejor.
+exterior, porque no tiene otra hip√≥tesis mejor.
 
 
-\Section ComparaciÛn de aprendices
+\Section Comparaci√≥n de aprendices
 
 Tanto el {\aprendiz} resolutivo formal como el aprendiz evolutivo de
 entrada, visto entre _>El aprendiz> y _>La realidad del aprendiz es
-cambiante>, modelan la realidad, y ambos prevÈn_{previsiÛn} el futuro,
-por lo que la relaciÛn entre ellos es clara. El aprendiz evolutivo es un
+cambiante>, modelan la realidad, y ambos prev√©n_{previsi√≥n} el futuro,
+por lo que la relaci√≥n entre ellos es clara. El aprendiz evolutivo es un
 caso particular del {\aprendiz} resolutivo, porque el primero utiliza
 una realidad de objetos, mientras que en el segundo no se imponen
-requisitos a la {\realidad}. AsÌ, por ejemplo, el ^{logicismo}, que
-apareciÛ al estudiar el {\aprendiz} formal, toma la forma del
+requisitos a la {\realidad}. As√≠, por ejemplo, el ^{logicismo}, que
+apareci√≥ al estudiar el {\aprendiz} formal, toma la forma del
 ^{objetivismo} cuando la realidad es objetiva.
 
 Para demostrar la correspondencia que existe entre ambos aprendices,
-hemos seÒalado, sobre el diagrama del aprendiz evolutivo mostrado en
-^>La simulaciÛn>, las partes del {\aprendiz} formal que realizan el
+hemos se√±alado, sobre el diagrama del aprendiz evolutivo mostrado en
+^>La simulaci√≥n>, las partes del {\aprendiz} formal que realizan el
 tratamiento de los datos representado por cada flecha.
-$$\hbox{FenÛmeno}
+$$\hbox{Fen√≥meno}
    \underbrace{\strut
     \base{$\aut M\;\;$\cr$\longrightarrow\;$}
     \base{\vrule width0pt depth2pt$\aut S$\cr \onitself{\strut Objeto}}
     \base{$\aut B$\cr$\;\longrightarrow$}}_{\hbox{\strut Aprendiz}}
-  \hbox{AcciÛn}
+  \hbox{Acci√≥n}
 $$
 
 
-\Section La doble resoluciÛn
+\Section La doble resoluci√≥n
 
-Para dar el siguiente paso en la ^{resoluciÛn} del ^{problema aparente},
-hemos de volver al comienzo de dicha resoluciÛn. Entonces vimos, en ^>El
+Para dar el siguiente paso en la ^{resoluci√≥n} del ^{problema aparente},
+hemos de volver al comienzo de dicha resoluci√≥n. Entonces vimos, en ^>El
 problema aparente>, que la manera de atacar un problema aparente, que no
-tiene una soluciÛn definitiva, consiste en intentar varias resoluciones
-pasando ^{informaciÛn} de las ya efectuadas a las todavÌa por efectuar.
+tiene una soluci√≥n definitiva, consiste en intentar varias resoluciones
+pasando ^{informaci√≥n} de las ya efectuadas a las todav√≠a por efectuar.
 Lo que nos interesa ahora es que, dado que el problema aparente no tiene
-una soluciÛn definitiva, su proceso de resoluciÛn consiste en diseÒar
-resoluciones cada vez mejores con la informaciÛn obtenida de anteriores
+una soluci√≥n definitiva, su proceso de resoluci√≥n consiste en dise√±ar
+resoluciones cada vez mejores con la informaci√≥n obtenida de anteriores
 resoluciones y, concretamente, el {\mecanismo}, el {\adaptador} y el
 {\aprendiz} son resolutores, y no soluciones.
 
-Por esta razÛn hay dos niveles en la resoluciÛn del problema aparente.
-El nivel superior es el efectuado por la ^{resoluciÛn} general del
-problema aparente, que se corresponde con la ^{evoluciÛn} darviniana, y
-para el que toda la ^{vida}, al completo, ha de considerarse un ˙nico
+Por esta raz√≥n hay dos niveles en la resoluci√≥n del problema aparente.
+El nivel superior es el efectuado por la ^{resoluci√≥n} general del
+problema aparente, que se corresponde con la ^{evoluci√≥n} darviniana, y
+para el que toda la ^{vida}, al completo, ha de considerarse un √∫nico
 ente resolutor; como propone ^[Lovelock]^(Lovelock1979). El nivel
-inferior corresponde a la resoluciÛn que cada organismo vivo individual
+inferior corresponde a la resoluci√≥n que cada organismo vivo individual
 ejecuta, ya que cada uno es un resolutor.
 
 
@@ -536,156 +536,156 @@ ejecuta, ya que cada uno es un resolutor.
 
 El {\mecanismo}, el {\adaptador} y el {\aprendiz} son resolutores. Cada
 uno de ellos resuelve de un modo, es decir, busca, de una manera
-concreta, un comportamiento que solucione el problema. Y asÌ como el
+concreta, un comportamiento que solucione el problema. Y as√≠ como el
 {\adaptador} mejoraba al {\mecanismo}, simplemente, porque era capaz de
-m·s comportamientos, el ^|conocedor|~$\aut A_3$, que asÌ llamaremos al
-siguiente resolutor del problema aparente formalizado, ser· capaz de m·s
-maneras de resoluciÛn.
+m√°s comportamientos, el ^|conocedor|~$\aut A_3$, que as√≠ llamaremos al
+siguiente resolutor del problema aparente formalizado, ser√° capaz de m√°s
+maneras de resoluci√≥n.
 
 Como el {\conocedor} es capaz de resolver de varias maneras, podemos
 dividirlo en dos partes:
 \point una ^|mente|~$\syn M$ que es capaz de resolver de varios modos, y
-\point una ^|inteligencia|~$\syn A$ que decide quÈ modo de resolver ha de
+\point una ^|inteligencia|~$\syn A$ que decide qu√© modo de resolver ha de
 ejecutarse en cada momento.
 
 \noindent Para que el {\conocedor} mejore al {\mecanismo},
 al {\adaptador} y al {\aprendiz}, es suficiente que su {\mente} sea
 capaz de resolver como cada uno de ellos, y que la {\inteligencia}
-satisfaga la ^{condiciÛn de la inteligencia}, esto es, que elija la
+satisfaga la ^{condici√≥n de la inteligencia}, esto es, que elija la
 manera de resolver del {\mecanismo} si el {\mecanismo} soluciona, la del
-{\adaptador} si Èste soluciona y, si el {\aprendiz} soluciona, la del
+{\adaptador} si √©ste soluciona y, si el {\aprendiz} soluciona, la del
 {\aprendiz} (\EPA6).
 $$\hbox{Problema}\,
    \underbrace{\strut
     \base{{\frakx A}$\;\;$\cr $\longrightarrow\;$}
-  \hbox{ResoluciÛn}
+  \hbox{Resoluci√≥n}
     \base{{\frakx M}\cr $\;\longrightarrow$}}_{\hbox{%
      Conocedor$\,{\cal A}_3$}}
-  \,\hbox{SoluciÛn}
+  \,\hbox{Soluci√≥n}
 $$
 
-El diseÒo de la {\mente} est· perfectamente especificado y, en ˙ltimo
-caso, la {\mente} se podrÌa construir simplemente agregando el
+El dise√±o de la {\mente} est√° perfectamente especificado y, en √∫ltimo
+caso, la {\mente} se podr√≠a construir simplemente agregando el
 {\mecanismo}, el {\adaptador} y el {\aprendiz} y completando el agregado
 con un selector que permitiera elegir uno de ellos. La tarea de la
-{\inteligencia} consistirÌa, precisamente, en manejar el selector para
+{\inteligencia} consistir√≠a, precisamente, en manejar el selector para
 elegir uno de los tres. En resumen, disponemos de una {\mente} que
 permite al {\conocedor} funcionar a voluntad como un {\mecanismo}, como
-un {\adaptador} o como un {\aprendiz}, pero, øcÛmo deberÌa manejarse el
-selector?, es decir, øcÛmo diseÒar la {\inteligencia}?
+un {\adaptador} o como un {\aprendiz}, pero, ¬øc√≥mo deber√≠a manejarse el
+selector?, es decir, ¬øc√≥mo dise√±ar la {\inteligencia}?
 
-Como en el caso del {\gobernador}, vÈase ^>La previsiÛn>, la
-{\inteligencia} del {\conocedor} puede elegir la resoluciÛn, o bien
-mec·nicamente, o bien por tanteo_{tantear}. El tanteo no nos asegura que
+Como en el caso del {\gobernador}, v√©ase ^>La previsi√≥n>, la
+{\inteligencia} del {\conocedor} puede elegir la resoluci√≥n, o bien
+mec√°nicamente, o bien por tanteo_{tantear}. El tanteo no nos asegura que
 el {\conocedor} mejore al {\mecanismo}, al {\adaptador} y al
-{\aprendiz}. Y, por el otro lado, podrÌa pensarse que puesto que hemos
-demostrado que el {\aprendiz} es mejor que el {\adaptador}, y Èste es
-mejor que el {\mecanismo}, deberÌa preferirse siempre el funcionamiento
+{\aprendiz}. Y, por el otro lado, podr√≠a pensarse que puesto que hemos
+demostrado que el {\aprendiz} es mejor que el {\adaptador}, y √©ste es
+mejor que el {\mecanismo}, deber√≠a preferirse siempre el funcionamiento
 como {\aprendiz}. Pero hemos de recordar que las mejoras estaban, en
 cada caso, condicionadas al cumplimiento de unos determinados
-requisitos. De manera que la principal tarea de la {\inteligencia} ser·
-comprobar si se cumplen, o no, la ^{condiciÛn del gobernador}, para
-discriminar entre mecanizaciÛn y adaptaciÛn, y la ^{condiciÛn del
-modelador}, para discriminar entre adaptaciÛn y aprendizaje.
+requisitos. De manera que la principal tarea de la {\inteligencia} ser√°
+comprobar si se cumplen, o no, la ^{condici√≥n del gobernador}, para
+discriminar entre mecanizaci√≥n y adaptaci√≥n, y la ^{condici√≥n del
+modelador}, para discriminar entre adaptaci√≥n y aprendizaje.
 
 
 \Section La inteligencia
 
-La ^{condiciÛn del gobernador} discrimina entre el {\mecanismo} y el
+La ^{condici√≥n del gobernador} discrimina entre el {\mecanismo} y el
 {\adaptador}. Recordemos que el {\adaptador} mejora al {\mecanismo} si
-cumple la condiciÛn del gobernador, o sea, si el {\adaptador} se
-comporta como el {\mecanismo} cuando Èste es soluciÛn en un {\universo}.
+cumple la condici√≥n del gobernador, o sea, si el {\adaptador} se
+comporta como el {\mecanismo} cuando √©ste es soluci√≥n en un {\universo}.
 Sucede, pues, que en tales circunstancias el {\adaptador} y el
-{\mecanismo} tienen idÈntico comportamiento, siendo m·s sencillo Èste
-˙ltimo. De aquÌ se deduce la primera regla de la {\inteligencia} del
+{\mecanismo} tienen id√©ntico comportamiento, siendo m√°s sencillo √©ste
+√∫ltimo. De aqu√≠ se deduce la primera regla de la {\inteligencia} del
 {\conocedor}. La {\inteligencia}, al advertir que un comportamiento
-mecanizado es soluciÛn, aplicar· ese comportamiento \hbox{mecanizado}
-para evitar otros c·lculos m·s costosos que, funcionando como
-{\adaptador} o como {\aprendiz}, tendrÌa que efectuar.
+mecanizado es soluci√≥n, aplicar√° ese comportamiento \hbox{mecanizado}
+para evitar otros c√°lculos m√°s costosos que, funcionando como
+{\adaptador} o como {\aprendiz}, tendr√≠a que efectuar.
 
-Si, por el contrario, ning˙n comportamiento mecanizado soluciona, caso
-que describiremos inexactamente como de condiciÛn del gobernador
-insatisfecha, entonces se impone una resoluciÛn m·s compleja, ya sea
-como {\adaptador} o como {\aprendiz}. En este caso la discriminaciÛn
-depende de la ^{condiciÛn del modelador}. Porque, si se cumple la
-condiciÛn del modelador, o sea, si la {\realidad} encontrada por el
-{\modelador} prevÈ_{previsiÛn} con la suficiente precisiÛn, entonces le
+Si, por el contrario, ning√∫n comportamiento mecanizado soluciona, caso
+que describiremos inexactamente como de condici√≥n del gobernador
+insatisfecha, entonces se impone una resoluci√≥n m√°s compleja, ya sea
+como {\adaptador} o como {\aprendiz}. En este caso la discriminaci√≥n
+depende de la ^{condici√≥n del modelador}. Porque, si se cumple la
+condici√≥n del modelador, o sea, si la {\realidad} encontrada por el
+{\modelador} prev√©_{previsi√≥n} con la suficiente precisi√≥n, entonces le
 conviene al {\conocedor} funcionar como {\aprendiz}. Pero, si no se
-cumple la condiciÛn del modelador, es decir, si los pronÛsticos de la
+cumple la condici√≥n del modelador, es decir, si los pron√≥sticos de la
 mejor {\realidad} encontrada no son fiables, entonces le es mejor
-prescindir de ellos y funcionar como un {\adaptador}. Y Èsta es la
+prescindir de ellos y funcionar como un {\adaptador}. Y √©sta es la
 segunda regla de la {\inteligencia} del {\conocedor}.
 
 La ^{sed}, que indica que el comportamiento actual no soluciona, es un
-ejemplo de condiciÛn del gobernador insatisfecha. Y la ^{perplejidad} es
-un ejemplo de condiciÛn del modelador incumplida. Ambos sentimientos, al
+ejemplo de condici√≥n del gobernador insatisfecha. Y la ^{perplejidad} es
+un ejemplo de condici√≥n del modelador incumplida. Ambos sentimientos, al
 ser originados por condiciones deseables insatisfechas, son dolorosos,
-pero la sed es corporal y la perplejidad mental. Descubrimos asÌ dos
-tipos de sentimientos: los sentimientos corporales, asÌ calificados
+pero la sed es corporal y la perplejidad mental. Descubrimos as√≠ dos
+tipos de sentimientos: los sentimientos corporales, as√≠ calificados
 porque dependen de la bondad, o maldad, de los comportamientos que
-ejecuta el {\cuerpo}, y los sentimientos mentales, que asÌ adjetivamos
+ejecuta el {\cuerpo}, y los sentimientos mentales, que as√≠ adjetivamos
 porque dependen de la bondad, o maldad, de las resoluciones que realiza
 la {\mente}. De modo que el ^{sentimiento} es un complejo que integra
-informaciÛn interna sobre el estado corporal y sobre el estado mental.
+informaci√≥n interna sobre el estado corporal y sobre el estado mental.
 
-Podemos decir que esta informaciÛn se organiza en tres mapas: el ^{mapa
-som·tico} que representa al {\cuerpo}, el ^{mapa mental} que representa
+Podemos decir que esta informaci√≥n se organiza en tres mapas: el ^{mapa
+som√°tico} que representa al {\cuerpo}, el ^{mapa mental} que representa
 a la {\mente}, y la {\realidad}, que es el mapa que representa al
-exterior. Para que los tres mapas sean ˙tiles a la {\inteligencia}, han
-de estar convenientemente relacionados. A la ^{informaciÛn} que
+exterior. Para que los tres mapas sean √∫tiles a la {\inteligencia}, han
+de estar convenientemente relacionados. A la ^{informaci√≥n} que
 cohesiona e integra los distintos mapas, mental y corporal, internos y
 externo, y que es fundamental para el funcionamiento unitario del
 {\conocedor}, la denominamos ^{significado}.
 
-No entraremos aquÌ en m·s detalles, como la interesante enfermedad de
-^[Camus], porque la descripciÛn completa podrÌa desviar nuestra atenciÛn
+No entraremos aqu√≠ en m√°s detalles, como la interesante enfermedad de
+^[Camus], porque la descripci√≥n completa podr√≠a desviar nuestra atenci√≥n
 de lo principal y porque, en cualquier caso, si usted lo desea, puede
 encontrarla en \EPA{6.4}.
 
 
-\Section ComparaciÛn de conocedores
+\Section Comparaci√≥n de conocedores
 
-La comparaciÛn de los conocedores mantiene la tendencia observada en las
-anteriores comparaciones entre la resoluciÛn formal del problema
-aparente y la evoluciÛn del camino de entrada, vÈanse _>ComparaciÛn de
-adaptadores> y _>ComparaciÛn de aprendices>: el {\conocedor} formal es
-m·s general que el conocedor evolutivo presentado entre _>El conocedor>
-y _>La realidad del conocedor es sem·ntica>. Ambos son capaces de
-resolver de varios modos, y Èsta es la esencia del conocedor. Pero, al
+La comparaci√≥n de los conocedores mantiene la tendencia observada en las
+anteriores comparaciones entre la resoluci√≥n formal del problema
+aparente y la evoluci√≥n del camino de entrada, v√©anse _>Comparaci√≥n de
+adaptadores> y _>Comparaci√≥n de aprendices>: el {\conocedor} formal es
+m√°s general que el conocedor evolutivo presentado entre _>El conocedor>
+y _>La realidad del conocedor es sem√°ntica>. Ambos son capaces de
+resolver de varios modos, y √©sta es la esencia del conocedor. Pero, al
 describir al conocedor evolutivo en el camino de entrada, nos fijamos en
 que, de las distintas maneras en las que se puede usar la realidad, una
 consiste en usarla entera y las otras en usar una parte, y vimos, por
-ejemplo, como la sed podÌa ser un subproblema del problema de la
-supervivencia que el conocedor evolutivo podÌa afrontar. En el caso del
-{\conocedor} formal no est·n limitadas las maneras de resolver.
+ejemplo, como la sed pod√≠a ser un subproblema del problema de la
+supervivencia que el conocedor evolutivo pod√≠a afrontar. En el caso del
+{\conocedor} formal no est√°n limitadas las maneras de resolver.
 
-No obstante, para que la comparaciÛn sea exacta, ha de tenerse en cuenta
-que la realidad sem·ntica del conocedor evolutivo, vista en ^>La
-realidad del conocedor es sem·ntica>, abarca en su correspondiente
-{\conocedor} formal, adem·s de la {\realidad} estricta, los mapas
-som·tico_{mapa som·tico} y mental_{mapa mental}, y la relaciÛn entre
+No obstante, para que la comparaci√≥n sea exacta, ha de tenerse en cuenta
+que la realidad sem√°ntica del conocedor evolutivo, vista en ^>La
+realidad del conocedor es sem√°ntica>, abarca en su correspondiente
+{\conocedor} formal, adem√°s de la {\realidad} estricta, los mapas
+som√°tico_{mapa som√°tico} y mental_{mapa mental}, y la relaci√≥n entre
 todos ellos que denominamos ^{significado}.
 
 Como al investigar sobre los sentimientos del {\conocedor} formal en la
-secciÛn anterior, _>La inteligencia>, descubrimos que la {\inteligencia}
-recibe informaciÛn interna, tanto corporal como mental, y externa,
+secci√≥n anterior, _>La inteligencia>, descubrimos que la {\inteligencia}
+recibe informaci√≥n interna, tanto corporal como mental, y externa,
 resulta que el ^{sistema emocional}, que se corresponde con la
-{\inteligencia} del {\conocedor} formal, deberÌa estar, en el diagrama
-del conocedor evolutivo, al final de tres flechas, que no est·n
-dibujadas porque complicarÌan la representaciÛn. Cada una de estas tres
-flechas tendrÌa su origen en una de las tres flechas del diagrama del
+{\inteligencia} del {\conocedor} formal, deber√≠a estar, en el diagrama
+del conocedor evolutivo, al final de tres flechas, que no est√°n
+dibujadas porque complicar√≠an la representaci√≥n. Cada una de estas tres
+flechas tendr√≠a su origen en una de las tres flechas del diagrama del
 ^{aprendiz}, o sea, que estas nuevas flechas desde flechas
-representarÌan datos de una nueva capa.
+representar√≠an datos de una nueva capa.
 
 
 \Section La mejora de la mente
 
 El {\conocedor} mejora a sus antecesores porque es capaz de varias
-resoluciones, y no de una ˙nica. Pero, por la misma regla, un
-{\conocedor} puede mejorar a otro si su {\mente} es capaz de m·s maneras
-de resolver. Luego, aumentar la versatilidad de la {\mente} es una lÌnea
+resoluciones, y no de una √∫nica. Pero, por la misma regla, un
+{\conocedor} puede mejorar a otro si su {\mente} es capaz de m√°s maneras
+de resolver. Luego, aumentar la versatilidad de la {\mente} es una l√≠nea
 de mejora resolutiva, en principio cuantitativa, que seguramente
-antecediÛ a la siguiente mejora cualitativa.
+antecedi√≥ a la siguiente mejora cualitativa.
 
 
 \Section El sujeto formal
@@ -693,214 +693,214 @@ antecediÛ a la siguiente mejora cualitativa.
 El {\sujeto} es al {\aprendiz}, como el {\conocedor} es al {\adaptador},
 estando el {\adaptador} y el {\aprendiz} en la capa de las soluciones, o
 de los comportamientos, y el {\conocedor} y el {\sujeto} en la capa de
-las resoluciones. Es decir, que asÌ como el {\adaptador} era capaz de
-varios comportamientos y el {\aprendiz} tambiÈn, pero con la posibilidad
+las resoluciones. Es decir, que as√≠ como el {\adaptador} era capaz de
+varios comportamientos y el {\aprendiz} tambi√©n, pero con la posibilidad
 de prever el efecto de los comportamientos, el {\conocedor} es capaz de
-varias resoluciones y el {\sujeto} tambiÈn, pero con la posibilidad de
-prever_{previsiÛn} el efecto de las resoluciones. Diremos que el
+varias resoluciones y el {\sujeto} tambi√©n, pero con la posibilidad de
+prever_{previsi√≥n} el efecto de las resoluciones. Diremos que el
 {\sujeto} puede ^{razonar} las resoluciones.
 
 Para poder prever el efecto de las resoluciones, es menester comprender
 el problema que las resoluciones afrontan. De modo que el
 ^|sujeto|~$\aut A_4$ consta de tres partes: un {\inquisidor} que busca
-la mejor representaciÛn del problema al que se enfrenta, una {\razon}
-que busca la mejor resoluciÛn posible para el problema hallado por el
+la mejor representaci√≥n del problema al que se enfrenta, una {\razon}
+que busca la mejor resoluci√≥n posible para el problema hallado por el
 {\inquisidor}, y una {\mente} que resuelve de la manera dispuesta por la
 {\razon} (\EPA7).
 $$\hbox{Problema}\,
    \underbrace{\strut
     \base{{\frakx I}$\;\;$\cr $\longrightarrow\;$}
-    \base{\vrule width0pt depth2pt{\frakx R}\cr \onitself{\strut ResoluciÛn}}
+    \base{\vrule width0pt depth2pt{\frakx R}\cr \onitself{\strut Resoluci√≥n}}
     \base{{\frakx M}\cr $\;\longrightarrow$}}_{\hbox{%
      Sujeto$\,{\cal A}_4$}}
-  \,\hbox{SoluciÛn}
+  \,\hbox{Soluci√≥n}
 $$
 
 \point La {\mente} del {\sujeto} ha de ser capaz de varias resoluciones,
-cuantas m·s mejor, seg˙n hemos visto en la secciÛn anterior, _>La mejora
+cuantas m√°s mejor, seg√∫n hemos visto en la secci√≥n anterior, _>La mejora
 de la mente>, pero por lo menos, para superar al {\conocedor}, todas las
-de Èste. AsÌ como la {\mente} del {\conocedor} est· especificada, asÌ lo
-est· la del {\sujeto}, ya que en ˙ltimo tÈrmino podrÌan ser iguales.
+de √©ste. As√≠ como la {\mente} del {\conocedor} est√° especificada, as√≠ lo
+est√° la del {\sujeto}, ya que en √∫ltimo t√©rmino podr√≠an ser iguales.
 
-\point El ^|inquisidor|~$\syn I$ busca la mejor representaciÛn del
-problema al que se enfrenta, representaciÛn que denominaremos ^|problema
+\point El ^|inquisidor|~$\syn I$ busca la mejor representaci√≥n del
+problema al que se enfrenta, representaci√≥n que denominaremos ^|problema
 del sujeto|, o simplemente ^|yo|~$\syn X$. Si el problema encontrado, el
 {\yo}, fuera indistinguible del problema al que efectivamente se
-enfrenta el {\sujeto}, entonces dirÌamos que se cumple la condiciÛn del
+enfrenta el {\sujeto}, entonces dir√≠amos que se cumple la condici√≥n del
 inquisidor.
 
-\point La tarea de la ^|razÛn|~$\syn R$, buscar la mejor resoluciÛn
-posible del problema del sujeto, est· perfectamente especificada porque
-es completamente interna al {\sujeto}. Es decir, que la determinaciÛn de
-cu·l es la mejor resoluciÛn para el \Mental problema$X$ encontrado por
+\point La tarea de la ^|raz√≥n|~$\syn R$, buscar la mejor resoluci√≥n
+posible del problema del sujeto, est√° perfectamente especificada porque
+es completamente interna al {\sujeto}. Es decir, que la determinaci√≥n de
+cu√°l es la mejor resoluci√≥n para el \Mental problema$X$ encontrado por
 el {\inquisidor}, de entre todas las resoluciones de las que es capaz la
-{\mente}, puede hacerse, en ˙ltimo tÈrmino, mediante una b˙squeda
-sistem·tica.
+{\mente}, puede hacerse, en √∫ltimo t√©rmino, mediante una b√∫squeda
+sistem√°tica.
 
-\noindent La ^{condiciÛn del inquisidor} es una condiciÛn suficiente
+\noindent La ^{condici√≥n del inquisidor} es una condici√≥n suficiente
 para que el {\sujeto} supere al {\conocedor}, porque, si se cumple, es
 decir, si el {\inquisidor} encuentra un problema indistinguible del
 problema al que se enfrenta, entonces la {\razon} del {\sujeto} puede
-calcular por adelantado la bondad, o la maldad, de una resoluciÛn antes
+calcular por adelantado la bondad, o la maldad, de una resoluci√≥n antes
 de acometerla, y puede evitar, de este modo, sufrir los errores que el
-{\conocedor} es incapaz de anticipar. Y esto es asÌ, aunque sea
-imposible verificar que la condiciÛn del inquisidor est· definitivamente
+{\conocedor} es incapaz de anticipar. Y esto es as√≠, aunque sea
+imposible verificar que la condici√≥n del inquisidor est√° definitivamente
 satisfecha; es imposible porque el {\sujeto} se enfrenta a un problema
 aparente.
 
 
-\Section El sujeto simbÛlico
+\Section El sujeto simb√≥lico
 
-Para que el {\sujeto} pueda prever_{previsiÛn} el efecto de las posibles
+Para que el {\sujeto} pueda prever_{previsi√≥n} el efecto de las posibles
 resoluciones sobre los problemas a solucionar, ha de ser capaz de
 representar problemas y resoluciones, y para hacerlo ha de disponer de
-una ^{lÛgica simbÛlica}, con ^{sem·ntica} y ^{sintaxis} recursiva. Ahora
+una ^{l√≥gica simb√≥lica}, con ^{sem√°ntica} y ^{sintaxis} recursiva. Ahora
 daremos estos dos pasos, pero de uno en uno.
 
-Un primer paso para convertir la ^{lÛgica interna} del {\conocedor} en
-una lÛgica simbÛlica consiste, como ya vimos en ^>La sem·ntica y la
-sintaxis>, en aÒadir una capa sint·ctica sobre la lÛgica preexistente,
-que denominaremos sem·ntica por serlo la realidad del conocedor; vÈase
-^>ComparaciÛn de conocedores>. Es decir, que la lÛgica del {\conocedor},
+Un primer paso para convertir la ^{l√≥gica interna} del {\conocedor} en
+una l√≥gica simb√≥lica consiste, como ya vimos en ^>La sem√°ntica y la
+sintaxis>, en a√±adir una capa sint√°ctica sobre la l√≥gica preexistente,
+que denominaremos sem√°ntica por serlo la realidad del conocedor; v√©ase
+^>Comparaci√≥n de conocedores>. Es decir, que la l√≥gica del {\conocedor},
 capaz de representar los comportamientos del {\universo} exterior y del
-propio {\conocedor}, asÌ como las condiciones que eval˙a su
-{\inteligencia}, se convierte en la capa sem·ntica de la lÛgica del
-{\sujeto}. Y sobre esta capa sem·ntica aparece una capa sint·ctica para
-completar la lÛgica simbÛlica. Construida la lÛgica simbÛlica del
+propio {\conocedor}, as√≠ como las condiciones que eval√∫a su
+{\inteligencia}, se convierte en la capa sem√°ntica de la l√≥gica del
+{\sujeto}. Y sobre esta capa sem√°ntica aparece una capa sint√°ctica para
+completar la l√≥gica simb√≥lica. Construida la l√≥gica simb√≥lica del
 {\sujeto} de esta manera, sus soluciones de han de ser de la misma
 naturaleza que las del {\conocedor}, y el {\aprendiz}, es decir,
-autÛmatas_{autÛmata}~$\aut A$, o sea, comportamientos, lo que, m·s que
-una limitaciÛn, es un requisito. A una lÛgica con sem·ntica y sintaxis
-la denominamos ^{lÛgica gramatical}.
+aut√≥matas_{aut√≥mata}~$\aut A$, o sea, comportamientos, lo que, m√°s que
+una limitaci√≥n, es un requisito. A una l√≥gica con sem√°ntica y sintaxis
+la denominamos ^{l√≥gica gramatical}.
 
 Pero, como no vale cualquier sintaxis, es necesario dar un segundo paso.
-Cuantos m·s problemas sea capaz de representar la lÛgica del {\sujeto},
-m·s posible resulta que pueda representar el problema al que actualmente
-se enfrenta, y adem·s, dada la evoluciÛn de la {\mente} en creciente
-versatilidad, vista en ^>La mejora de la mente>, es tambiÈn necesario
-que la lÛgica del {\sujeto} represente la mayor cantidad y variedad
+Cuantos m√°s problemas sea capaz de representar la l√≥gica del {\sujeto},
+m√°s posible resulta que pueda representar el problema al que actualmente
+se enfrenta, y adem√°s, dada la evoluci√≥n de la {\mente} en creciente
+versatilidad, vista en ^>La mejora de la mente>, es tambi√©n necesario
+que la l√≥gica del {\sujeto} represente la mayor cantidad y variedad
 posible de resoluciones. En estas circunstancias, y recordando que las
-resoluciones son transformaciones sint·cticas, como tambiÈn vimos en
-_>La sem·ntica y la sintaxis>, es preciso que la sintaxis tenga la
-m·xima expresividad y, por consiguiente, ha de ser
+resoluciones son transformaciones sint√°cticas, como tambi√©n vimos en
+_>La sem√°ntica y la sintaxis>, es preciso que la sintaxis tenga la
+m√°xima expresividad y, por consiguiente, ha de ser
 recursiva_{recursividad}, es decir, la sintaxis ha de ser tal que en
 ella puedan expresarse, incluso, las propias transformaciones
-sint·cticas. En conclusiÛn, y puesto que un ^|simbolismo| es,
-precisamente, cualquier lÛgica gramatical cuya sintaxis es recursiva,
-resulta que la lÛgica del {\sujeto} ha de ser simbÛlica.
+sint√°cticas. En conclusi√≥n, y puesto que un ^|simbolismo| es,
+precisamente, cualquier l√≥gica gramatical cuya sintaxis es recursiva,
+resulta que la l√≥gica del {\sujeto} ha de ser simb√≥lica.
 
 
-\Section La jerarquÌa de Chomsky
+\Section La jerarqu√≠a de Chomsky
 
 Para entender mejor el alcance de los simbolismos, con sus sintaxis
-recursivas, conviene ubicarlos en la ^{jerarquÌa de gram·ticas} de
-^[Chomsky]. IntentarÈ explicar la situaciÛn sin descender a los detalles
-m·s tÈcnicos, pero, si juzga usted que no es asÌ, puede saltarse toda la
-excursiÛn por la ^{teorÌa de la computaciÛn} y proseguir directamente en
-^>El algoritmo>, en donde se resumen las conclusiones m·s importantes.
+recursivas, conviene ubicarlos en la ^{jerarqu√≠a de gram√°ticas} de
+^[Chomsky]. Intentar√© explicar la situaci√≥n sin descender a los detalles
+m√°s t√©cnicos, pero, si juzga usted que no es as√≠, puede saltarse toda la
+excursi√≥n por la ^{teor√≠a de la computaci√≥n} y proseguir directamente en
+^>El algoritmo>, en donde se resumen las conclusiones m√°s importantes.
 Otra posibilidad, que yo le recomiendo, es que se aficione usted a la
-teorÌa de la computaciÛn, en la que puede introducirse m·s f·cilmente
-con la ayuda de un texto sÛlido como el de ^[Fern·ndez] y ^[S·ez
-Vacas]^(Fern·ndez1987), el de ^[Carroll] y ^[Long]^(Carroll1989), o el
+teor√≠a de la computaci√≥n, en la que puede introducirse m√°s f√°cilmente
+con la ayuda de un texto s√≥lido como el de ^[Fern√°ndez] y ^[S√°ez
+Vacas]^(Fern√°ndez1987), el de ^[Carroll] y ^[Long]^(Carroll1989), o el
 de ^[Arbib]^(Arbib1987).
 
-Se denomina \Mental gram·tica$G$ al conjunto de reglas que permite
-construir todas las expresiones sint·cticas de un determinado \Mental
+Se denomina \Mental gram√°tica$G$ al conjunto de reglas que permite
+construir todas las expresiones sint√°cticas de un determinado \Mental
 lenguaje$L$, que es como se define el conjunto de expresiones
-sint·cticas correctamente construidas. Es importante advertir que, con
-esta definiciÛn tÈcnica y contrariamente al uso com˙n, \mental
-lenguaje$L$ equivale a sintaxis, quedando excluida la sem·ntica. De
-manera que el primer paso en el an·lisis de una ^{expresiÛn sint·ctica}
-consiste en determinar si pertenece, o no, al lenguaje, esto es, si est·
-correctamente construida, o si no lo est·. Al mecanismo capaz de
-determinar si una expresiÛn concreta pertenece al \mental lenguaje$L$ se
-le denomina ^{reconocedor}, y se dice que acepta_{aceptar} la expresiÛn
-si la reconoce como sint·cticamente correcta.
+sint√°cticas correctamente construidas. Es importante advertir que, con
+esta definici√≥n t√©cnica y contrariamente al uso com√∫n, \mental
+lenguaje$L$ equivale a sintaxis, quedando excluida la sem√°ntica. De
+manera que el primer paso en el an√°lisis de una ^{expresi√≥n sint√°ctica}
+consiste en determinar si pertenece, o no, al lenguaje, esto es, si est√°
+correctamente construida, o si no lo est√°. Al mecanismo capaz de
+determinar si una expresi√≥n concreta pertenece al \mental lenguaje$L$ se
+le denomina ^{reconocedor}, y se dice que acepta_{aceptar} la expresi√≥n
+si la reconoce como sint√°cticamente correcta.
 
-La jerarquÌa de gram·ticas de ^[Chomsky] identifica cuatro tipos de
-lenguajes, que, repito, m·s propiamente deberÌan denominarse sintaxis,
-cada uno de los cuales est· asociado con un tipo de gram·tica y con un
-tipo de reconocedor. La diferencia entre el tipo de lenguaje m·s
-sencillo de la jerarquÌa, el \Mental lenguaje regular$L_3$, y el m·s
+La jerarqu√≠a de gram√°ticas de ^[Chomsky] identifica cuatro tipos de
+lenguajes, que, repito, m√°s propiamente deber√≠an denominarse sintaxis,
+cada uno de los cuales est√° asociado con un tipo de gram√°tica y con un
+tipo de reconocedor. La diferencia entre el tipo de lenguaje m√°s
+sencillo de la jerarqu√≠a, el \Mental lenguaje regular$L_3$, y el m√°s
  \hbox{complejo},
 el \Mental lenguaje gramatical$L_0$ no restringido_{lenguaje
-no restringido}, es que un ^{autÛmata} finito puede reconocer con una
-˙nica lectura secuencial, esto es, sin necesidad de retroceder,
-cualquier expresiÛn sint·ctica de un \mental lenguaje regular$L_3$,
-mientras que para analizar una expresiÛn sint·ctica de un \mental
+no restringido}, es que un ^{aut√≥mata} finito puede reconocer con una
+√∫nica lectura secuencial, esto es, sin necesidad de retroceder,
+cualquier expresi√≥n sint√°ctica de un \mental lenguaje regular$L_3$,
+mientras que para analizar una expresi√≥n sint√°ctica de un \mental
 lenguaje gramatical$L_0$ necesita, en general, transformarla en otras
-expresiones, cuyas longitudes no est·n limitadas, avanzando y
-retrocediendo en la lectura y escritura de las expresiones seg˙n sea
-menester para su an·lisis.
+expresiones, cuyas longitudes no est√°n limitadas, avanzando y
+retrocediendo en la lectura y escritura de las expresiones seg√∫n sea
+menester para su an√°lisis.
 
-Como las longitudes de las expresiones intermedias no est·n limitadas,
-un autÛmata que analice expresiones de un \mental lenguaje
-gramatical$L_0$ no restringido tendr· que valerse de una cinta
+Como las longitudes de las expresiones intermedias no est√°n limitadas,
+un aut√≥mata que analice expresiones de un \mental lenguaje
+gramatical$L_0$ no restringido tendr√° que valerse de una cinta
 potencialmente infinita para poder retenerla mientras la analiza, puesto
-que la memoria del autÛmata finito es, por definiciÛn, finita. A un
-autÛmata finito con una cinta infinita se le denomina {\TM}. La ^{cinta}
-es, pues, otra memoria que la {\TM} utiliza especÌficamente para retener
-las expresiones sint·cticas mientras las va analizando. Al autÛmata
+que la memoria del aut√≥mata finito es, por definici√≥n, finita. A un
+aut√≥mata finito con una cinta infinita se le denomina {\TM}. La ^{cinta}
+es, pues, otra memoria que la {\TM} utiliza espec√≠ficamente para retener
+las expresiones sint√°cticas mientras las va analizando. Al aut√≥mata
 finito de la {\TM} se le denomina \Procesador$T$.
-$$\hbox{M·quina de ^[Turing]~$\syn T$}\left\lbrace
+$$\hbox{M√°quina de ^[Turing]~$\syn T$}\left\lbrace
   \vcenter{\hbox{Procesador~${\cal P}_{\syn T}$}
            \hbox{Cinta}}\right.
 $$
 
-Para notar que, si escribimos la expresiÛn sint·ctica~$\frak e$ en la
+Para notar que, si escribimos la expresi√≥n sint√°ctica~$\frak e$ en la
 cinta de la {\TM} cuyo procesador es~${\cal P}_{\syn T}$ y lo dejamos
-funcionar, cuando se pare encontraremos en la cinta la expresiÛn
-sint·ctica~$\frak r$, usaremos la notaciÛn:
+funcionar, cuando se pare encontraremos en la cinta la expresi√≥n
+sint√°ctica~$\frak r$, usaremos la notaci√≥n:
 $${\cal P}_{\syn T}[{\frak e}] \rightarrow {\frak r} .$$
-Si, por el contrario, al escribir la expresiÛn $\frak x$, la {\TM} no
-llegara a pararse, dirÌamos que $\frak x$ es una ^{paradoja}, y lo
-anotarÌamos:
+Si, por el contrario, al escribir la expresi√≥n $\frak x$, la {\TM} no
+llegara a pararse, dir√≠amos que $\frak x$ es una ^{paradoja}, y lo
+anotar√≠amos:
 $${\cal P}_{\syn T}[{\frak x}] \rightarrow \infty .$$
 
-Dada una expresiÛn cualquiera, el \corporal autÛmata finito$R_3$
+Dada una expresi√≥n cualquiera, el \corporal aut√≥mata finito$R_3$
 reconocedor de un determinado \mental lenguaje regular$L_3$ siempre es
-capaz de determinar si la expresiÛn pertenece a Èl, o si no pertenece,
-con una ˙nica lectura secuencial. En cambio, lo m·s que puede asegurarse
-de la m·quina de ^[Turing]~$\syn R_0$ reconocedora de un \mental
-lenguaje gramatical$L_0$ es que puede que reconozca la expresiÛn como
+capaz de determinar si la expresi√≥n pertenece a √©l, o si no pertenece,
+con una √∫nica lectura secuencial. En cambio, lo m√°s que puede asegurarse
+de la m√°quina de ^[Turing]~$\syn R_0$ reconocedora de un \mental
+lenguaje gramatical$L_0$ es que puede que reconozca la expresi√≥n como
 perteneciente a dicho lenguaje, que puede que reconozca que no pertenece
-a Èl, o que puede que nunca termine de analizarla. Dicho de otro modo,
+a √©l, o que puede que nunca termine de analizarla. Dicho de otro modo,
 en los \mental lenguajes gramaticales$L_0$_{lenguaje gramatical} pueden
 expresarse paradojas.
 
-Este importante resultado, que est· muy relacionado con el teorema de
-^{indecidibilidad} de ^[Gˆdel]^(G\"odel1931), se debe a
+Este importante resultado, que est√° muy relacionado con el teorema de
+^{indecidibilidad} de ^[G√∂del]^(G\"odel1931), se debe a
 ^[Turing]^(Turing1936), es conocido como \latin{the halting problem}, y
-lo veremos en m·s detalle en _>La paradoja reflexiva>. Es como si la
-atemporalidad, o reversibilidad, de las expresiones sint·cticas no
+lo veremos en m√°s detalle en _>La paradoja reflexiva>. Es como si la
+atemporalidad, o reversibilidad, de las expresiones sint√°cticas no
 restringidas, que pueden ser examinadas sin limitaciones avanzando o
 retrocediendo, fuera la culpable de las paradojas. Y sospecho, en base a
-que no se podrÌa ver el tiempo sino desde una lÛgica atemporal, que aquÌ
-se encuentra la esencia del ^{tiempo}, pero el vÈrtigo me impide seguir
-investigando esta cuestiÛn ya examinada en ^>Lo permanente es lo
-sint·ctico>. Adem·s, nos distraerÌa de otro descubrimiento a˙n m·s
+que no se podr√≠a ver el tiempo sino desde una l√≥gica atemporal, que aqu√≠
+se encuentra la esencia del ^{tiempo}, pero el v√©rtigo me impide seguir
+investigando esta cuesti√≥n ya examinada en ^>Lo permanente es lo
+sint√°ctico>. Adem√°s, nos distraer√≠a de otro descubrimiento a√∫n m√°s
 fundamental del mismo ^[Turing] de 1936.
 
 
-\Section La m·quina universal de Turing
+\Section La m√°quina universal de Turing
 
-Existe un tipo de m·quina de ^[Turing], como ya anunciamos en ^>El
+Existe un tipo de m√°quina de ^[Turing], como ya anunciamos en ^>El
 comportamiento>, que se llama {\UTM} y que es capaz de comportarse como
-cualquier {\TM}. M·s precisamente, una {\UTM} interpreta una parte de la
-^{expresiÛn sint·ctica}, parte que denominaremos \Mental
-algoritmo$P_{\syn T}$, como la descripciÛn de una determinada {\TM} a
+cualquier {\TM}. M√°s precisamente, una {\UTM} interpreta una parte de la
+^{expresi√≥n sint√°ctica}, parte que denominaremos \Mental
+algoritmo$P_{\syn T}$, como la descripci√≥n de una determinada {\TM} a
 imitar, que puede ser cualquiera, de tal suerte que el resultado de
-analizar la otra parte de la expresiÛn, los llamados ^{argumentos} o
-\Mental par·metros$d$, es, en todos los casos, el mismo que obtendrÌa la
+analizar la otra parte de la expresi√≥n, los llamados ^{argumentos} o
+\Mental par√°metros$d$, es, en todos los casos, el mismo que obtendr√≠a la
 {\TM} imitada. O sea:
 $${\cal P}_{\syn U}[{\syn P}_{\syn T}({\syn d})] \equiv
   {\cal P}_{\syn T}[{\syn d}] .$$
-Es sorprendente que la m·quina de ^[Turing] a imitar pueda ser
+Es sorprendente que la m√°quina de ^[Turing] a imitar pueda ser
 cualquiera, incluida la propia {\UTM}. Que el imitador pueda imitarse a
-sÌ mismo parece lo m·s sencillo; sin embargo, el imitador es imitador
+s√≠ mismo parece lo m√°s sencillo; sin embargo, el imitador es imitador
 porque imita a alguien, de manera que, en este caso, una parte de los
-\mental argumentos$d$ son el \mental algoritmo$P'$ que describe la m·quina
-que el imitador imitado imita. øNo est· claro?
+\mental argumentos$d$ son el \mental algoritmo$P'$ que describe la m√°quina
+que el imitador imitado imita. ¬øNo est√° claro?
 $${\cal P}_{\syn U}[{\syn P}_{\syn U}
 ( \underbrace{{\syn P'}({\syn d'})}_{\hbox{\frak d}})] \equiv
   {\cal P}_{\syn U}[\underbrace{{\syn P'}({\syn d'})}_{\hbox{\frak d}}]
@@ -908,140 +908,140 @@ $${\cal P}_{\syn U}[{\syn P}_{\syn U}
   {\cal P}'[{\syn d'}] .$$
 
 Sucede, pues, que alcanzada la ^{complejidad} de la {\UTM}, que no es
-infinita porque su \Procesador$U$ sigue siendo un autÛmata finito, ya
-disponemos del m·ximo poder de an·lisis sint·ctico que es posible
+infinita porque su \Procesador$U$ sigue siendo un aut√≥mata finito, ya
+disponemos del m√°ximo poder de an√°lisis sint√°ctico que es posible
 alcanzar. Por compleja que sea la {\TM} a imitar, la {\UTM} puede
-imitarla. La clave consiste en poder representar sint·cticamente al
-propio \procesador$T$ sint·ctico, porque el \mental algoritmo$P_{\syn
-T}$ representa efectivamente la transformaciÛn sint·ctica que tal
-procesador acomete. AsÌ que, dentro de los \mental lenguajes
+imitarla. La clave consiste en poder representar sint√°cticamente al
+propio \procesador$T$ sint√°ctico, porque el \mental algoritmo$P_{\syn
+T}$ representa efectivamente la transformaci√≥n sint√°ctica que tal
+procesador acomete. As√≠ que, dentro de los \mental lenguajes
 gramaticales$L_0$_{lenguaje gramatical}, llamaremos \Mental lenguaje
 universal$L_{\syn U}$ o, lo que es lo mismo, \Mental sintaxis
-recursiva$L_{\syn U}$, a todo aquÈl cuyo reconocedor sea una {\UTM}.
+recursiva$L_{\syn U}$, a todo aqu√©l cuyo reconocedor sea una {\UTM}.
 $$ {\syn L}_{\syn U} = \hbox{Lenguaje universal}
                      = \hbox{Sintaxis recursiva} $$
 
 Decimos que el {\UP}, esto es, el procesador de una {\UTM}, es un
-^{motor sint·ctico} porque es capaz de ejecutar cualquier transformaciÛn
-sint·ctica.
-$${\cal P}_{\frak U}=\hbox{Procesador universal}=\hbox{Motor sint·ctico}$$
+^{motor sint√°ctico} porque es capaz de ejecutar cualquier transformaci√≥n
+sint√°ctica.
+$${\cal P}_{\frak U}=\hbox{Procesador universal}=\hbox{Motor sint√°ctico}$$
 
 
 \Section La expresividad
 
-Hay que distinguir dos tipos de relaciÛn entre conjuntos que pueden
-aplicarse a los lenguajes: la inclusiÛn, utilizada en la jerarquÌa de
-gram·ticas de ^[Chomsky], y que relaciona dos conjuntos de lenguajes, y
+Hay que distinguir dos tipos de relaci√≥n entre conjuntos que pueden
+aplicarse a los lenguajes: la inclusi√≥n, utilizada en la jerarqu√≠a de
+gram√°ticas de ^[Chomsky], y que relaciona dos conjuntos de lenguajes, y
 la ^{expresividad}, que relaciona dos lenguajes, entendiendo el lenguaje
-como el conjunto de sus expresiones sint·cticas.
+como el conjunto de sus expresiones sint√°cticas.
 
-Por ejemplo, el lenguaje que sÛlo acepta la secuencia~$\frak abc$ es un
-\Mental lenguaje regular$L_3$ porque hay un autÛmata finito que sÛlo
-acepta tal secuencia, y tambiÈn es un \Mental lenguaje gramatical$L_0$,
-porque tambiÈn hay una
- m·quina de ^[Turing]_{m·quina de \string\string\string\vperson[Turing]}
-que solamente acepta dicha ^{expresiÛn sint·ctica}. Por razonamientos
+Por ejemplo, el lenguaje que s√≥lo acepta la secuencia~$\frak abc$ es un
+\Mental lenguaje regular$L_3$ porque hay un aut√≥mata finito que s√≥lo
+acepta tal secuencia, y tambi√©n es un \Mental lenguaje gramatical$L_0$,
+porque tambi√©n hay una
+ m√°quina de ^[Turing]_{m√°quina de \string\string\string\vperson[Turing]}
+que solamente acepta dicha ^{expresi√≥n sint√°ctica}. Por razonamientos
 como el anterior se concluye que todos los \mental lenguajes
 regulares$L_3$ son \mental gramaticales$L_0$ y, en consecuencia, el
-conjunto de los lenguajes regulares~$\{ {\syn L}_3 \}$ est· contenido, o
+conjunto de los lenguajes regulares~$\{ {\syn L}_3 \}$ est√° contenido, o
 incluido, en el conjunto de los lenguajes gramaticales~$\{{\syn L}_0\}$:
 $$ \{ {\syn L}_3 \} \subset \{ {\syn L}_0 \} .$$
 
-Ocurre, en cambio, que ning˙n \Mental lenguaje universal$L_{\syn U}$
-puede aceptar ˙nicamente la secuencia $\frak abc$, aunque todos ellos
-pueden aceptar una versiÛn ampliada. La posibilidad de ampliaciÛn exige
-que se acepten otras secuencias; veamos todo esto en m·s detalle.
+Ocurre, en cambio, que ning√∫n \Mental lenguaje universal$L_{\syn U}$
+puede aceptar √∫nicamente la secuencia $\frak abc$, aunque todos ellos
+pueden aceptar una versi√≥n ampliada. La posibilidad de ampliaci√≥n exige
+que se acepten otras secuencias; veamos todo esto en m√°s detalle.
 
-Sea~${\cal P}_{\frak\!abc}$ el procesador de la m·quina de ^[Turing] que
-solamente acepta la expresiÛn~$\frak abc$. Sea $\syn U$ una
- m·quina universal de ^[Turing]_{m·quina universal de
+Sea~${\cal P}_{\frak\!abc}$ el procesador de la m√°quina de ^[Turing] que
+solamente acepta la expresi√≥n~$\frak abc$. Sea $\syn U$ una
+ m√°quina universal de ^[Turing]_{m√°quina universal de
  \string\string\string\vperson[Turing]},
-y sea ${\syn P}_{\frak abc}$ la expresiÛn sint·ctica que representa al
-procesador~${\cal P}_{\frak\!abc}$ en $\syn U$. Con esta terminologÌa
-resulta que $\syn U$ aceptar· la expresiÛn~${\syn P}_{\frak\!abc}({\frak
+y sea ${\syn P}_{\frak abc}$ la expresi√≥n sint√°ctica que representa al
+procesador~${\cal P}_{\frak\!abc}$ en $\syn U$. Con esta terminolog√≠a
+resulta que $\syn U$ aceptar√° la expresi√≥n~${\syn P}_{\frak\!abc}({\frak
 abc})$:
 $${\cal P}_{\syn U}[{\syn P}_{\frak abc}({\frak abc})] \equiv
   {\cal P}_{\frak\!abc}[{\frak abc}] \rightarrow \true .
 $$
 De manera que las expresiones ampliadas tienen dos partes: el
-^{algoritmo}, en el ejemplo~${\syn P}_{\frak abc}$, y los ^{par·metros},
+^{algoritmo}, en el ejemplo~${\syn P}_{\frak abc}$, y los ^{par√°metros},
 que son~$\frak abc$ en el ejemplo. Y ya podemos asegurar que la \Mental
-sintaxis recursiva$L_{\syn U}$ acepta la expresiÛn~${\syn
+sintaxis recursiva$L_{\syn U}$ acepta la expresi√≥n~${\syn
 P}_{\frak\!abc}({\frak abc})$, que debe leerse: `lo que expresa~$\frak
 abc$ en el lenguaje reconocido por~${\cal P}_{\frak\!abc}$'. Pero el
-\mental lenguaje universal$L_{\syn U}$ acepta, adem·s, otras
+\mental lenguaje universal$L_{\syn U}$ acepta, adem√°s, otras
 expresiones, por ejemplo
  ${\syn P}_{\syn U}({\syn P}_{\frak abc}({\frak abc}))$, porque:
 $${\cal P}_{\syn U}[{\syn P}_{\syn U}({\syn P}_{\frak abc}({\frak abc}))]
   \equiv {\cal P}_{\syn U}[{\syn P}_{\frak abc}({\frak abc})] \equiv
    {\cal P}_{\frak\! abc}[{\frak abc}] \rightarrow \true .$$
 
-Por esta razÛn decimos que los \mental lenguajes universales$L_{\syn
-U}$ son m·s expresivos que los \mental regulares$L_3$, aunque no los
+Por esta raz√≥n decimos que los \mental lenguajes universales$L_{\syn
+U}$ son m√°s expresivos que los \mental regulares$L_3$, aunque no los
 incluyen; $\forall{\syn L}_3,{\syn L}_{\syn U}$:
 $$\eqalign{
    {\syn L}_3 &\prec {\syn L}_{\syn U} \cr
    \{ {\syn L}_3 \} &\not\subset \{ {\syn L}_{\syn U} \}  . \cr
  }$$
 
-El \mental lenguaje universal$L_{\syn U}$ es el m·s expresivo de los
-lenguajes con gram·tica porque puede expresar todo cuanto pueda expresar
+El \mental lenguaje universal$L_{\syn U}$ es el m√°s expresivo de los
+lenguajes con gram√°tica porque puede expresar todo cuanto pueda expresar
 cualquier otro \mental lenguaje gramatical$L_0$, ya que las
-transformaciones sint·cticas de este otro, sean Èstas cuales sean,
+transformaciones sint√°cticas de este otro, sean √©stas cuales sean,
 pueden expresarse en la \mental sintaxis recursiva$L_{\syn U}$ e
-interpretarse como tales. Y, en conclusiÛn, ning˙n \mental lenguaje
-gramatical$L_0$ puede ser m·s expresivo que un \mental lenguaje
+interpretarse como tales. Y, en conclusi√≥n, ning√∫n \mental lenguaje
+gramatical$L_0$ puede ser m√°s expresivo que un \mental lenguaje
 universal$L_{\syn U}$; $\forall{\syn L}_0,{\syn L}_{\syn U}$:
 $${\syn L}_0 \preceq {\syn L}_{\syn U} .$$
 
 En cierto modo, los \mental lenguajes universales$L_{\syn U}$ son
-demasiado expresivos. Son tan expresivos que, si la expresiÛn~$\frak x$
-es paradÛjica en cualquier \Mental lenguaje gramatical$L_0$, por ejemplo
+demasiado expresivos. Son tan expresivos que, si la expresi√≥n~$\frak x$
+es parad√≥jica en cualquier \Mental lenguaje gramatical$L_0$, por ejemplo
 en el reconocido por aquella {\TM} cuyo procesador es~${\cal P}_{\syn
-T}$, entonces la expresiÛn~${\syn P}_{\syn T}({\frak x})$ es paradÛjica
+T}$, entonces la expresi√≥n~${\syn P}_{\syn T}({\frak x})$ es parad√≥jica
 en la \Mental sintaxis recursiva$L_{\syn U}$:
 $$ {\cal P}_{\syn U}[{\syn P}_{\syn T}({\frak x})] \equiv
    {\cal P}_{\syn T}[{\frak x}] \rightarrow \infty .$$
 Esto demuestra que en todas las \mental sintaxis recursivas$L_{\syn U}$
 hay paradojas.
 
-Adem·s, las paradojas_{paradoja} que pueden ser expresadas en un \Mental
+Adem√°s, las paradojas_{paradoja} que pueden ser expresadas en un \Mental
 lenguaje universal$L_{\syn U}$ son pertinaces, porque no es posible,
 siquiera, reconocerlas a todas. Para probarlo, es necesario mostrar que
 en una \mental sintaxis recursiva$L_{\syn U}$ pueden expresarse
 paradojas reflexivas_{paradoja reflexiva}, o
-autorreferentes_{autorreferencia}, como `esta frase es falsa', tambiÈn
-llamadas paradojas de ^[EpimÈnides]^(Northrop1944), un cretense que
-dijo, seg˙n cuentan, que todo cuanto dicen los cretenses es mentira.
+autorreferentes_{autorreferencia}, como `esta frase es falsa', tambi√©n
+llamadas paradojas de ^[Epim√©nides]^(Northrop1944), un cretense que
+dijo, seg√∫n cuentan, que todo cuanto dicen los cretenses es mentira.
 
 
 \Section La recursividad
 
-La ^{referencia} permite usar, en las expresiones sint·cticas, nombres
-como abreviaturas de otras expresiones, generalmente m·s largas. A la
-operaciÛn de dar un ^{nombre} a una expresiÛn la denominamos
-^{definiciÛn}. AsÌ, por ejemplo, si escribimos las definiciones tras los
-dos puntos, y siendo~$n$ el nombre de la expresiÛn sint·ctica~$\syn n$:
+La ^{referencia} permite usar, en las expresiones sint√°cticas, nombres
+como abreviaturas de otras expresiones, generalmente m√°s largas. A la
+operaci√≥n de dar un ^{nombre} a una expresi√≥n la denominamos
+^{definici√≥n}. As√≠, por ejemplo, si escribimos las definiciones tras los
+dos puntos, y siendo~$n$ el nombre de la expresi√≥n sint√°ctica~$\syn n$:
 $$ {\cal P}_{\syn U}[{\frak e} n {\frak o} : n = {\frak n} ]
    \rightarrow
    {\cal P}_{\syn U}[{\frak eno} : n = {\frak n} ] .$$
 Nos vale que las definiciones de los nombres sean fijas, o sea, que no
 se puedan cambiar. Para probar que cualquier {\UTM} puede usar nombres
-basta mostrar que existe una m·quina de ^[Turing] capaz de sustituir un
-nombre por una expresiÛn. Es decir, basta mostrar que es posible diseÒar
-una m·quina de ^[Turing] ^{diccionario}~$\syn D$, que, dado un nombre,
-devuelve su expresiÛn:
+basta mostrar que existe una m√°quina de ^[Turing] capaz de sustituir un
+nombre por una expresi√≥n. Es decir, basta mostrar que es posible dise√±ar
+una m√°quina de ^[Turing] ^{diccionario}~$\syn D$, que, dado un nombre,
+devuelve su expresi√≥n:
 $$ {\cal P}_{\syn U}[{\syn P}_{\syn D}(n)] \equiv
    {\cal P}_{\syn D}[n] \rightarrow {\frak n} .$$
 Merced a las definiciones, las \mental sintaxis recursivas$L_{\syn U}$
 son extensibles_{extensibilidad}.
 
 El otro requisito necesario para poder expresar paradojas reflexivas, o
-autorreferentes, es que se puedan expresar sint·cticamente las propias
-transformaciones sint·cticas, como es el caso en los \mental lenguajes
+autorreferentes, es que se puedan expresar sint√°cticamente las propias
+transformaciones sint√°cticas, como es el caso en los \mental lenguajes
 universales$L_{\syn U}$. Porque entonces se puede dar nombre al
-^{algoritmo} que representa a una transformaciÛn sint·ctica, y ese mismo
-nombre puede aparecer en la definiciÛn del propio algoritmo, expediente
+^{algoritmo} que representa a una transformaci√≥n sint√°ctica, y ese mismo
+nombre puede aparecer en la definici√≥n del propio algoritmo, expediente
 que se denomina ^|recursividad|, y que da nombre a las
 \mental sintaxis recursivas$L_{\syn U}$_{sintaxis recursiva}.
 
@@ -1053,12 +1053,12 @@ que se denomina ^|recursividad|, y que da nombre a las
 
 De modo que ya podemos mostrar que, en un \Mental lenguaje
 universal$L_{\syn U}$, es imposible reconocer todas las paradojas. Lo
-probaremos por reducciÛn al absurdo, es decir, examinaremos lo que
-sucederÌa si existiera efectivamente un ^{algoritmo}~{\algStop} que
-siempre se parara y que dijese de cualquier ^{expresiÛn
-sint·ctica}~$\frak w$ si, escrita en la cinta, la {\UTM} se pararÌa, y
-en este caso el resultado de {\algStop} serÌa {\true}, o no se pararÌa,
-y entonces el resultado serÌa {\false}, y en donde $\syn D$ es un
+probaremos por reducci√≥n al absurdo, es decir, examinaremos lo que
+suceder√≠a si existiera efectivamente un ^{algoritmo}~{\algStop} que
+siempre se parara y que dijese de cualquier ^{expresi√≥n
+sint√°ctica}~$\frak w$ si, escrita en la cinta, la {\UTM} se parar√≠a, y
+en este caso el resultado de {\algStop} ser√≠a {\true}, o no se parar√≠a,
+y entonces el resultado ser√≠a {\false}, y en donde $\syn D$ es un
 ^{diccionario} con definiciones:
 $$\algStop \cases{
  {\cal P}_{\syn U}[{\algStop}({\frak w}) : {\syn D}] \rightarrow \true
@@ -1067,53 +1067,53 @@ $$\algStop \cases{
    & si ${\cal P}_{\syn U}[{\frak w} : {\syn D}] \rightarrow\infty$ .\cr
 }$$
 
-Si existiera {\algStop}, entonces tambiÈn podrÌamos definir otro
+Si existiera {\algStop}, entonces tambi√©n podr√≠amos definir otro
 algoritmo~{\algPdox}, de la siguiente manera:
 $$ {\algPdox}({\frak y}) =
   {\bf if\;} {\algStop}({\frak y})
   {\;\bf then\;} {\it loop\,forever}
   {\;\bf else\;} {\it stop}
   {\;\bf end\;} .$$
-Para probar que, si {\algStop} fuera un algoritmo, podrÌamos definir
+Para probar que, si {\algStop} fuera un algoritmo, podr√≠amos definir
 {\algPdox}, hay que mostrar que en una {\UTM} se pueden definir
-algoritmos que utilizan otros algoritmos, lo que no es difÌcil dada su
+algoritmos que utilizan otros algoritmos, lo que no es dif√≠cil dada su
 universalidad, y que se puede definir un {\bf if}, para lo que basta ver
 que es posible construir un {\TM} que lo hace. Demos estas cuestiones
 por probadas.
 
-øQuÈ ocurrirÌa si escribiÈramos la expresiÛn
+¬øQu√© ocurrir√≠a si escribi√©ramos la expresi√≥n
 ${\algPdox}(Z):Z={\algPdox}(Z)$, que es autorreferente, en la cinta de
 la {\UTM}? Si el algoritmo {\algStop} se comporta como anunciamos,
-entonces sÛlo hemos de estudiar los dos casos posibles.
+entonces s√≥lo hemos de estudiar los dos casos posibles.
 \point Si ${\algStop}({\algPdox}(Z)): Z={\algPdox}(Z)$ es {\true},
-quiere decir, seg˙n la definiciÛn de {\algStop}, que la expresiÛn
+quiere decir, seg√∫n la definici√≥n de {\algStop}, que la expresi√≥n
  ${\algPdox}(Z): Z={\algPdox}(Z)$
-har· parar la {\UTM}, pero, seg˙n la definiciÛn de {\algPdox}, depende
-de cÛmo resuelva la {\UTM} la expresiÛn
+har√° parar la {\UTM}, pero, seg√∫n la definici√≥n de {\algPdox}, depende
+de c√≥mo resuelva la {\UTM} la expresi√≥n
  ${\algStop}(Z): Z={\algPdox}(Z) \rightarrow
   {\algStop}({\algPdox}(Z)): Z={\algPdox}(Z)$,
-que estamos suponiendo que es {\true}, de manera que lo har· es
+que estamos suponiendo que es {\true}, de manera que lo har√° es
 \latin{loop forever}, o sea, no parar.
 \point Si, por el contrario, ${\algStop}({\algPdox}(Z)): Z={\algPdox}(Z)$
-fuera {\false}, entonces, seg˙n la definiciÛn de {\algStop}, con
-${\algPdox}(Z): Z={\algPdox}(Z)$ la {\UTM} no deberÌa pararse, pero, por
-ser {\false}, seg˙n la definiciÛn de {\algPdox} se ejecutarÌa la rama
-{\bf else} y se pararÌa.
+fuera {\false}, entonces, seg√∫n la definici√≥n de {\algStop}, con
+${\algPdox}(Z): Z={\algPdox}(Z)$ la {\UTM} no deber√≠a pararse, pero, por
+ser {\false}, seg√∫n la definici√≥n de {\algPdox} se ejecutar√≠a la rama
+{\bf else} y se parar√≠a.
 
-\noindent Lo que esta contradicciÛn significa es que el
+\noindent Lo que esta contradicci√≥n significa es que el
 algoritmo~{\algStop} no puede existir tal como lo hemos definido y, por
 lo tanto, que dentro de un lenguaje universal es imposible determinar
-definitivamente si una expresiÛn es paradÛjica, o si no lo es. Y con
+definitivamente si una expresi√≥n es parad√≥jica, o si no lo es. Y con
 esto queda probado que, en las sintaxis recursivas, las paradojas son
 pertinaces.
 
 
 \Section La sintaxis recursiva
 
-Para despedir esta visita a la ^{teorÌa de la computaciÛn}, que con toda
-propiedad podrÌa denominarse ^{teorÌa de la sintaxis}, ubicaremos al
+Para despedir esta visita a la ^{teor√≠a de la computaci√≥n}, que con toda
+propiedad podr√≠a denominarse ^{teor√≠a de la sintaxis}, ubicaremos al
 conjunto de los lenguajes universales_{lenguaje universal}, $\{ {\syn
-L}_{\syn U} \}$, en el m·s general conjunto de los lenguajes
+L}_{\syn U} \}$, en el m√°s general conjunto de los lenguajes
 gramaticales_{lenguaje gramatical}, $\{ {\syn L}_0 \}$.
 
 Podemos partir el conjunto de los lenguajes gramaticales~$\{ {\syn L}_0
@@ -1128,19 +1128,19 @@ $$\eqalign{
 de los lenguajes decidibles,
  ${\cal H}_{\Sigma} = \{ {\syn L}_{\syn D} \}$,
 que son los lenguajes reconocidos por las {\TMes} que siempre se paran,
-y que ubican en la jerarquÌa de ^[Chomsky] entre los gramaticales no
+y que ubican en la jerarqu√≠a de ^[Chomsky] entre los gramaticales no
 restringidos~$\{{\syn L}_0 \}$ y los sensibles al contexto~$\{ {\syn
 L}_1 \}$:
 $$ \{ {\syn L}_1 \} \subset
    \{ {\syn L}_{\syn D} \} \subset
    \{ {\syn L}_0 \} .$$
 
-En ning˙n \Mental lenguaje decidible$L_{\syn D}$ pueden expresarse
-paradojas, porque todas las expresiones_{expresiÛn sint·ctica} son
+En ning√∫n \Mental lenguaje decidible$L_{\syn D}$ pueden expresarse
+paradojas, porque todas las expresiones_{expresi√≥n sint√°ctica} son
 decidibles. Por contra, en todos los \mental lenguajes
-indecidibles$L_{\syn I}$ existen paradojas. Como tambiÈn pueden
+indecidibles$L_{\syn I}$ existen paradojas. Como tambi√©n pueden
 expresarse paradojas en todas las \mental sintaxis recursivas$L_{\syn
-U}$_{sintaxis recursiva}, seg˙n demostramos en ^>La paradoja reflexiva>,
+U}$_{sintaxis recursiva}, seg√∫n demostramos en ^>La paradoja reflexiva>,
 resulta que todos los \mental lenguajes universales$L_{\syn U}$ son
 \mental indecidibles$L_{\syn I}$, aunque no todos los \mental lenguajes
 indecidibles$L_{\syn I}$ son \mental universales$L_{\syn U}$, porque hay
@@ -1150,163 +1150,163 @@ $$ \{ {\syn L}_{\syn U} \} \subset
    \{ {\syn L}_0 \} . $$
 
 Entre los \mental lenguajes indecidibles$L_{\syn I}$ se encuentran,
-tambiÈn, aquÈ\-llos con errores; por ejemplo el lenguaje aceptado por
-una {\TM} que ˙nicamente no se para ante una secuencia de cien unos
-consecutivos por, digamos, un despiste al diseÒar el estado
+tambi√©n, aqu√©\-llos con errores; por ejemplo el lenguaje aceptado por
+una {\TM} que √∫nicamente no se para ante una secuencia de cien unos
+consecutivos por, digamos, un despiste al dise√±ar el estado
 correspondiente a los cien unos.
 
 
 \Section El algoritmo
 
-En ^>La sem·ntica y la sintaxis>, definimos una ^{lÛgica simbÛlica} como
-aquÈlla capaz de representar problemas, resoluciones y soluciones,
-valiÈndose de dos capas: la sintaxis y la sem·ntica. La ^{sem·ntica}
+En ^>La sem√°ntica y la sintaxis>, definimos una ^{l√≥gica simb√≥lica} como
+aqu√©lla capaz de representar problemas, resoluciones y soluciones,
+vali√©ndose de dos capas: la sintaxis y la sem√°ntica. La ^{sem√°ntica}
 contiene las soluciones y la ^{sintaxis} los problemas y las
 resoluciones. Las resoluciones toman el ^{problema} expresado
-sint·cticamente y lo van transformando sint·cticamente hasta alcanzar la
-expresiÛn sint·ctica de una ^{soluciÛn}. De modo que la ^{resoluciÛn} es
-una transformaciÛn sint·ctica.
+sint√°cticamente y lo van transformando sint√°cticamente hasta alcanzar la
+expresi√≥n sint√°ctica de una ^{soluci√≥n}. De modo que la ^{resoluci√≥n} es
+una transformaci√≥n sint√°ctica.
 
-Llamamos ^|algoritmo| a la expresiÛn de una transformaciÛn sint·ctica
-que, en principio, puede ser una ^{expresiÛn sint·ctica} o
-meta-sint·ctica. La primera alternativa conduce, como hemos visto entre
-^>La jerarquÌa de Chomsky>, y ^>La sintaxis recursiva>, a las
+Llamamos ^|algoritmo| a la expresi√≥n de una transformaci√≥n sint√°ctica
+que, en principio, puede ser una ^{expresi√≥n sint√°ctica} o
+meta-sint√°ctica. La primera alternativa conduce, como hemos visto entre
+^>La jerarqu√≠a de Chomsky>, y ^>La sintaxis recursiva>, a las
 \mental sintaxis recursivas$L_{\syn U}$_{sintaxis recursiva}, capaces de
-la m·xima ^{expresividad}, pero que no pueden evitar las paradojas. Las
-paradojas_{paradoja} son expresiones sint·cticas sin significado,
+la m√°xima ^{expresividad}, pero que no pueden evitar las paradojas. Las
+paradojas_{paradoja} son expresiones sint√°cticas sin significado,
 inconclusivas, irresolubles, esto es, son resoluciones que no alcanzan
-la soluciÛn. AsÌ que ^[Russell] intentÛ, con su ^{teorÌa de tipos}, la
-segunda alternativa para evitar la ^{paradoja reflexiva} que Èl mismo
-habÌa descubierto en la teorÌa de los conjuntos, vÈase
-^[Quine]\footnote{_(Quine1940), p·gina~163 y siguientes.}:
+la soluci√≥n. As√≠ que ^[Russell] intent√≥, con su ^{teor√≠a de tipos}, la
+segunda alternativa para evitar la ^{paradoja reflexiva} que √©l mismo
+hab√≠a descubierto en la teor√≠a de los conjuntos, v√©ase
+^[Quine]\footnote{_(Quine1940), p√°gina~163 y siguientes.}:
  $$R = \{ x?\; x \not\in x\} \Longrightarrow
   ( R \in R \Longleftrightarrow R \not\in R ) .$$
-Pero la ^{lÛgica tipada} resultante es complicada, lo cual induce a
-errar, limita la expresividad de la lÛgica y, lo que es peor, necesita
-de un n˙mero ilimitado de meta-meta-\dots-sintaxis, asÌ que es, ella
-misma, paradÛjica.
+Pero la ^{l√≥gica tipada} resultante es complicada, lo cual induce a
+errar, limita la expresividad de la l√≥gica y, lo que es peor, necesita
+de un n√∫mero ilimitado de meta-meta-\dots-sintaxis, as√≠ que es, ella
+misma, parad√≥jica.
 
-Es mejor tolerar las paradojas y usar sintaxis recursivas, que son m·s
-sencillas y expresivas, porque, en la pr·ctica, ni la ^{cinta} de la
-{\TM} es infinita, ni el ^{tiempo} disponible para alcanzar una soluciÛn
-es ilimitado, de manera que las resoluciones que precisan m·s cinta de
+Es mejor tolerar las paradojas y usar sintaxis recursivas, que son m√°s
+sencillas y expresivas, porque, en la pr√°ctica, ni la ^{cinta} de la
+{\TM} es infinita, ni el ^{tiempo} disponible para alcanzar una soluci√≥n
+es ilimitado, de manera que las resoluciones que precisan m√°s cinta de
 la disponible o demasiado tiempo, aunque fueran capaces de alcanzar una
-soluciÛn en otras circunstancias, son tan in˙tiles o perjudiciales como
+soluci√≥n en otras circunstancias, son tan in√∫tiles o perjudiciales como
 las paradojas. En definitiva, las paradojas no son peores que las
 resoluciones malas.
 
 
-\Section La razÛn
+\Section La raz√≥n
 
-La tarea del {\inquisidor} es describir con la mayor precisiÛn posible
+La tarea del {\inquisidor} es describir con la mayor precisi√≥n posible
 el problema al que se enfrenta el {\sujeto}. La {\razon} recibe del
-{\inquisidor} la representaciÛn del \Mental problema$X$, representaciÛn
-que es necesariamente sint·ctica, y la {\razon} produce, como resultado,
-la representaciÛn de la resoluciÛn, o sea, el ^{algoritmo} que ha de
-ejecutar la {\mente}, representaciÛn que tambiÈn es sint·ctica. Luego,
-si la {\razon} ha de tener la m·xima generalidad, seg˙n concluimos en
-^>El sujeto simbÛlico>, entonces la {\razon} ha de ser un ^{motor
-sint·ctico}, o procesador universal~${\cal P}_{\frak U}$, capaz de
-transformar cualquier ^{expresiÛn sint·ctica} en cualquiera otra, como
-hemos visto en ^>La m·quina universal de Turing>:
+{\inquisidor} la representaci√≥n del \Mental problema$X$, representaci√≥n
+que es necesariamente sint√°ctica, y la {\razon} produce, como resultado,
+la representaci√≥n de la resoluci√≥n, o sea, el ^{algoritmo} que ha de
+ejecutar la {\mente}, representaci√≥n que tambi√©n es sint√°ctica. Luego,
+si la {\razon} ha de tener la m√°xima generalidad, seg√∫n concluimos en
+^>El sujeto simb√≥lico>, entonces la {\razon} ha de ser un ^{motor
+sint√°ctico}, o procesador universal~${\cal P}_{\frak U}$, capaz de
+transformar cualquier ^{expresi√≥n sint√°ctica} en cualquiera otra, como
+hemos visto en ^>La m√°quina universal de Turing>:
 $${\frak R}={\cal P}_{\frak U} .$$
-Esto significa que la ^{lÛgica interna} del {\sujeto} o, al menos, la de
-su {\razon}, es una lÛgica simbÛlica, con sem·ntica y \Mental sintaxis
+Esto significa que la ^{l√≥gica interna} del {\sujeto} o, al menos, la de
+su {\razon}, es una l√≥gica simb√≥lica, con sem√°ntica y \Mental sintaxis
 recursiva$L_{\syn U}$.
 
-Por fin, la {\mente} tiene que aplicar el algoritmo de resoluciÛn
-propuesto por la {\razon} y obtener la soluciÛn, en forma de
+Por fin, la {\mente} tiene que aplicar el algoritmo de resoluci√≥n
+propuesto por la {\razon} y obtener la soluci√≥n, en forma de
 comportamiento que pueda ejecutar el {\cuerpo}, para que, si todo ha ido
 bien, solucione efectivamente el problema al que se enfrenta el
 {\sujeto}.
 
-En la sem·ntica del ^{simbolismo} de la {\razon} del {\sujeto} tienen
-^{significado}: los sÌmbolos que se refieren a los recursos de la
+En la sem√°ntica del ^{simbolismo} de la {\razon} del {\sujeto} tienen
+^{significado}: los s√≠mbolos que se refieren a los recursos de la
 {\mente}, como son los comportamientos del {\cuerpo}, las modelaciones
-del {\modelador}, los pronÛsticos_{previsiÛn} de la {\realidad} y las
+del {\modelador}, los pron√≥sticos_{previsi√≥n} de la {\realidad} y las
 simulaciones del {\simulador}; y los que aluden a las condiciones que la
 {\razon} puede considerar, como son la bondad o maldad de los
-comportamientos y de los pronÛsticos. Otros sÌmbolos representan
-conceptos de la ^{teorÌa del problema}, como, por ejemplo, la
+comportamientos y de los pron√≥sticos. Otros s√≠mbolos representan
+conceptos de la ^{teor√≠a del problema}, como, por ejemplo, la
 ^{libertad} del problema, notada `?', que no tiene significado, porque
-indica a la {\razon} que la expresiÛn sint·ctica en la que se encuentra
-est· abierta, o sea, que no tiene cerrado su significado, y que,
-consiguientemente, no est· lista para ser pasada a la {\mente}.
+indica a la {\razon} que la expresi√≥n sint√°ctica en la que se encuentra
+est√° abierta, o sea, que no tiene cerrado su significado, y que,
+consiguientemente, no est√° lista para ser pasada a la {\mente}.
 
 
-\Section ComparaciÛn de yoes
+\Section Comparaci√≥n de yoes
 
-Hemos cerrado un cÌrculo en el ^{camino de salida}. Salimos del ^{yo} al
+Hemos cerrado un c√≠rculo en el ^{camino de salida}. Salimos del ^{yo} al
 descubrir, en _>Yo estoy vivo>, que el yo no es todo el ^{sujeto}, sino
-que el yo sÛlo es el ^{problema del sujeto}. El sujeto est· vivo, es
+que el yo s√≥lo es el ^{problema del sujeto}. El sujeto est√° vivo, es
 parte de la ^{vida}, de manera que el problema del sujeto es parte del
 ^{problema de la supervivencia} que define la vida. El problema de la
 supervivencia es un ^{problema aparente} que, concretado en el ^{tiempo}
 y en el ^{espacio}, formalizamos, en _>El problema aparente
-formalizado>, y resolvimos. Y, ahora, la resoluciÛn del problema
+formalizado>, y resolvimos. Y, ahora, la resoluci√≥n del problema
 aparente formalizado nos lleva al {\sujeto} y, finalmente, al {\yo}.
-Pero, para completar cabalmente el cÌrculo, hay que establecer que el
+Pero, para completar cabalmente el c√≠rculo, hay que establecer que el
 {\yo} formal encontrado coincide con aquel yo originario del que
-partimos para salir, en _>øQuÈ soy yo?>, y que definimos como
+partimos para salir, en _>¬øQu√© soy yo?>, y que definimos como
 ^{libertad} para no morir, en _>Yo soy libertad para no morir>, y que
-era sint·ctico y paradÛjico, seg˙n vimos en _>Yo estoy en la sintaxis> y
-_>Yo soy paradÛjico>.
+era sint√°ctico y parad√≥jico, seg√∫n vimos en _>Yo estoy en la sintaxis> y
+_>Yo soy parad√≥jico>.
 
 El {\sujeto} formal encontrado coincide con el sujeto original, ya que
-de Èste solamente tenÌamos dos datos, vÈase ^>Yo estoy vivo>, y en ambos
-coincide con el formal. SabÌamos que el sujeto original, como el
-{\sujeto} formal, dispone de una ^{lÛgica simbÛlica}. Y sabÌamos,
-tambiÈn, que el problema del sujeto original es su yo originario, lo
+de √©ste solamente ten√≠amos dos datos, v√©ase ^>Yo estoy vivo>, y en ambos
+coincide con el formal. Sab√≠amos que el sujeto original, como el
+{\sujeto} formal, dispone de una ^{l√≥gica simb√≥lica}. Y sab√≠amos,
+tambi√©n, que el problema del sujeto original es su yo originario, lo
 mismo que el problema del {\sujeto} formal es su {\yo} formal; lo mismo
-siempre y cuando coincidan ambos yoes, lo que probaremos a continuaciÛn.
+siempre y cuando coincidan ambos yoes, lo que probaremos a continuaci√≥n.
 
 Para el {\sujeto} formal, el {\yo} formal resulta ser la mejor
-representaciÛn que Èl mismo puede hacerse del problema al que se
+representaci√≥n que √©l mismo puede hacerse del problema al que se
 enfrenta, que es el problema aparente de la supervivencia. Como la
-libertad es inherente a todo problema, y la condiciÛn final del problema
-de la supervivencia es vivir, resulta que el {\yo} formal podrÌa
+libertad es inherente a todo problema, y la condici√≥n final del problema
+de la supervivencia es vivir, resulta que el {\yo} formal podr√≠a
 definirse de la misma manera que definimos el yo originario, esto es,
 como libertad para no morir.
 
-El {\yo} formal tambiÈn es sint·ctico, puesto que cualquier
-representaciÛn de un problema ha de ser sint·ctica, como ya sabemos,
-vÈase ^>La sem·ntica y la sintaxis>, porque ha de representar la
-libertad, que est· tautolÛgicamente libre de significado.
+El {\yo} formal tambi√©n es sint√°ctico, puesto que cualquier
+representaci√≥n de un problema ha de ser sint√°ctica, como ya sabemos,
+v√©ase ^>La sem√°ntica y la sintaxis>, porque ha de representar la
+libertad, que est√° tautol√≥gicamente libre de significado.
 
-En ^>El sujeto formal>, establecimos que la condiciÛn del inquisidor no
-puede ser verificada concluyentemente, es decir, que la representaciÛn
+En ^>El sujeto formal>, establecimos que la condici√≥n del inquisidor no
+puede ser verificada concluyentemente, es decir, que la representaci√≥n
 de de un problema aparente, dada su naturaleza, nunca es definitiva, y,
-por esta razÛn, el \Mental problema del sujeto$X$ formal ha de
-mantenerse siempre abierto a revisiÛn. Como un problema cambiante no
-puede tener una soluciÛn definitiva, queda probado que el {\yo} formal
-es paradÛjico.
+por esta raz√≥n, el \Mental problema del sujeto$X$ formal ha de
+mantenerse siempre abierto a revisi√≥n. Como un problema cambiante no
+puede tener una soluci√≥n definitiva, queda probado que el {\yo} formal
+es parad√≥jico.
 
 
-\Section ComparaciÛn de sujetos
+\Section Comparaci√≥n de sujetos
 
-Las comparaciones de la secciÛn anterior eran entre sujetos, y yoes, del
-camino de salida, de modo que todavÌa no hemos comparado los sujetos del
-camino de salida con sus homÛnimos del camino de entrada.
+Las comparaciones de la secci√≥n anterior eran entre sujetos, y yoes, del
+camino de salida, de modo que todav√≠a no hemos comparado los sujetos del
+camino de salida con sus hom√≥nimos del camino de entrada.
 
-La caracterÌstica esencial del {\sujeto} formal es su capacidad de
-^{razonar}, es decir, de prever_{previsiÛn} el resultado de las
+La caracter√≠stica esencial del {\sujeto} formal es su capacidad de
+^{razonar}, es decir, de prever_{previsi√≥n} el resultado de las
 diferentes maneras de resolver, y para ello le es imprescindible una
-lÛgica simbÛlica en la que representar los problemas y las resoluciones,
-adem·s de las soluciones. El sujeto evolutivo, visto entre _>La palabra>
-y _>El mundo del sujeto es simbÛlico>, disponÌa de una lÛgica simbÛlica,
-asÌ que ha de ser considerado como un caso especÌfico de {\sujeto}
+l√≥gica simb√≥lica en la que representar los problemas y las resoluciones,
+adem√°s de las soluciones. El sujeto evolutivo, visto entre _>La palabra>
+y _>El mundo del sujeto es simb√≥lico>, dispon√≠a de una l√≥gica simb√≥lica,
+as√≠ que ha de ser considerado como un caso espec√≠fico de {\sujeto}
 formal, con las peculiaridades que se derivan de su herencia darviniana.
 Recordemos que la ^{sintaxis} del sujeto evolutivo se apoyaba en una
 ^{realidad} de cosas con ^{significado} heredada del conocedor, mientras
 que de la sintaxis del {\sujeto} formal solamente podemos asegurar que
-se sostiene sobre una capa ^{sem·ntica} heredada del {\conocedor} en
-donde han de estar las soluciones. AsÌ, mientras en la sintaxis
-evolutiva encontramos oraciones_{oraciÛn} con sustantivos_{sustantivo},
+se sostiene sobre una capa ^{sem√°ntica} heredada del {\conocedor} en
+donde han de estar las soluciones. As√≠, mientras en la sintaxis
+evolutiva encontramos oraciones_{oraci√≥n} con sustantivos_{sustantivo},
 verbos_{verbo}, adjetivos_{adjetivo} y pronombres_{pronombre}, de la
 sintaxis formal sabemos que ha de ser recursiva_{sintaxis recursiva},
-${\syn L}_{\syn U}$, es decir, de m·xima expresividad pero con paradojas
+${\syn L}_{\syn U}$, es decir, de m√°xima expresividad pero con paradojas
 pertinaces, y que para tratar tales sintaxis es necesario un {\UP}, o
-^{motor sint·ctico}, que es el procesador de una {\UTM}.
+^{motor sint√°ctico}, que es el procesador de una {\UTM}.
 
 
 \Section El bucle subjetivo
@@ -1314,12 +1314,12 @@ pertinaces, y que para tratar tales sintaxis es necesario un {\UP}, o
 Habiendo llegado hasta el final del ^{camino de salida}, ya podemos
 hacer apreciaciones globales. El camino de salida es circular_{bucle
 subjetivo}. Parte del ^{yo}, definido como ^{problema}, entonces va al
-^{sujeto} y, desde aquÌ, a la ^{vida}, definida como ^{problema
+^{sujeto} y, desde aqu√≠, a la ^{vida}, definida como ^{problema
 aparente}, en donde termina la primera parte, que es ciertamente de
-salida. Pero, la ^{resoluciÛn} del problema aparente de la
+salida. Pero, la ^{resoluci√≥n} del problema aparente de la
 supervivencia, que pasa por cinco etapas, termina en el {\sujeto} con su
-{\yo}, asÌ que esta segunda parte del camino de salida regresa al
-principio, como mostramos en ^>ComparaciÛn de yoes>, y discurre en el
+{\yo}, as√≠ que esta segunda parte del camino de salida regresa al
+principio, como mostramos en ^>Comparaci√≥n de yoes>, y discurre en el
 mismo sentido que el camino de entrada.
 $$\vbox{\everycr={}\tabskip=0pt \lineskip=0pt
   \halign{&\hfil#\hfil\cr
@@ -1334,38 +1334,38 @@ $$\vbox{\everycr={}\tabskip=0pt \lineskip=0pt
 
 \breakif2
 
-Se completa asÌ el cÌrculo, y ahora podemos contemplar enteramente el
-postulado fundamental de la ^{teorÌa de la subjetividad}, a saber, que
+Se completa as√≠ el c√≠rculo, y ahora podemos contemplar enteramente el
+postulado fundamental de la ^{teor√≠a de la subjetividad}, a saber, que
 la vida, o lo que es lo mismo, el ^{problema de la supervivencia}, es un
-^{problema aparente}; vÈase ^>El problema de la supervivencia>. Nos
-valdremos de una observaciÛn general: en cualquier teorÌa que utilice
-problemas para explicar, si alg˙n concepto se corresponde con un
-problema aparente, ha de ser un concepto primigenio que la teorÌa deje
-indefinido, ya que no puede aportar informaciÛn alguna sobre Èl. De la
-observaciÛn se sigue que, tanto la necesidad de usar problemas para
-explicar, como la elecciÛn de la ^{vida} como el concepto primitivo no
-definido de la teorÌa de la subjetividad, son consecuencias de definir
+^{problema aparente}; v√©ase ^>El problema de la supervivencia>. Nos
+valdremos de una observaci√≥n general: en cualquier teor√≠a que utilice
+problemas para explicar, si alg√∫n concepto se corresponde con un
+problema aparente, ha de ser un concepto primigenio que la teor√≠a deje
+indefinido, ya que no puede aportar informaci√≥n alguna sobre √©l. De la
+observaci√≥n se sigue que, tanto la necesidad de usar problemas para
+explicar, como la elecci√≥n de la ^{vida} como el concepto primitivo no
+definido de la teor√≠a de la subjetividad, son consecuencias de definir
 el yo como libertad para no morir. Porque el yo, por ser libertad y
-condiciÛn, es problema y, por ser la condiciÛn no morir, remite a la
-vida. Remite a la vida porque el yo, dado que est· definido, no puede
-ser el concepto primigenio indefinido que sÌ puede ser la inefable vida.
+condici√≥n, es problema y, por ser la condici√≥n no morir, remite a la
+vida. Remite a la vida porque el yo, dado que est√° definido, no puede
+ser el concepto primigenio indefinido que s√≠ puede ser la inefable vida.
 
 Pero, como el camino es circular, quien lo prefiera puede ponerlo al
-revÈs. Si se explica el yo a partir del problema aparente de la
+rev√©s. Si se explica el yo a partir del problema aparente de la
 supervivencia, entonces la consecuencia es que el yo ha de definirse
 como libertad para no morir.
 
-Por otra parte, la resoluciÛn del problema aparente alcanza el {\sujeto}
-con su {\yo}, lo que prueba constructivamente que una teorÌa
-problem·tica es suficiente para explicar la naturaleza del sujeto y del
+Por otra parte, la resoluci√≥n del problema aparente alcanza el {\sujeto}
+con su {\yo}, lo que prueba constructivamente que una teor√≠a
+problem√°tica es suficiente para explicar la naturaleza del sujeto y del
 yo.
 
 
 \Section Los niveles
 
-Las cinco etapas de la resoluciÛn del problema aparente pueden agruparse
-en tres niveles. El {\mecanismo} no es m·s que el punto de partida y
-forma, Èl solo, el nivel de referencia. El siguiente nivel, al que
+Las cinco etapas de la resoluci√≥n del problema aparente pueden agruparse
+en tres niveles. El {\mecanismo} no es m√°s que el punto de partida y
+forma, √©l solo, el nivel de referencia. El siguiente nivel, al que
 pertenecen el {\adaptador} y el {\aprendiz}, aparece con el {\cuerpo},
 que es capaz de comportarse como varios \corporal mecanismos$A_0$ y, de
 este modo, podemos decir que incluye al nivel de referencia anterior
@@ -1373,7 +1373,7 @@ este modo, podemos decir que incluye al nivel de referencia anterior
 $$\hbox{Adaptador $\aut A_1$}\llave{
    Gobernador $\aut G$\cr
    Cuerpo $\aut B$\lopen\langle{Mecanismo $\aut A_0$}}$$
-Por fin, el tercer nivel, en el que est·n el {\conocedor} y el
+Por fin, el tercer nivel, en el que est√°n el {\conocedor} y el
 {\sujeto}, tiene su origen en la {\mente} que, al ser capaz de resolver
 como los \corporal aprendices$A_2$, como los \corporal adaptadores$A_1$
 y como los \corporal mecanismos$A_0$, contiene a los dos niveles que lo
@@ -1386,46 +1386,46 @@ $$\hbox{Conocedor $\aut A_3$}\llave{
     Mecanismo $\aut A_0$}}$$
 
 Dentro de cada nivel con dos etapas, la primera etapa engloba
-externamente al nivel anterior y la segunda lo interioriza. AsÌ, el
+externamente al nivel anterior y la segunda lo interioriza. As√≠, el
 {\simulador} del {\aprendiz} contiene interiorizaciones de los
 comportamientos de su {\cuerpo} y del exterior, y, por esto, la tarea
 del {\modelador} es componer la {\realidad}, que es, precisamente, la
-representaciÛn interior del comportamiento del exterior (\EPA3).
+representaci√≥n interior del comportamiento del exterior (\EPA3).
 $$\hbox{Aprendiz $\aut A_2$}\llave{
    Gobernador $\aut G$\llave{
     Modelador $\aut M$ $\to$ Realidad $\aut R$\cr
     Simulador $\aut S$ [Cuerpo $\aut B$]}\cr
    Cuerpo $\aut B$\lopen\langle{Mecanismo $\aut A_0$}}$$
 Y, similarmente, la {\razon} del {\sujeto} tiene las representaciones,
-sint·cticas y recursivas, de las resoluciones de su {\mente} y del
-problema exterior, asÌ que la tarea del {\inquisidor} es buscar el
+sint√°cticas y recursivas, de las resoluciones de su {\mente} y del
+problema exterior, as√≠ que la tarea del {\inquisidor} es buscar el
 problema al que se enfrenta, esto es, el problema del sujeto, o sea, el
-{\yo}, que es, precisamente, la representaciÛn interna del problema
+{\yo}, que es, precisamente, la representaci√≥n interna del problema
 externo (\EPA7).
 $$\hbox{Sujeto $\aut A_4$}\llave{
    Inteligencia $\syn A$\llave{
     Inquisidor $\syn I$ $\to$ Yo $\syn X$\cr
-    RazÛn $\syn R$ [Mente $\syn M$]}\cr
+    Raz√≥n $\syn R$ [Mente $\syn M$]}\cr
    Mente $\syn M$\lopen\langle{
     Aprendiz $\aut A_2$\cr
     Adaptador $\aut A_1$\cr
     Mecanismo $\aut A_0$}}$$
 
 Sucede que el {\sujeto}, que culmina el proceso resolutivo del problema
-aparente, lo contiene completo. Porque en la {\razon} est· interiorizada
-la {\mente}, que incluye todo lo anterior, y por lo tanto, tambiÈn
+aparente, lo contiene completo. Porque en la {\razon} est√° interiorizada
+la {\mente}, que incluye todo lo anterior, y por lo tanto, tambi√©n
 contiene al {\simulador}, que interioriza al {\cuerpo}.
 
 
 \Section Las capas
 
-La construcciÛn del simbolismo en dos capas, vista en ^>La sem·ntica y
-la sintaxis>, y en ^>El sujeto simbÛlico>, que est· en el origen de los
-niveles de la resoluciÛn del problema aparente, nos permite descubrir
+La construcci√≥n del simbolismo en dos capas, vista en ^>La sem√°ntica y
+la sintaxis>, y en ^>El sujeto simb√≥lico>, que est√° en el origen de los
+niveles de la resoluci√≥n del problema aparente, nos permite descubrir
 algunas correspondencias en el ^{mundo} del sujeto, presentado en ^>El
 mundo>. El {\cuerpo} en la capa de los comportamientos, que es la de las
-soluciones y que llamamos sem·ntica, se corresponde con la {\mente} en
-la capa de las resoluciones, que denominamos sint·ctica. Y el {\yo} se
+soluciones y que llamamos sem√°ntica, se corresponde con la {\mente} en
+la capa de las resoluciones, que denominamos sint√°ctica. Y el {\yo} se
 corresponde con la {\realidad}.
 $$\vbox{\def\uc#1{\relax\uppercase{#1}}
  \def\:#1#2:#3#4.{\uc#1#2_{#1#2}& $\equiv$&\uc#3#4_{#3#4}\cr}
@@ -1440,17 +1440,17 @@ $$\vbox{\def\uc#1{\relax\uppercase{#1}}
  \.cuerpo $B$.mente $M$.
  \.aprendiz $A_2$.sujeto {$\aut A_4$}$E_2$.
  \.modelador $M$.inquisidor $I$.
- \.simulador $S$.razÛn {${\cal P}_{\syn U}$}$R$.
+ \.simulador $S$.raz√≥n {${\cal P}_{\syn U}$}$R$.
  \.realidad $R$.yo $X$.
- \:sem·ntica:sintaxis.
+ \:sem√°ntica:sintaxis.
  \:comportamiento:problema.
- \:soluciÛn:resoluciÛn.
+ \:soluci√≥n:resoluci√≥n.
  \:programa:algoritmo.
  \:cosa:concepto.
- \:pr·ctica:teorÌa.
+ \:pr√°ctica:teor√≠a.
  \:finito:infinito.
- \:fÌsica:metafÌsica.
- \:datos:informaciÛn.
+ \:f√≠sica:metaf√≠sica.
+ \:datos:informaci√≥n.
  \:cambio:permanencia.
  \:res extensa:res cogitans.
 }}$$
@@ -1458,10 +1458,10 @@ $$\vbox{\def\uc#1{\relax\uppercase{#1}}
 
 \Section El mundo es un enigma
 
-El {\inquisidor} ocupa el lugar m·s elevado del {\sujeto} que, a su vez,
+El {\inquisidor} ocupa el lugar m√°s elevado del {\sujeto} que, a su vez,
 es la cumbre del proceso resolutivo del problema aparente. Y la tarea
-del {\inquisidor} es plantear preguntas, la primera øquÈ soy yo? Tal vez
-por esto ^[AristÛteles]^(AristÛteles-IV) comenzÛ su ^<MetafÌsica>
+del {\inquisidor} es plantear preguntas, la primera ¬øqu√© soy yo? Tal vez
+por esto ^[Arist√≥teles]^(Arist√≥teles-IV) comenz√≥ su ^<Metaf√≠sica>
 declarando que ``todos los hombres tienen naturalmente el ^{deseo} de
 saber''.
 

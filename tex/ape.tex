@@ -24,7 +24,7 @@
 \font\fonttwosym=cmbsy10 scaled\magstep1
 \def\Stitle{{\fonttwosym \char"78}}
 
-\catcode`\ˆ=13 \defˆ{\"o}% for Gˆdel
+\catcode`\√∂=13 \def√∂{\"o}% for G√∂del
 
 \font\sc=cmcsc10
 \font\msbm=msbm10
@@ -52,7 +52,7 @@
 \vsize=39\baselineskip \advance\vsize\topskip % 40 lines
 \parskip=0pt plus 0.0001pt minus 0.0001pt
 
-\def\titulo{RamÛn Casares\cr Sobre la libertad}
+\def\titulo{Ram√≥n Casares\cr Sobre la libertad}
 \setcrops
 
 \predisplaypenalty=10
@@ -471,21 +471,21 @@ enddef;
  \def\mente{\vindex{mente}~$\syn M$} % $\Re$
 \def\sujeto{\vindex{sujeto}~$\aut A_4$}
  \def\inquisidor{\vindex{inquisidor}~$\syn I$}
- \def\razon{\vindex{razÛn}~$\syn R$}
+ \def\razon{\vindex{raz√≥n}~$\syn R$}
  \def\yo{\vindex{yo}~$\syn X$}
 
 \def\Corporal#1$#2#3${\vindex{#1}~${\aut #2}#3$}
 \def\corporal#1$#2#3${#1~${\aut #2}#3$}
 \def\Mental#1$#2#3${\vindex{#1}~${\syn #2}#3$}
 \def\mental#1$#2#3${#1~${\syn #2}#3$}
-\def\TM{m·quina de \vperson[Turing]%
- \hindex{m·quina de \string\string\string\vperson[Turing]}~$\mathop{\frak T}$}
-\def\TMes{m·quinas de \vperson[Turing]%
- \hindex{m·quina de \string\string\string\vperson[Turing]}~$\mathop{\frak T}$}
-\def\UTM{m·quina universal de \vperson[Turing]%
- \hindex{m·quina universal de \string\string\string\vperson[Turing]}~$\mathop{\frak U}$}
-\def\UTMes{m·quinas universales de \vperson[Turing]%
- \hindex{m·quina universal de \string\string\string\vperson[Turing]}~$\mathop{\frak U}$}
+\def\TM{m√°quina de \vperson[Turing]%
+ \hindex{m√°quina de \string\string\string\vperson[Turing]}~$\mathop{\frak T}$}
+\def\TMes{m√°quinas de \vperson[Turing]%
+ \hindex{m√°quina de \string\string\string\vperson[Turing]}~$\mathop{\frak T}$}
+\def\UTM{m√°quina universal de \vperson[Turing]%
+ \hindex{m√°quina universal de \string\string\string\vperson[Turing]}~$\mathop{\frak U}$}
+\def\UTMes{m√°quinas universales de \vperson[Turing]%
+ \hindex{m√°quina universal de \string\string\string\vperson[Turing]}~$\mathop{\frak U}$}
 \def\procesador$#1${procesador~${\cal P}_{\frak #1}$}
 \def\Procesador$#1${\vindex{procesador}~${\cal P}_{\frak #1}$}
 \def\UP{\vindex{procesador universal}~${\cal P}_{\frak U}$} % cal
@@ -516,7 +516,7 @@ enddef;
 % ^(cite1999)   _(cite1999)
 % ^|definition| _|definition|
 % ^<booktitle>  _<label>
-% ^>ref>        _>ref>   ( V = \S2.1, p·g.~123     H = \S2.1 )
+% ^>ref>        _>ref>   ( V = \S2.1, p√°g.~123     H = \S2.1 )
 
 \def\specialhat{\ifmmode\def\next{^}\else\let\next=\beginvref\fi\next}
 \def\specialund{\ifmmode\def\next{_}\else\let\next=\beginhref\fi\next}
@@ -551,7 +551,7 @@ enddef;
 \def\hdefinition|#1|{\allowhyphens\ndx{#1}{1}}%\tomargin{\it#1}}
 \def\vlabel<#1>{{\sl#1}\itcor} % used for book titles only
 %\def\hlabel<#1>{\label{#1}}
-\def\vref>#1>{la~\S\refsc{#1}, p·\-gi\-na~\refpg{#1}}
+\def\vref>#1>{la~\S\refsc{#1}, p√°\-gi\-na~\refpg{#1}}
 \def\href>#1>{la~\S\refsc{#1}}
 \def\vindex#1{\leavevmode\presignal\ndx{#1}{3}%
  \Blue\allowhyphens#1\allowhyphens\Black\signal}
@@ -600,11 +600,11 @@ enddef;
 \vbox to22pt{\centerline{\fontone Referencias}\toc3{Referencias}\vss}
 \vskip 1pc plus1pc minus6pt
 
-Se seÒalan las ediciones de las obras consultadas. Los n˙meros que
-aparecen al final de cada reseÒa, detr·s del tri·ngulo~{\teni.}, indican
-las p·ginas en las que la obra est· citada, asÌ {\teni.}\refpg{La
-jerarquÌa de Chomsky} significa que la cita se encuentra en la
-p·gina~\refpg{La jerarquÌa de Chomsky}.
+Se se√±alan las ediciones de las obras consultadas. Los n√∫meros que
+aparecen al final de cada rese√±a, detr√°s del tri√°ngulo~{\teni.}, indican
+las p√°ginas en las que la obra est√° citada, as√≠ {\teni.}\refpg{La
+jerarqu√≠a de Chomsky} significa que la cita se encuentra en la
+p√°gina~\refpg{La jerarqu√≠a de Chomsky}.
 
 \newwrite\bibnotes \immediate\openout\bibnotes=auxiliar.bdb
 \iverb\bibnotes"% AUXILIAR.BDB"
@@ -616,7 +616,7 @@ p·gina~\refpg{La jerarquÌa de Chomsky}.
 \iverb\bibnotes" \YEAR{\kern-1.5pt 1\kern-0.3pt 6\kern-0.2pt 3\kern-0.2pt 7\kern-1pt , "
 \iverb\bibnotes"  \kern-1pt 1641\kern-1pt}}"
 \iverb\bibnotes"\record{Freud1900}{BOOK}{\YEAREDITION{\kern-1pt 1966}"
-\iverb\bibnotes" \EDITION{TraducciÛn de Luis LÛpez-Ballesteros y de Torres (\kern-1pt1923)}}"
+\iverb\bibnotes" \EDITION{Traducci√≥n de Luis L√≥pez-Ballesteros y de Torres (\kern-1pt1923)}}"
 \iverb\bibnotes"\record{Rumelhart1986}{BOOK}{"
 \iverb\bibnotes" \AUTHOR{Rumelhart, D.E.; McClelland, J.L.; \& the PDP Research Group}}"
 \iverb\bibnotes"\endinput"
@@ -724,14 +724,14 @@ p·gina~\refpg{La jerarquÌa de Chomsky}.
 %%%
 
 \setdest
-\vbox to22pt{\centerline{\fontone Õndice tem·tico}\toc3{Õndice tem·tico}\vss}
+\vbox to22pt{\centerline{\fontone √çndice tem√°tico}\toc3{√çndice tem√°tico}\vss}
 \vskip 1pc plus1pc minus6pt
 %\vskip 5.87955pt % just to make exact room for columns
 
-Los conceptos escritos en letra negrilla son los m·s importantes de la
-teorÌa de la subjetividad, y los n˙meros escritos tambiÈn en negrilla
-indican las p·ginas en las que est·n definidos. Los otros conceptos son
-menos importantes, y los otros n˙meros seÒalan las p·ginas en las que
+Los conceptos escritos en letra negrilla son los m√°s importantes de la
+teor√≠a de la subjetividad, y los n√∫meros escritos tambi√©n en negrilla
+indican las p√°ginas en las que est√°n definidos. Los otros conceptos son
+menos importantes, y los otros n√∫meros se√±alan las p√°ginas en las que
 aparecen, independentemente de su importancia, los distintos conceptos y
 autores.
 
@@ -763,7 +763,7 @@ autores.
 \vfill\break %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setdest
-\vbox to22pt{\centerline{\fontone Õndice}\toc3{Õndice}\vss}
+\vbox to22pt{\centerline{\fontone √çndice}\toc3{√çndice}\vss}
 \vskip 2pc plus1pc minus6pt
 
 \def\tocline#1{\ifcase #1\let\next=\toclinezero \or
@@ -775,7 +775,7 @@ autores.
  \line{\bf\pdfgoto{#1}{#2}\hfil}\ignorespaces}
 \def\toclineone#1#2#3#4{\par
  {\pdfcode \pdf@ut \stringactives \pdfoutline goto num #2
-  count -\number\@utno {\noexpandß#3 #1}\pdfendcode}%
+  count -\number\@utno {\noexpand¬ß#3 #1}\pdfendcode}%
  \contentsline{#1}{#2}{$\S#3$\quad}{#4}\ignorespaces}
 
 \def\Referencias{Referencias}
@@ -797,13 +797,13 @@ autores.
 \raggedbottom \openup3pt
 \input auxiliar.toc
 
- \vfill % ColofÛn
+ \vfill % Colof√≥n
  {\parindent=0pt \obeylines \normalbottom %\baselineskip=12pt
  Este libro ha sido compuesto por el autor
  utilizando el programa {\TeX}
  del Profesor Knuth (Stanford University).
  Los tipos son de la familia Computer Modern.
- Las figuras est·n descritas en {\logo METAFONT}.
+ Las figuras est√°n descritas en {\logo METAFONT}.
  \par}
 
 \let\vfill=\relax

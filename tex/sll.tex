@@ -11,7 +11,6 @@
 \newdimen\hpage \newdimen\vpage % already defined in crops.tex
 
 \def\[{\string\[} % to allow ^álgebra de \[Boole]^
-%%%\files
 
 % Fonts
 
@@ -29,6 +28,24 @@
 
 \font\msbm=msbm10
 \font\logo=logo10
+
+%\pdfcode
+% \pdfmapline{+ccicons CCIcons <ccicons.pfb}
+%\pdfendcode
+\font\ccicons=ccicons
+\def\ccbysa{{\ccicons \char0\kern1pt\char1\kern1pt\char2}}
+
+\font\ptitlefont=texnansi-lmssbx10 at 90pt
+\font\psubtitlefont=texnansi-lmss10 at 40pt
+\font\pauthorfont=texnansi-lmss10 at 50pt
+\font\pcitafont=texnansi-lmss10 at 21pt
+\font\ptextfont=texnansi-lmss10 at 14pt
+
+\def\pdfBlack{\pdfliteral{0 0 0 1 k 0 0 0 1 K}}
+\def\pdfWhite{\pdfliteral{0 0 0 0 k 0 0 0 0 K}}
+\def\pdfRed{\pdfliteral{0 1 1 0 k 0 1 1 0 K}}
+\def\pdfBlue{\pdfliteral{1 1 0 0 k 1 1 0 0 K}}
+\def\pdfGreen{\pdfliteral{1 0 1 0 k 1 0 1 0 K}}
 
 \catcode`\@=11
 
@@ -54,12 +71,55 @@
 
 \parindent=20pt
 
-\predisplaypenalty=10
-\abovedisplayskip=12pt plus 6pt minus 6pt
-\belowdisplayskip=12pt plus 6pt minus 6pt
-\abovedisplayshortskip=0pt plus 6pt minus 6pt
-\belowdisplayshortskip=12pt plus 6pt minus 6pt
+% Grid
 
+%\tracingpages=1 % to check that the lines are on the grid
+
+\abovedisplayskip=12pt
+\belowdisplayskip=12pt
+\abovedisplayshortskip=0pt
+\belowdisplayshortskip=12pt
+
+\newbox\displaybox
+\newdimen\displayht
+\newdimen\displaydp
+
+% if \baselineskip is 12pt,
+% the strut height is 8.5pt     17/24 = 0.7083..3
+% and its depth is 3.5pt.        7/24 = 0.2916..6
+
+% It doesn't work with alignment displays (The {\TeX}book, pg 190)
+
+\def\griddisplay#1$${%
+ \setbox\displaybox=\hbox{$\displaystyle{#1}$}%
+ \displayht=\ht\displaybox \displaydp=\dp\displaybox
+ \advance\displayht by \lineskiplimit
+ \advance\displayht by 0.75\baselineskip
+ \divide\displayht by \baselineskip
+ \multiply\displayht by \baselineskip
+ \advance\displaydp by \lineskiplimit
+ \advance\displaydp by 0.25\baselineskip
+ \divide\displaydp by \baselineskip
+ \multiply\displaydp by \baselineskip
+ \ht\displaybox=0pt \dp\displaybox=0pt
+ \baselineskip=\displayht
+ \box\displaybox
+ \ifdim\displaydp=0pt\else \vadjust{\kern\displaydp}\fi$$}
+\everydisplay{\griddisplay}
+
+\def\nodepth#1{\setbox0=\hbox{#1}\dp0=0pt\box0}
+
+% Covers background color
+\def\background{\pdfcode
+  \pdfliteral{q}% save current graphic state in the stack
+  \pdfGreen
+  \pdfliteral{-67 -574 m}% 72 * 9 = 648, 72 * 8 = 576
+  \pdfliteral{365 -574 l}% 72 * 6 = 432, 72 * 5 = 360
+  \pdfliteral{365 74 l}%
+  \pdfliteral{-67 74 l}%
+  \pdfliteral{-67 -574 l}%
+  \pdfliteral{b Q}% close, stroke, fill, and restore graphic state
+ \pdfendcode}
 
 % Every point is a period
 \count255=`A \loop\sfcode\count255=1000
@@ -106,23 +166,6 @@
 \def\footnote{\global\advance\footnoteno1
  \plain\footnote{$^{\number\footnoteno}$}}
 \def\footnoteoptions{\everypar{}\parindent=20pt}
-
-% OUTPUT ROUTINE
-
-\def\pagecontents{\dimen@=\dp\strutbox \advance\dimen@-\dp\@cclv
- \advance\dimen@\ht\strutbox \advance\dimen@\dp\strutbox
- \ifnum\pageno=136 \global\tracingpages=1
-  \global\showboxbreadth=\maxdimen \global\showboxdepth=1 \fi
- \ifnum\pageno=138 \global\tracingpages=0
-  \global\showboxbreadth=2 \global\showboxdepth=2 \fi
- \unvbox\@cclv
- \ifvoid\footins\else\kern\dimen@\footnoterule\unvbox\footins\fi}
-
-%\saveplain\pagebody
-%\def\pagebody{\hbox{\plain\pagebody
-% \ifvoid\margin\else\kern3pt\vbox to0pt{\vss\unvbox\margin}\fi}}
-
-
 
 % Sectioning
 
@@ -691,15 +734,94 @@ autores.
 
 \raggedbottom \openup3pt
 \input auxiliar.toc
+\openup-3pt
 
- \vfill % Colofón
- {\parindent=0pt \obeylines \normalbottom %\baselineskip=12pt
- Este libro ha sido compuesto por el autor
- utilizando el programa {\TeX}
- del Profesor Knuth (Stanford University).
- Los tipos son de la familia Computer Modern.
- Las figuras están descritas en {\logo METAFONT}.
- \par}
+\vfill % Colofón
 
-\let\vfill=\relax
+\begincenter \obeylines % \normalbottom \baselineskip=12pt
+ Este libro ha sido tipografiado por el autor
+ usando el sistema del Profesor D.~E.~Knuth (Stanford University).
+ He utilizado {\em su} programa {\TeX}
+ para componer {\em mi} texto
+ con {\em sus} tipos Computer Modern
+ y para colocar {\em mis} figuras,
+ que hice con {\em su} programa {\logo METAFONT}.
+\endcenter
+
+\break
+
+%\let\vfill=\relax
+%\bye
+
+\break
+
+\shipout\vbox{\background
+\pdfWhite
+\hsize=5.5in
+\leftskip-0.55in
+\vskip-0.55in
+\begingroup\pcitafont\parindent=0pt\baselineskip=24pt\obeylines
+
+``El mundo no es una máquina enorme,
+\leavevmode\kern12pt como creen los materialistas,
+\leavevmode\kern12pt sino un enigma inmenso'' {\ptextfont(§160 ¶6)}
+
+\endgroup
+
+\vskip 1pc
+
+\begingroup\ptextfont\parindent=0pt\baselineskip=16pt\obeylines
+
+En el libro le muestro las limitaciones del materialismo,
+y le presento una teoría para superarlo.
+Como vía de ataque utilizo el concepto de información,
+que investigo con usted inspeccionando juntos las grietas de la
+percepción. Mi evaluación subjetivista es concluyente:
+la realidad no es lo que está fuera,
+sino el producto de la percepción.
+\null
+Pero, resulta que el poder expresivo de los procesos perceptivos
+es limitado. La prueba es que podemos hablar de cosas que
+no podemos observar. Por esto, la realidad no lo es todo, sino la
+representación de lo exterior que construye la percepción
+con sus exiguos recursos expresivos. Y el materialismo, al ceñirse
+a lo observable, a lo medible, es innecesariamente pobre.
+Urge superar esta situación.
+\null
+Visto que el habla es más expresiva que la percepción,
+me fijo en que no podemos percibir los problemas.
+Entonces demuestro que, para poder representar todos los
+conceptos de la teoría del problema, es necesaria una
+sintaxis recursiva. Esto es muy técnico, pero,
+basta saber que la sintaxis del habla es una sintaxis recursiva,
+para entender por qué sólo los sujetos parlantes podemos
+examinar mentalmente las posibles resoluciones de un problema.
+También le explico la consciencia, pero, para alcanzar los detalles,
+ha de leer el interior de este libro.
+
+\endgroup
+
+\kern12bp
+
+\pdfBlack
+\input ean13
+\hbox{\kern-0.55in
+\pdfximage{cc-by-sa-www.pdf}\pdfrefximage\pdflastximage
+\kern2.05in
+\pdfliteral{q}% save current graphic state in the stack
+  \pdfliteral{0 0 0 0 k 0 0 0 1 K}% set black stroke on white fill
+  \pdfliteral{-5 -5 m}% moves to the origin
+  \pdfliteral{110 -5 l}%
+  \pdfliteral{110 92 l}%
+  \pdfliteral{-5 92 l}%
+  \pdfliteral{-5 -5 l}%
+  \pdfliteral{b Q}% close, stroke, fill, and restore graphic state
+\ISBN 978-1-4536-0915-6
+\barheight=2.5cm % this must be after \ISBN call
+\EAN 978-1-4536-0915-6
+\hskip9pt
+}
+}
+
 \bye
+

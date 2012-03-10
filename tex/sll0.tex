@@ -1,20 +1,41 @@
 % sll0.tex (RMCG20001212)
 
-% PDF
+% front matter
 
-\ifx\pdfliteral\undefined\else
+% pdf info
+
+\pdfcode
  \begingroup\corkfont
   \pdfinfo{
-   /Author (© Ramón Casares 2001)
+   /Author (© Ramón Casares 2002, 2012)
    /Title (Sobre la libertad)
    /Subject (Teoría de la subjetividad)
+   /Creator (Licencia http://creativecommons.org/licenses/by-sa/3.0/)
    /Keywords (objeto problema significado símbolo sintaxis sujeto)}
  \endgroup
-\fi
+\pdfendcode
 
-% Text
+% [0] Portada
 
 \pdflabel \toc0{Sobre la libertad}
+
+\shipout\vbox{\background
+\pdfWhite
+\hbox{}
+\vskip2in
+\centerline{\ptitlefont Sobre}
+\vskip1pc
+\centerline{\ptitlefont la libertad}
+\vskip10pc
+\centerline{\psubtitlefont La teoría de la}
+\vskip6pt
+\centerline{\psubtitlefont subjetividad}
+\vskip2pc
+\centerline{\pauthorfont Ramón Casares}
+\pdfBlack
+}
+
+% [1] Autor y título
 
 \centerline{\fontone Ramón Casares}
 \vskip1pc
@@ -22,11 +43,11 @@
 \vskip1.5pc
 \centerline{\fontzero Sobre la libertad}
 
-\vfill\break % [1] Autor y título
-
-\null
 
 \vfill\break % [2] Colección (en blanco)
+\advance\pageno1
+
+% [3] Autor, título, subtítulo
 
 \centerline{\fontone Ramón Casares}
 \vskip1pc
@@ -36,36 +57,31 @@
 \vskip1pc
 \centerline{\fontone Teoría de la subjetividad}
 
-\vfill\break % [3] Autor, Título, Subtítulo
+\vfill\break % [4] Créditos
 
-\null \vfill
+\null
 
- Cualquier sugerencia o\par comentario dirigido a\par
- \indent\pdfcode \pdfstartlink attr{/Border [0 0 0]}
-   user{/Subtype /Link /A << /Type /Action
-    /S /URI /URI (mailto:r.casares@ieee.org) >>}\pdfendcode
-  {\tt r.casares@ieee.org}\pdfcode \pdfendlink \pdfendcode\par
- será bien recibido.\par
- Muchas gracias.
+\def\URI#1#2{\leavevmode\pdfcode \pdfstartlink
+  attr {/Border [0 0 0]}
+  user {/Subtype /Link /A << /Type /Action /S /URI /URI (#2) >>}%
+ \pdfendcode{\tt#1}\pdfcode\pdfendlink\pdfendcode}
 
-\vglue 2pc
-
- \def\smallcaps#1{{\sc\lowercase{#1}}}
-
+\vfill
  {\sl Sobre la libertad}\par
- {\sl Teoría de la subjetividad}\par
- Versión: \todayiso \par
- \copyright\ {\bf Ramón Casares} 2003\par
- C/. San Andrés, 112 (4º piso)\par
- \smallcaps E--15003 A Coruña (\smallcaps{ESPAÑA})\par
- Teléfono: 981 183 997 / 981 229 531\par
- Internet: \pdfcode \pdfstartlink attr{/Border [0 0 0]}
-   user{/Subtype /Link /A << /Type /Action
-    /S /URI /URI (mailto:r.casares@ieee.org) >>}\pdfendcode
-  {\tt r.casares@ieee.org}\pdfcode \pdfendlink \pdfendcode \par
+ {\sl La teoría de la subjetividad}\par
+ 1ª edición (\todayiso)\par
+ \null\par
+ Publicado por \URI{www.ramoncasares.com}{http://www.ramoncasares.com}\par
+ \copyright\ Ramón Casares, 2002, 2012\par
+ Este libro queda liberado conforme a los términos de la licencia\par
+ \ccbysa\ {\sf Creative Commons Attribution-ShareAlike 3.0},\par
+ \URI{http://creativecommons.org/licenses/by-sa/3.0/}%
+     {http://creativecommons.org/licenses/by-sa/3.0/}\par
+ \null\par
+ ISBN-13: 978-1-4536-xxxx-6\par
+ ISBN-10: 1-4536-xxxx-6\par
 
-\break % [4] Créditos
-
+\break % [5] Dedicatoria
 
 \null
 \vfil
@@ -76,7 +92,7 @@
 % A Valentín Fernández Vidal
 % A Nancy Konvalinka
 \vfil
-\break % [5] Dedicatoria
+\break
 
 \null\vfill\break % [6] Blanco
 

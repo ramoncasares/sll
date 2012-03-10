@@ -81,13 +81,10 @@
 
 % Other
 
-
-
 \def\beginpoints{\par\begingroup\everypar{}\parindent=20pt}
 \def\point{\par \hang\indent\llap{$\circ$\enspace}}
 \def\siglo#1 {\par \noindent\hang {\sc #1} $\cdot$ \ignorespaces}
 \def\endpoints{\par\endgroup}
-
 
 \def\goodbreak{\vskip0pt plus 4\baselineskip\penalty-250
  \vskip0pt plus-4\baselineskip}
@@ -99,13 +96,9 @@
 
 % PDFTeX
 
-\def\stringactives{\stringate\doaccents\dosymbols}
-
-
 %%% OPTION
 \nocolor % default value
 %\colors
-
 
 % Numbered footnotes
 \newcount\footnoteno
@@ -135,7 +128,7 @@
 
 \outer\def\Part#1 \par{\vfill\break \null\pdflabel
  \nointerlineskip\vbox to7\baselineskip{\vfil
-  \centerline{\fontone #1\label{#1}\toc0{#1}}\vfil}}
+  \centerline{\fontone #1\label{#1}\toc1{#1}}\vfil}}
 
 \newcount\secno \secno=0
 \newcount\parno \parno=0
@@ -146,7 +139,7 @@
  \vskip0pt plus 4\baselineskip\penalty-43
  \vskip0pt plus-4\baselineskip \vskip\baselineskip
  \titleline{\noindent\Stitle\fonttwo\section\space}%
-   {\fonttwo#1\pdflabel\toc1{#1}\lbl{#1}{\section}}%
+   {\fonttwo#1\pdflabel\toc2{#1}\lbl{#1}{\section}}%
  \everypar{\numberedpars}\nobreak}
 
 \def\titleline#1#2{\setbox0\hbox{#1}\dimen0=\hsize \advance\dimen0 -\wd0
@@ -167,6 +160,8 @@
 
 \def\label#1{\pdflabel\lbl{#1}{\section}}
 \def\index#1{\pdflabel\ndx{#1}{1}}
+
+\def\pdfout#1#2#3{\ifnum#1=2 §#3 #2\else #2\fi}
 
 \files
 
@@ -481,7 +476,7 @@ enddef;
 
 \input sll0.tex
 
-\pdflabel \let\par=\destpar
+\let\par=\destpar
 
 \input sll1.tex
 \input sll2.tex
@@ -499,7 +494,7 @@ enddef;
 \vfill\break %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \pdflabel
-\vbox to22pt{\centerline{\fontone Referencias}\toc3{Referencias}\vss}
+\vbox to22pt{\centerline{\fontone Referencias}\toc9{Referencias}\vss}
 \vskip 1pc plus1pc minus6pt
 
 Se señalan las ediciones de las obras consultadas. Los números que
@@ -626,7 +621,7 @@ página~\refpg{La jerarquía de Chomsky}.
 %%%
 
 \pdflabel
-\vbox to22pt{\centerline{\fontone Índice temático}\toc3{Índice temático}\vss}
+\vbox to22pt{\centerline{\fontone Índice temático}\toc9{Índice temático}\vss}
 \vskip 1pc plus1pc minus6pt
 %\vskip 5.87955pt % just to make exact room for columns
 
@@ -665,30 +660,28 @@ autores.
 \vfill\break %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \pdflabel
-\vbox to22pt{\centerline{\fontone Índice}\toc3{Índice}\vss}
+\vbox to22pt{\centerline{\fontone Índice}\toc9{Índice}\vss}
 \vskip 2pc plus1pc minus6pt
 
-\def\tocline#1{\ifcase #1\let\next=\toclinezero \or
- \let\next=\toclineone \else \let\next=\toclineindex \fi \next}
+% \tocline{level}{Title}{dest}{section}{page}
+\def\tocline#1{\ifcase#1 \let\next=\toclinezero \or
+ \let\next=\toclineone \or \let\next=\toclinetwo
+ \else \let\next=\toclineindex \fi \next}
 
-\def\toclinezero#1#2#3#4{\bigbreak
- {\pdfcode \pdf@ut \stringactives \pdfoutline goto num #2
-  count -\number\@utno {#1}\pdfendcode}%
- \line{\bf\pdfgoto{#1}{#2}\hfil}\ignorespaces}
-\def\toclineone#1#2#3#4{\par
- {\pdfcode \pdf@ut \stringactives \pdfoutline goto num #2
-  count -\number\@utno {\noexpand§#3 #1}\pdfendcode}%
+\def\toclinezero#1#2#3#4{\relax}
+\def\toclineone#1#2#3#4{\bigbreak
+ \line{\bf \pdfgoto{#1}{#2}\hfil}\ignorespaces}
+\def\toclinetwo#1#2#3#4{\par
  \contentsline{#1}{#2}{$\S#3$\quad}{#4}\ignorespaces}
-
 \def\Referencias{Referencias}
-\def\toclineindex#1#2#3#4{\par\def\1{#1}\ifx\1\Referencias\bigbreak\fi
- {\pdfcode \pdf@ut \stringactives \pdfoutline goto num #2
-  count -\number\@utno {#1}\pdfendcode}%
+\def\toclineindex#1#2#3#4{\par
+ \def\1{#1}\ifx\1\Referencias\bigbreak\fi
  \contentsline{{\bf #1}}{#2}{}{#4}\ignorespaces}
 
-\newdimen\tridig \setbox0=\hbox{$\S123$\quad}\tridig=\wd0
+\newdimen\tridig \setbox0=\hbox{$\S127$\quad}\tridig=\wd0
 
-\def\contentsline#1#2#3#4{\setbox0\hbox to\tridig{\hfil#3}\setbox2\hbox{#1}%
+\def\contentsline#1#2#3#4{\setbox2\hbox{#1}%
+ \setbox0\hbox to\tridig{\hfil#3}%
  \dimen0=\hsize \advance\dimen0 by -\wd0
  \multiply\dimen0 by 8 \divide\dimen0 by 10
  \ifdim\dimen0>\wd2 \line{\box0 #1\tocleaders \pdfgoto{#4}{#2}}\else

@@ -18,7 +18,7 @@ las reacciones del universo son buenas, para lo que utilizaremos una
 Todos estos autómatas dibujan el siguiente circuito que representa el
 ^{problema aparente formalizado} en el álgebra automática (\EPA{1.4.1}).
 % Interacción total y medida externa
-$$\MTbeginchar(110pt,70pt,0pt);
+\MTbeginchar(110pt,70pt,0pt);
  \MT: pickup thick_pen;
  \MT: x1 + x2 = w; x2 = x1 + 50u; y1b = y2b = 30v;
  \MT: rectangle(1)(20u,20v); % 1 is U
@@ -49,7 +49,7 @@ $$\MTbeginchar(110pt,70pt,0pt);
  \MT: x8lbl = x3lbl; y8lbl.t = y6 - jot;
  \MTlabel(8lbl)"\sevenbf 1";
 \MTendchar;
-\box\MTbox$$
+$$\box\MTbox$$
 
 La letra negrilla~$\no n$ indica la parte de los ^{datos de entrada} que
 no influye directamente en la solución del problema; son los ^{datos
@@ -71,7 +71,7 @@ valores~$1$ en los datos valorados~$\no v$. De todo el ^{problema
 aparente formalizado}, en esto lo hemos dejado, y con esto es suficiente
 para seguir las explicaciones que vienen.
 % Interacción total con semántica mínima
-$$\MTbeginchar(100pt,40pt,0pt);
+\MTbeginchar(100pt,40pt,0pt);
  \MT: pickup thick_pen;
  \MT: x1 + x2 = w; x2 = x1 + 40u; y1b = y2b = 0;
  \MT: rectangle(1)(20u,20v); % 1 is U
@@ -90,9 +90,9 @@ $$\MTbeginchar(100pt,40pt,0pt);
  \MT: x4blbl = 1/2[x4bl,x4br]; y4blbl.t = 1/2[y4bl,y4br] - jot;
  \MTlabel(4tlbl)"\no n"; \MTlabel(4blbl)"\no v";
 \MTendchar;
-\box\MTbox
-\abovedisplayskip=0pt plus 3pt
-\belowdisplayskip=0pt minus 6pt
+$$\box\MTbox
+%\abovedisplayskip=0pt plus 3pt
+%\belowdisplayskip=0pt minus 6pt
 $$
 
 
@@ -113,10 +113,10 @@ evolución y la resolución>. Recordemos que se trata de diseñar un
 ^{autómata}~\aut A capaz de generar en cada instante, y sea como sea el
 ^{universo}~\aut U al que se enfrente, una mayoría de valores~$1$ en los
 ^{datos valorados}~{\no v}.
- $$\hbox{Problema aparente formalizado} \etapa
+$$\hbox{Problema aparente formalizado} \etapa
    \hbox{Resolución}
-\abovedisplayskip=12pt minus 3pt
-\belowdisplayskip=0pt plus 3pt
+%\abovedisplayskip=12pt minus 3pt
+%\belowdisplayskip=0pt plus 3pt
 $$
 
 
@@ -168,7 +168,7 @@ como~$\aut A_0$ porque nos servirá de referencia. La forma del
 {\mecanismo} es la mínima suficiente para poder ocupar el lugar de la
 ^{incógnita}~$\aut A?$ en el problema aparente formalizado (\EPA{1.6}).
 % Mecanismo
-$$\MTbeginchar(80pt,20pt,0pt);
+\MTbeginchar(80pt,20pt,0pt);
  \MT: pickup thick_pen;
  \MT: x1 = w/2; y1b = 0; z1lbl = z1;
  \MT: rectangle(1)(20u,20v); % 1 is A_0
@@ -183,8 +183,7 @@ $$\MTbeginchar(80pt,20pt,0pt);
  \MT: y4lbl.t = y4o - jot; x4lbl = 1/2[x4o,x4d];
  \MTlabel(4lbl)"\no m";
 \MTendchar;
-\box\MTbox
-$$
+$$\box\MTbox$$
 
 
 \Section El adaptador formal
@@ -224,9 +223,8 @@ comporte, precisamente, como el {\mecanismo}.
 disposiciones para cumplir la condición del gobernador, debe recibir
 todos los ^{datos}. Así alcanzamos a definir la forma del {\adaptador}
 (\EPA{2}).
-\endpoints
 % Adaptador
-$$\MTbeginchar(140pt,60pt,0pt);
+\MTbeginchar(140pt,60pt,0pt);
  \MT: pickup thick_pen;
  \MT: x1r = w - 20u; y1b = 0; z1lbl = z1;
  \MT: rectangle(1)(20u,20v); % 1 is B
@@ -253,7 +251,8 @@ $$\MTbeginchar(140pt,60pt,0pt);
  \MT: x10lbl.l = x10m; y10lbl.b = y10m + jot;
  \MTlabel(10lbl)"\no b";
 \MTendchar;
-\box\MTbox$$
+$$\box\MTbox$$
+\endpoints
 
 Aquí hemos utilizado un autómata, el {\cuerpo}, con varios
 comportamientos, como adelantamos en ^>El comportamiento>. Los
@@ -297,6 +296,7 @@ $$\hbox{Fenómeno}
   \hbox{Acción}
 $$
 
+\kern-12pt
 
 \Section La mejora del cuerpo
 
@@ -395,7 +395,7 @@ los pronósticos son certeros.
 
 La forma del {\aprendiz} es la que muestra la figura siguiente (\EPA3).
 % Aprendiz
-$$\MTbeginchar(170pt,60pt,0pt);
+\MTbeginchar(170pt,60pt,0pt);
  \MT: pickup thick_pen;
  \MT: x1r = w - 20u; y1b = 0; z1lbl = z1;
  \MT: rectangle(1)(20u,20v); % 1 is B
@@ -429,8 +429,7 @@ $$\MTbeginchar(170pt,60pt,0pt);
  \MT: x13lbl.l = x13m; y13lbl.b = y13m + jot;
  \MTlabel(13lbl)"\no b";
 \MTendchar;
-\box\MTbox
-$$
+$$\box\MTbox$$
 
 Los datos~$\no r$ sirven para que el {\modelador} comunique al
 {\simulador} cómo es la {\realidad}. Como la {\realidad} es un autómata,
@@ -511,6 +510,7 @@ $$\hbox{Fenómeno}
   \hbox{Acción}
 $$
 
+\kern-12pt
 
 \Section La doble resolución
 
@@ -558,7 +558,6 @@ satisfaga la ^{condición de la inteligencia}, esto es, que elija la
 manera de resolver del {\mecanismo} si el {\mecanismo} soluciona, la del
 {\adaptador} si éste soluciona y, si el {\aprendiz} soluciona, la del
 {\aprendiz} (\EPA6).
-\endpoints
 $$\hbox{Problema}\,
    \underbrace{\strut
     \base{{\frakx A}$\;\;$\cr $\longrightarrow\;$}
@@ -567,6 +566,7 @@ $$\hbox{Problema}\,
      Conocedor$\,{\cal A}_3$}}
   \,\hbox{Solución}
 $$
+\endpoints
 
 El diseño de la {\mente} está perfectamente especificado y, en último
 caso, la {\mente} se podría construir simplemente agregando el
@@ -958,6 +958,8 @@ puede aceptar únicamente la secuencia $\frak abc$, aunque todos ellos
 pueden aceptar una versión ampliada. La posibilidad de ampliación exige
 que se acepten otras secuencias; veamos todo esto en más detalle.
 
+\vfill\break
+
 Sea~${\cal P}_{\frak\!abc}$ el procesador de la máquina de ^[Turing] que
 solamente acepta la expresión~$\frak abc$. Sea $\syn U$ una
  máquina universal de ^[Turing]_{máquina universal de
@@ -985,10 +987,16 @@ $${\cal P}_{\syn U}[{\syn P}_{\syn U}({\syn P}_{\frak abc}({\frak abc}))]
 Por esta razón decimos que los \mental lenguajes universales$L_{\syn
 U}$ son más expresivos que los \mental regulares$L_3$, aunque no los
 incluyen; $\forall{\syn L}_3,{\syn L}_{\syn U}$:
+\begingroup
+\abovedisplayskip=6pt
+\belowdisplayskip=6pt
+\abovedisplayshortskip=0pt
+\belowdisplayshortskip=0pt
 $$\eqalign{
    {\syn L}_3 &\prec {\syn L}_{\syn U} \cr
    \{ {\syn L}_3 \} &\not\subset \{ {\syn L}_{\syn U} \}  . \cr
  }$$
+\endgroup
 
 El \mental lenguaje universal$L_{\syn U}$ es el más expresivo de los
 lenguajes con gramática porque puede expresar todo cuanto pueda expresar
@@ -1156,6 +1164,8 @@ indecidibles$L_{\syn I}$ son \mental universales$L_{\syn U}$, porque hay
 $$ \{ {\syn L}_{\syn U} \} \subset
    \{ {\syn L}_{\syn I} \} \subset
    \{ {\syn L}_0 \} . $$
+
+\breakif2
 
 Entre los \mental lenguajes indecidibles$L_{\syn I}$ se encuentran,
 también, aqué\-llos con errores; por ejemplo el lenguaje aceptado por
@@ -1340,7 +1350,7 @@ $$\vbox{\everycr={}\tabskip=0pt \lineskip=0pt
     ${\cal A}_1$$\leftarrow$& ${\cal A}_0$$\leftarrow$\hidewidth&
     Problema aparente\cr}}$$
 
-\breakif2
+\breakif2 %$
 
 Se completa así el círculo, y ahora podemos contemplar enteramente el
 postulado fundamental de la ^{teoría de la subjetividad}, a saber, que
@@ -1424,6 +1434,7 @@ aparente, lo contiene completo. Porque en la {\razon} está interiorizada
 la {\mente}, que incluye todo lo anterior, y por lo tanto, también
 contiene al {\simulador}, que interioriza al {\cuerpo}.
 
+\vfill\break
 
 \Section Las capas
 
@@ -1435,6 +1446,11 @@ mundo>. El {\cuerpo} en la capa de los comportamientos, que es la de las
 soluciones y que llamamos semántica, se corresponde con la {\mente} en
 la capa de las resoluciones, que denominamos sintáctica. Y el {\yo} se
 corresponde con la {\realidad}.
+\begingroup
+\abovedisplayskip=6pt
+\belowdisplayskip=6pt
+\abovedisplayshortskip=0pt
+\belowdisplayshortskip=0pt
 $$\vbox{\def\uc#1{\relax\uppercase{#1}}
  \def\:#1#2:#3#4.{\uc#1#2_{#1#2}& $\equiv$&\uc#3#4_{#3#4}\cr}
  \setbox0=\hbox{$\mathop{\cal A}\nolimits_4$ }
@@ -1462,6 +1478,7 @@ $$\vbox{\def\uc#1{\relax\uppercase{#1}}
  \:cambio:permanencia.
  \:res extensa:res cogitans.
 }}$$
+\endgroup
 
 
 \Section El mundo es un enigma

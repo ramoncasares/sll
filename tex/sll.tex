@@ -36,7 +36,6 @@
 
 \let\docinfo\relax \let\infodoc\relax
 
-%\nopagenumbers
 \headline={\hfil}
 \footline={\tenrm\ifodd\pageno \docinfo\hfil\folio
             \else \folio\hfil\infodoc \fi\strut}
@@ -79,17 +78,12 @@
 \def\itc@rdo{\skip0=\lastskip \ifdim\skip0=0pt \/\else
  \unskip \/\hskip\skip0 \fi \endgroup}
 
-% Verbatim
-
-\def\uncatcodeall{\deactivate\dospecials\dohigh}
-\def\iverb#1{\begingroup\uncatcodeall\obeyspaces\obeylines\d@iverb#1}
-\def\d@iverb#1#2{\def\next##1#2{\immediate\write#1{##1}\endgroup}\next}
 
 % Other
 
 \def\siglo#1 {\par \noindent\hang {\sc #1} $\cdot$ \ignorespaces}
 
-\def\point{\par\hang\indent\llap{$\bullet$\enspace}}
+\def\point{\par{\everypar{}\parindent=20pt\hang\indent\llap{$\bullet$\enspace}}}
 \def\goodbreak{\vskip0pt plus 4\baselineskip\penalty-250
  \vskip0pt plus-4\baselineskip}
 
@@ -135,10 +129,9 @@
 
 % Sectioning
 
-\outer\def\Part#1 \par{\vfill\break \null\setdest
+\outer\def\Part#1 \par{\vfill\break \null\pdflabel
  \nointerlineskip\vbox to7\baselineskip{\vfil
   \centerline{\fontone #1\label{#1}\toc0{#1}}\vfil}}
-
 
 \newcount\secno \secno=0
 \newcount\parno \parno=0
@@ -162,30 +155,12 @@
   \teni\number\parno}\hfil$\cdot$\hfil}\ignorespaces}
 
 
-
-
-\newcount\xs@one
-
-\outer\def\xSection#1 \par{\vskip0pt plus 4\baselineskip\penalty-250
- \vskip0pt plus-4\baselineskip
- \vskip\baselineskip \advance\s@one1 \setdest
- \noindent{\fonttwo\Stitle\the\s@one\space#1\label{#1}}\toc1{#1}\par
- \nobreak}
-
 % Indexing
-
-%\newcount\d@stno \newcount\p@rno \d@stno=1 \p@rno=1
-
-%\def\setdest{\global\advance\d@stno1 \global\p@rno=\d@stno
-% \pdfcode \pdfdest num \number\d@stno fitbh\pdfendcode}
-\let\setdest=\pdflabel
 
 \def\destpar{\ifhmode \let\next=\pdflabel \else \let\next=\relax \fi
  \endgraf \next}
 
-%%%\def\stringall{\stringate\dohigh\stringaccents}
-
-\def\label#1{\pdflabel\lbl{#1}{\number\secno}}
+\def\label#1{\pdflabel\lbl{#1}{\section}}
 \def\index#1{\pdflabel\ndx{#1}{1}}
 
 \files
@@ -501,7 +476,7 @@ enddef;
 
 \input sll0.tex
 
-\setdest \let\par=\destpar
+\pdflabel \let\par=\destpar
 
 \input sll1.tex
 \input sll2.tex
@@ -518,7 +493,7 @@ enddef;
 
 \vfill\break %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\setdest
+\pdflabel
 \vbox to22pt{\centerline{\fontone Referencias}\toc3{Referencias}\vss}
 \vskip 1pc plus1pc minus6pt
 
@@ -528,8 +503,8 @@ las páginas en las que la obra está citada, así {\teni.}\refpg{La
 jerarquía de Chomsky} significa que la cita se encuentra en la
 página~\refpg{La jerarquía de Chomsky}.
 
-\newwrite\bibnotes \immediate\openout\bibnotes=auxiliar.bdb
-\iverb\bibnotes"% AUXILIAR.BDB"
+\newwrite\bibnotes \immediate\openout\bibnotes=auxiliar.abdb
+\iverb\bibnotes"% auxiliar.abdb"
 \iverb\bibnotes"\record{Lettvin1959}{INCOLLECTION}{"
 \iverb\bibnotes" \AUTHOR{Lettvin, J.\kern-1pt Y\kern-1pt.; "
 \iverb\bibnotes" Maturana, H.R.; McCulloch, \kern-1ptW\kern-2pt.S.; "
@@ -567,10 +542,10 @@ página~\refpg{La jerarquía de Chomsky}.
  \else % \newk@y<>\oldk@y
  \ifrange --\number\lastpgno\rangefalse \fi
  \bibbreak
- \setdest \cleantoks \lastpgno=0
+ \pdflabel \cleantoks \lastpgno=0
  \def\record##1##2##3{\def\secondk@y{##1}\ifx\newk@y\secondk@y##3\fi}
- \input sll.bdb
  \input auxiliar.bdb
+ \input auxiliar.abdb
  \hang\noindent\rm{\sc\the\AUTHOR}:%
  {\def\em{\string\em\space}\def~{\string~}\def\it{\string\it\space}%
   \def\sc{\string\sc\space}%
@@ -645,7 +620,7 @@ página~\refpg{La jerarquía de Chomsky}.
 
 %%%
 
-\setdest
+\pdflabel
 \vbox to22pt{\centerline{\fontone Índice temático}\toc3{Índice temático}\vss}
 \vskip 1pc plus1pc minus6pt
 %\vskip 5.87955pt % just to make exact room for columns
@@ -684,7 +659,7 @@ autores.
 
 \vfill\break %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\setdest
+\pdflabel
 \vbox to22pt{\centerline{\fontone Índice}\toc3{Índice}\vss}
 \vskip 2pc plus1pc minus6pt
 

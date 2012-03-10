@@ -81,12 +81,16 @@
 
 % Other
 
-\def\siglo#1 {\par \noindent\hang {\sc #1} $\cdot$ \ignorespaces}
 
-\def\point{\par{\everypar{}\parindent=20pt\hang\indent\llap{$\bullet$\enspace}}}
+
+\def\beginpoints{\par\begingroup\everypar{}\parindent=20pt}
+\def\point{\par \hang\indent\llap{$\circ$\enspace}}
+\def\siglo#1 {\par \noindent\hang {\sc #1} $\cdot$ \ignorespaces}
+\def\endpoints{\par\endgroup}
+
+
 \def\goodbreak{\vskip0pt plus 4\baselineskip\penalty-250
  \vskip0pt plus-4\baselineskip}
-
 \def\breakif#1{\vskip0pt plus #1\baselineskip \penalty-250
  \vskip0pt plus-#1\baselineskip}
 
@@ -152,7 +156,8 @@
 
 \def\numberedpars{\global\advance\parno1 \pdflabel
  \noindent\hbox to\oldparindent{{\sevensy\char"7B %" little par sign
-  \teni\number\parno}\hfil$\cdot$\hfil}\ignorespaces}
+  \teni\number\parno}\hfil}\ignorespaces}
+%  \teni\number\parno}\hfil$\cdot$\hfil}\ignorespaces}
 
 
 % Indexing

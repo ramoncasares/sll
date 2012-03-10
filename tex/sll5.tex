@@ -200,7 +200,7 @@ mejora al {\mecanismo}. Veámoslo.
 El ^|adaptador|~$\aut A_1$ se compone de un {\cuerpo}, capaz de varios
 comportamientos, y de un {\gobernador}, que elige cuál de los
 comportamientos se ejecuta.
-
+\beginpoints
 \point El ^|cuerpo|~$\aut B$ es un autómata capaz de comportarse como el
 {\mecanismo} y, además, de otras maneras, por lo que es, técnicamente,
 una ^{ampliación} del {\mecanismo}. Aunque aquí no nos interesan los
@@ -224,6 +224,7 @@ comporte, precisamente, como el {\mecanismo}.
 disposiciones para cumplir la condición del gobernador, debe recibir
 todos los ^{datos}. Así alcanzamos a definir la forma del {\adaptador}
 (\EPA{2}).
+\endpoints
 % Adaptador
 $$\MTbeginchar(140pt,60pt,0pt);
  \MT: pickup thick_pen;
@@ -356,7 +357,7 @@ El ^|aprendiz|~$\aut A_2$ tiene tres partes: un {\cuerpo}, capaz de
 varios comportamientos, un {\modelador}, que modela el exterior, y un
 {\simulador}, que elige el comportamiento actual valiéndose del modelo
 para hacer pronósticos con los que compara los comportamientos posibles.
-
+\beginpoints
 \point El {\cuerpo} del {\aprendiz} es capaz de varios comportamientos,
 cuantos más mejor, según hemos visto en ^>La mejora del cuerpo>, pero al
 menos y para superar al {\adaptador}, todos los de éste. Técnicamente,
@@ -388,6 +389,7 @@ superar, pero con la ventaja de evitar la ejecución actual contra el
 {\universo} exterior de los comportamientos previsiblemente peores, que
 coinciden con los comportamientos peores porque estamos suponiendo que
 los pronósticos son certeros.
+\endpoints
 
 \breakif6
 
@@ -544,6 +546,7 @@ maneras de resolución.
 
 Como el {\conocedor} es capaz de resolver de varias maneras, podemos
 dividirlo en dos partes:
+\beginpoints
 \point una ^|mente|~$\syn M$ que es capaz de resolver de varios modos, y
 \point una ^|inteligencia|~$\syn A$ que decide qué modo de resolver ha de
 ejecutarse en cada momento.
@@ -555,6 +558,7 @@ satisfaga la ^{condición de la inteligencia}, esto es, que elija la
 manera de resolver del {\mecanismo} si el {\mecanismo} soluciona, la del
 {\adaptador} si éste soluciona y, si el {\aprendiz} soluciona, la del
 {\aprendiz} (\EPA6).
+\endpoints
 $$\hbox{Problema}\,
    \underbrace{\strut
     \base{{\frakx A}$\;\;$\cr $\longrightarrow\;$}
@@ -716,6 +720,7 @@ $$\hbox{Problema}\,
   \,\hbox{Solución}
 $$
 
+\beginpoints
 \point La {\mente} del {\sujeto} ha de ser capaz de varias resoluciones,
 cuantas más mejor, según hemos visto en la sección anterior, _>La mejora
 de la mente>, pero por lo menos, para superar al {\conocedor}, todas las
@@ -747,6 +752,7 @@ de acometerla, y puede evitar, de este modo, sufrir los errores que el
 imposible verificar que la condición del inquisidor está definitivamente
 satisfecha; es imposible porque el {\sujeto} se enfrenta a un problema
 aparente.
+\endpoints
 
 
 \Section El sujeto simbólico
@@ -1085,6 +1091,7 @@ por probadas.
 ${\algPdox}(Z):Z={\algPdox}(Z)$, que es autorreferente, en la cinta de
 la {\UTM}? Si el algoritmo {\algStop} se comporta como anunciamos,
 entonces sólo hemos de estudiar los dos casos posibles.
+\beginpoints
 \point Si ${\algStop}({\algPdox}(Z)): Z={\algPdox}(Z)$ es {\true},
 quiere decir, según la definición de {\algStop}, que la expresión
  ${\algPdox}(Z): Z={\algPdox}(Z)$
@@ -1106,6 +1113,7 @@ lo tanto, que dentro de un lenguaje universal es imposible determinar
 definitivamente si una expresión es paradójica, o si no lo es. Y con
 esto queda probado que, en las sintaxis recursivas, las paradojas son
 pertinaces.
+\endpoints
 
 
 \Section La sintaxis recursiva

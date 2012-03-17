@@ -10,6 +10,8 @@
 %\input crops % OPTIONAL CROPS (Beware the next line!)
 \newdimen\hpage \newdimen\vpage % already defined in crops.tex
 
+\newif\ifportada \portadafalse
+
 \def\[{\string\[} % to allow ^álgebra de \[Boole]^
 
 % Fonts
@@ -748,10 +750,10 @@ autores.
  que hice con {\em su} programa {\logo METAFONT}.
 \endcenter
 
-\break
-
-%\let\vfill=\relax
-%\bye
+\ifportada\else
+ \let\vfill=\relax
+ \bye
+\fi
 
 \break
 
@@ -816,9 +818,9 @@ Eso sí, para juzgarlas ha de leer este libro.
   \pdfliteral{-5 92 l}%
   \pdfliteral{-5 -5 l}%
   \pdfliteral{b Q}% close, stroke, fill, and restore graphic state
-\ISBN 978-1-4536-0915-6
+\ISBN 978-1-4750-4270-2
 \barheight=2.5cm % this must be after \ISBN call
-\EAN 978-1-4536-0915-6
+\EAN 978-1475042702
 \hskip9pt
 }
 }

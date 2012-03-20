@@ -1,0 +1,22 @@
+
+CreateSpace exige un tríptico con:
+
+- contraportada
+- lomo
+- portada
+
+La anchura del lomo, en pulgadas, para papel color crema,
+se calcula multiplicando por 0.0025 el número de páginas:
+
+160 x 0.0025 = 0.4"
+
+Además requieren un márgen de seguridad (bleed) de, al menos, 0.125",
+así que yo lo he puesto de 0.25".
+
+Con estos datos, para mi libro de 160 páginas de 6x9,
+el tamaño del tríptico (ancho x alto), en pulgadas, es:
+
+(0.25 + 6.00 + 0.40 + 6.00 + 0.25) x (0.25 + 6.00 + 0.25)
+
+O sea, 12.90" x 6.50".
+

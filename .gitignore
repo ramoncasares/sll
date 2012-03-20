@@ -5,6 +5,7 @@
 *.dvi
 # except logo file
 !tex/cc-by-sa-www.pdf
+!covers/cc-by-sa-www.pdf
 # ignore archives
 *.tar
 *.gz

@@ -1,0 +1,176 @@
+% sll-triptic.tex (RMCG20120317)
+
+\font\ptitlefont=texnansi-lmssbx10 at 90pt
+\font\psubtitlefont=texnansi-lmss10 at 40pt
+\font\pauthorfont=texnansi-lmss10 at 50pt
+
+\font\spinetitlefont=texnansi-lmssbx10 at 24pt
+\font\spineauthorfont=texnansi-lmss10 at 24pt
+
+\font\pcitefont=texnansi-lmss10 at 21pt
+\font\ptextfont=texnansi-lmss10 at 14pt
+
+\ansifont
+
+\def\pdfBlack{\pdfliteral{0 0 0 1 k 0 0 0 1 K}}
+\def\pdfWhite{\pdfliteral{0 0 0 0 k 0 0 0 0 K}}
+\def\pdfRed{\pdfliteral{0 1 1 0 k 0 1 1 0 K}}
+\def\pdfBlue{\pdfliteral{1 1 0 0 k 1 1 0 0 K}}
+\def\pdfGreen{\pdfliteral{1 0 1 0 k 1 0 1 0 K}}
+
+\pdfpageheight=9.5in \voffset=-1in 
+\pdfpagewidth=12.9in \hoffset=-1in
+
+\newbox\background
+\setbox\background=\hbox{\pdfGreen\vrule width 6.25in height 0pt depth 9.5in}
+\wd\background=0pt 
+\ht\background=0pt
+\dp\background=0pt
+
+\newif\iftesting % \testingtrue
+
+\iftesting \showboxbreadth=10 \showboxdepth=6 \fi
+
+%%%%%%%%%%%%% Portada
+
+\newbox\portada
+\setbox\portada=\vbox to 9.5in{\copy\background
+ \vss\hbox to 6.25in{
+ \vbox{\hsize=6in
+  \pdfWhite
+  \hbox{}
+  \vskip12pc
+  \centerline{\ptitlefont Sobre}
+  \vskip1pc
+  \centerline{\ptitlefont la}
+  \centerline{\ptitlefont libertad}
+  \vskip10pc
+  \centerline{\psubtitlefont La teoría de la}
+  \vskip6pt
+  \centerline{\psubtitlefont subjetividad}
+  \vskip2pc
+  \centerline{\pauthorfont Ramón Casares}
+ \vss}\hss}\kern0.25in\vss}
+
+\iftesting \showbox\portada \fi
+\message{Portada (\the\wd\portada, \the\ht\portada, \the\dp\portada)}
+
+%%%%%%%%%%%%% Lomo
+
+\def\rotatebox#1{%
+ \wd#1=0pt \ht#1=0pt \dp#1=0pt
+ \pdfliteral{q}% \pdfsave
+ \pdfliteral{0 -1 1 0 0 0 cm}% rotate -90º
+ \box#1%
+ \pdfliteral{Q}% \pdfrestore
+}
+
+\newbox\lomotext
+\setbox\lomotext=\vbox{\hbox to 9.5in{\pdfGreen
+ \vrule width 9.5in height 0.31in depth 0.09in
+ \kern -7.25in \pdfWhite
+  \spinetitlefont Sobre la libertad\hss
+  \spineauthorfont Ramón Casares\kern24pt
+  \kern0.25in}\nointerlineskip\hbox{}}
+
+\message{Lomox (\the\wd\lomotext, \the\ht\lomotext, \the\dp\lomotext)}
+
+\newbox\lomo
+\setbox\lomo=\vbox to 9.5in{\hbox to 0.4in{\hss\rotatebox\lomotext}\vss}
+
+\message{Lomoy (\the\wd\lomo, \the\ht\lomo, \the\dp\lomo)}
+
+\wd\lomo=0.4in
+\dp\lomo=0pt
+\ht\lomo=9.5in
+
+\iftesting \showbox\lomo \fi
+\message{Lomo (\the\wd\lomo, \the\ht\lomo, \the\dp\lomo)}
+
+%%%%%%%%%%%%% Contraportada
+
+\newbox\contra
+\setbox\contra=\vbox to 9.5in{\copy\background
+ \vss\hbox to 6.25in{
+ \hss\vbox to 9in{\hsize=5.5in
+  \pdfWhite
+  \hbox{}
+  \kern3pc
+  \begingroup\pcitefont\parindent=0pt\baselineskip=24pt\obeylines
+   \kern12pt
+   ``La vida es una burbuja de conocimiento
+   \leavevmode\kern12pt y de libertad'' {\ptextfont(§154 ¶2)}
+   \kern12pt
+  \endgroup
+\vskip 1pc
+\begingroup\ptextfont\parindent=0pt\baselineskip=16pt\obeylines
+
+El sujeto es la base de la teoría del conocimiento,
+y, sin embargo, apenas se le ha prestado atención.
+La causa de este desinterés es, seguramente, que,
+como ya vio Descartes, el sujeto es la verdad indubitable;
+siendo yo mismo, ¿cómo no voy a saberlo todo sobre el sujeto?
+\null
+Pero esta renuncia a estudiar al sujeto del conocimiento
+produce anomalías que alcanzan tamaños enormes.
+Por un lado, la ciencia prescinde por completo del sujeto, porque
+postula que en las leyes de la naturaleza no cabe libertad alguna.
+Y, por el otro lado, el arte aspira a la creatividad absoluta,
+lo que nos descubre que el arte da por hecho que
+el sujeto disfruta de una libertad sin límites.
+\null
+``Sobre la libertad'' presenta una teoría del sujeto
+para remediar tan disparatada situación. Primero
+reconstruye el proceso evolutivo que ha producido los sujetos.
+Entonces propone considerar que la vida es,
+desde el punto de vista epistemológico, un problema,
+y analiza las consecuencias. Una es que
+la resolución de tal problema coincide
+con el proceso evolutivo, lo que legitima la hipótesis.
+Las otras consecuencias son muy numerosas y variadas,
+y le dejo a usted que las evalúe.
+Eso sí, para juzgarlas ha de leer este libro.
+
+\endgroup
+\vfil
+\pdfBlack
+\input ean13
+\line{
+\pdfximage{cc-by-sa-www.pdf}\pdfrefximage\pdflastximage
+\hfil
+\pdfliteral{q}% save current graphic state in the stack
+  \pdfliteral{0 0 0 0 k 0 0 0 1 K}% set black stroke on white fill
+  \pdfliteral{-5 -5 m}% moves to the origin
+  \pdfliteral{110 -5 l}%
+  \pdfliteral{110 78 l}% 92 -> 78
+  \pdfliteral{-5 78 l}%
+  \pdfliteral{-5 -5 l}% 
+  \pdfliteral{b Q}% close, stroke, fill, and restore graphic state
+\ISBN 978-1-4750-4270-2
+\barheight=2cm % this must be after \ISBN call
+\EAN 978-1475042702
+\hskip9pt
+}\kern0.1in}\kern0.1in}\vss}
+
+%\showbox\contra
+\message{Contra (\the\wd\contra, \the\ht\contra, \the\dp\contra)}
+
+%%%%%%%%%%%%% Tríptico
+
+\iftesting
+ \shipout\hbox{\copy\portada}
+ \shipout\hbox{\copy\lomo}
+ \shipout\hbox{\copy\contra}
+\fi
+
+\newbox\tripbox
+\iftesting
+ \setbox\tripbox=\hbox to \pdfpagewidth{\box\contra\hss\box\lomo\hss\box\portada}
+ \showbox\tripbox
+ \shipout\box\tripbox
+\else
+ \shipout\hbox to \pdfpagewidth{\box\contra\hss\box\lomo\hss\box\portada}
+\fi
+
+\end
+

@@ -1,0 +1,53 @@
+% sll-portada.tex (RMCG20120430)
+
+\font\ptitlefont=texnansi-lmssbx10 at 90pt
+\font\psubtitlefont=texnansi-lmss10 at 40pt
+\font\pauthorfont=texnansi-lmss10 at 50pt
+
+\font\spinetitlefont=texnansi-lmssbx10 at 24pt
+\font\spineauthorfont=texnansi-lmss10 at 24pt
+
+\font\pcitefont=texnansi-lmss10 at 21pt
+\font\ptextfont=texnansi-lmss10 at 14pt
+
+\ansifont
+
+\def\pdfBlack{\pdfliteral{0 0 0 1 k 0 0 0 1 K}}
+\def\pdfWhite{\pdfliteral{0 0 0 0 k 0 0 0 0 K}}
+\def\pdfRed{\pdfliteral{0 1 1 0 k 0 1 1 0 K}}
+\def\pdfBlue{\pdfliteral{1 1 0 0 k 1 1 0 0 K}}
+\def\pdfGreen{\pdfliteral{1 0 1 0 k 1 0 1 0 K}}
+
+\pdfpageheight=9in \voffset=-1in 
+\pdfpagewidth=6in \hoffset=-1in
+
+\newbox\background
+\setbox\background=\hbox{\pdfGreen\vrule width 6in height 0pt depth 9in}
+\wd\background=0pt 
+\ht\background=0pt
+\dp\background=0pt
+
+%%%%%%%%%%%%% Portada
+
+\newbox\portada
+\setbox\portada=\vbox to 9in{\copy\background
+ \vss\hbox to 6in{
+ \vbox{\hsize=6in
+  \pdfWhite
+  \hbox{}
+  \vskip12pc
+  \centerline{\ptitlefont Sobre la}
+  \vskip1pc
+  \centerline{\ptitlefont libertad}
+  \vskip10pc
+  \centerline{\psubtitlefont La teoría de la}
+  \vskip6pt
+  \centerline{\psubtitlefont subjetividad}
+  \vskip2pc
+  \centerline{\pauthorfont Ramón Casares}
+ \vss}\hss}\kern0.25in\vss}
+
+\shipout\hbox{\copy\portada}
+
+\end
+

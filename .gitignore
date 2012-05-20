@@ -28,4 +28,5 @@ auxiliar.*
 # ignore dirs
 admin/
 letters/
+google/
 # end of file

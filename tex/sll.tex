@@ -178,13 +178,13 @@
 \newcount\secno \secno=0
 \newcount\parno \parno=0
 
-\def\section{\number\secno}
+\def\secid{\number\secno}
 
 \def\Section#1 \par{\everypar{}\parno=0  \advance\secno1 
  \vskip0pt plus 4\baselineskip\penalty-43
  \vskip0pt plus-4\baselineskip \vskip\baselineskip
- \titleline{\noindent\Stitle\fonttwo\section\space}%
-   {\fonttwo#1\pdflabel\toc2{#1}\lbl{#1}{\section}}%
+ \titleline{\noindent\Stitle\fonttwo\secid\space}%
+   {\fonttwo#1\pdflabel\toc2{#1}\lbl{#1}{\secid}}%
  \everypar{\numberedpars}\nobreak}
 
 \def\titleline#1#2{\setbox0\hbox{#1}\dimen0=\hsize \advance\dimen0 -\wd0
@@ -203,7 +203,7 @@
 \def\destpar{\ifhmode \let\next=\pdflabel \else \let\next=\relax \fi
  \endgraf \next}
 
-\def\label#1{\pdflabel\lbl{#1}{\section}}
+\def\label#1{\pdflabel\lbl{#1}{\secid}}
 \def\index#1{\pdflabel\ndx{#1}{1}}
 
 \def\pdfout#1#2#3{\ifnum#1=2 §#3 #2\else #2\fi}

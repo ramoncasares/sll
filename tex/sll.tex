@@ -173,7 +173,7 @@
 
 \outer\def\Part#1 \par{\vfill\break \null\pdflabel
  \nointerlineskip\vbox to7\baselineskip{\vfil
-  \centerline{\fontone #1\label{#1}\toc1{#1}}\vfil}}
+  \centerline{\fontone #1\def\secid{*}\label{#1}\toc1{#1}}\vfil}}
 
 \newcount\secno \secno=0
 \newcount\parno \parno=0
@@ -538,8 +538,10 @@ enddef;
 
 \vfill\break %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\wverb\auxf"\iverb\tocf|\bigbreak|" % \bigbreak in the toc
+\def\secid{*}
 \pdflabel
-\vbox to22pt{\centerline{\fontone Referencias}\toc9{Referencias}\vss}
+\vbox to22pt{\centerline{\fontone Referencias}\toc8{Referencias}\vss}
 \vskip 1pc plus1pc minus6pt
 
 Se señalan las ediciones de las obras consultadas. Los números que
@@ -666,7 +668,7 @@ página~\refpg{La jerarquía de Chomsky}.
 %%%
 
 \pdflabel
-\vbox to22pt{\centerline{\fontone Índice temático}\toc9{Índice temático}\vss}
+\vbox to22pt{\centerline{\fontone Índice temático}\toc8{Índice temático}\vss}
 \vskip 1pc plus1pc minus6pt
 %\vskip 5.87955pt % just to make exact room for columns
 
@@ -705,7 +707,7 @@ autores.
 \vfill\break %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \pdflabel
-\vbox to22pt{\centerline{\fontone Índice}\toc9{Índice}\vss}
+\vbox to22pt{\centerline{\fontone Índice}\toc8{Índice}\vss}
 \vskip 2pc plus1pc minus6pt
 
 % \tocline{level}{Title}{dest}{section}{page}
@@ -718,9 +720,7 @@ autores.
  \line{\bf \pdfgoto{#1}{#2}\hfil}\ignorespaces}
 \def\toclinetwo#1#2#3#4{\par
  \contentsline{#1}{#2}{$\S#3$\quad}{#4}\ignorespaces}
-\def\Referencias{Referencias}
 \def\toclineindex#1#2#3#4{\par
- \def\1{#1}\ifx\1\Referencias\bigbreak\fi
  \contentsline{{\bf #1}}{#2}{}{#4}\ignorespaces}
 
 \newdimen\tridig \setbox0=\hbox{$\S127$\quad}\tridig=\wd0

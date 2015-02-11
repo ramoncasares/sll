@@ -66,7 +66,8 @@
  \voffset\vpage \advance\voffset-\vsize \advance\voffset-2\baselineskip
  \divide\voffset2 \advance\voffset-1in
 
-\pdfcode \pdfpageheight=\vpage \pdfpagewidth=\hpage \pdfendcode
+\ifcase\pdfoutput \special{papersize=\the\hpage,\the\vpage}\else
+ \pdfpageheight=\vpage \pdfpagewidth=\hpage \fi
 
 %\def\titulo{Ramón Casares\cr Sobre la libertad}
 %\setcrops % OPTIONAL (Beware the top of this file!)
@@ -112,7 +113,7 @@
 \def\nodepth#1{\setbox0=\hbox{#1}\dp0=0pt\box0}
 
 % Covers background color
-\def\background{\pdfcode
+\def\background{\ifcase\pdfoutput \else
   \pdfliteral{q}% save current graphic state in the stack
   \pdfGreen
   \pdfliteral{-67 -574 m}% 72 * 9 = 648, 72 * 8 = 576
@@ -121,7 +122,7 @@
   \pdfliteral{-67 74 l}%
   \pdfliteral{-67 -574 l}%
   \pdfliteral{b Q}% close, stroke, fill, and restore graphic state
- \pdfendcode}
+ \fi}
 
 % Every point is a period
 \count255=`A \loop\sfcode\count255=1000
@@ -171,20 +172,20 @@
 
 % Sectioning
 
-\outer\def\Part#1 \par{\vfill\break \null\pdflabel
- \nointerlineskip\vbox to7\baselineskip{\vfil
-  \centerline{\fontone #1\def\secid{*}\label{#1}\toc1{#1}}\vfil}}
+\outer\def\Part#1 \par{\vfill\break \null\dest
+ \nointerlineskip\vbox to7\baselineskip{\vfil \let\secid\empty
+  \centerline{\fontone #1\def\secid{}\label{#1}\toc1{#1}}\vfil}}
 
 \newcount\secno \secno=0
 \newcount\parno \parno=0
 
-\def\secid{\number\secno}
+\def\secid{\S\number\secno}
 
 \def\Section#1 \par{\everypar{}\parno=0  \advance\secno1 
  \vskip0pt plus 4\baselineskip\penalty-43
  \vskip0pt plus-4\baselineskip \vskip\baselineskip
- \titleline{\noindent\Stitle\fonttwo\secid\space}%
-   {\fonttwo#1\pdflabel\toc2{#1}\lbl{#1}{\secid}}%
+ \titleline{\noindent\Stitle\fonttwo\expandafter\gobble\secid\space}%
+   {\fonttwo#1\dest\toc2{#1}\lbl{#1}{\secid}}%
  \everypar{\numberedpars}\nobreak}
 
 \def\titleline#1#2{\setbox0\hbox{#1}\dimen0=\hsize \advance\dimen0 -\wd0
@@ -192,7 +193,7 @@
 
 \newdimen\oldparindent \oldparindent=\parindent \parindent=0pt
 
-\def\numberedpars{\global\advance\parno1 \pdflabel
+\def\numberedpars{\global\advance\parno1 \dest
  \noindent\hbox to\oldparindent{{\sevensy\char"7B %" little par sign
   \teni\number\parno}\hfil}\ignorespaces}
 %  \teni\number\parno}\hfil$\cdot$\hfil}\ignorespaces}
@@ -200,11 +201,11 @@
 
 % Indexing
 
-\def\destpar{\ifhmode \let\next=\pdflabel \else \let\next=\relax \fi
+\def\destpar{\ifhmode \let\next=\dest \else \let\next=\relax \fi
  \endgraf \next}
 
-\def\label#1{\pdflabel\lbl{#1}{\secid}}
-\def\index#1{\pdflabel\ndx{#1}{1}}
+\def\label#1{\dest\lbl{#1}{\secid}}
+\def\index#1{\dest\ndx{#1}{1}}
 
 \def\pdfout#1#2#3{\ifnum#1=2 §#3 #2\else #2\fi}
 
@@ -487,18 +488,18 @@ enddef;
 \def\vcite(#1){\ndx{#1}0\footnote{\ref{#1}.}}
 \def\hcite(#1){\ndx{#1}0\ref{#1}}
 \def\vdefinition|#1|{\leavevmode\Presignal\ndx{#1}{1}%
- \Green\allowhyphens#1\allowhyphens\Black\Signal}
+ \color{Green}\allowhyphens#1\allowhyphens\endcolor\Signal}
 \def\hdefinition|#1|{\allowhyphens\ndx{#1}{1}}%\tomargin{\it#1}}
 \def\vlabel<#1>{{\sl#1}\itcor} % used for book titles only
 %\def\hlabel<#1>{\label{#1}}
-\def\vref>#1>{la~\S\refsc{#1}, pá\-gi\-na~\refpg{#1}}
-\def\href>#1>{la~\S\refsc{#1}}
+\def\vref>#1>{la~\refsc{#1}, pá\-gi\-na~\refpg{#1}}
+\def\href>#1>{la~\refsc{#1}}
 \def\vindex#1{\leavevmode\presignal\ndx{#1}{3}%
- \Blue\allowhyphens#1\allowhyphens\Black\signal}
+ \color{Blue}\allowhyphens#1\allowhyphens\endcolor\signal}
 \def\hindex#1{\allowhyphens\ndx{#1}{3}\hsignal}
 
-%\def\signal{\hbox to0pt{\Blue\hss\vbox to0pt{
-% \hbox{$\longleftarrow$}\vss}\Black}}
+%\def\signal{\hbox to0pt{\color{Blue}\hss\vbox to0pt{
+% \hbox{$\longleftarrow$}\vss}\endcolor}}
 \def\Signal{\hbox to0pt{\hss\vrule width10pt height-2pt depth2.4pt
  \vrule width0.4pt height4pt depth2pt}}
 \def\Presignal{\hbox to0pt{\vrule width0.4pt height4pt depth2pt
@@ -539,9 +540,9 @@ enddef;
 \vfill\break %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \wverb\auxf"\iverb\tocf|\bigbreak|" % \bigbreak in the toc
-\def\secid{*}
-\pdflabel
-\vbox to22pt{\centerline{\fontone Referencias}\toc8{Referencias}\vss}
+\def\secid{>}
+\dest
+\vbox to22pt{\centerline{\fontone Referencias}\toc1{Referencias}\vss}
 \vskip 1pc plus1pc minus6pt
 
 Se señalan las ediciones de las obras consultadas. Los números que
@@ -584,12 +585,12 @@ página~\refpg{La jerarquía de Chomsky}.
   \ifnum\lastpgno=\thispgno \rangetrue \else
    \ifrange \advance\lastpgno-1 --\number\lastpgno\fi
    \lastpgno=#3\rangefalse
-   , \pdfgoto{#3}{#1}%
+   , \goto{#3}{#1}%
   \fi\fi
  \else % \newk@y<>\oldk@y
  \ifrange --\number\lastpgno\rangefalse \fi
  \bibbreak
- \pdflabel \cleantoks \lastpgno=0
+ \dest \cleantoks \lastpgno=0
  \def\record##1##2##3{\def\secondk@y{##1}\ifx\newk@y\secondk@y##3\fi}
  \input auxiliar.bdb
  \input auxiliar.abdb
@@ -619,7 +620,7 @@ página~\refpg{La jerarquía de Chomsky}.
  \setbox0=\hbox{\the\PAGES}\ifdim\wd0=0pt\else, pp.~\the\PAGES\fi
  \setbox0=\hbox{\the\ISBN}\ifdim\wd0=0pt\else, {\sc isbn} {\the\ISBN}\fi.
  \setbox0=\hbox{\the\NOTE}\ifdim\wd0=0pt\else \the\NOTE. \fi
- {\teni.}\pdfgoto{#3}{#1}\fi
+ {\teni.}\goto{#3}{#1}\fi
  \ignorespaces}
 
 \bigskip
@@ -667,8 +668,8 @@ página~\refpg{La jerarquía de Chomsky}.
 
 %%%
 
-\pdflabel
-\vbox to22pt{\centerline{\fontone Índice temático}\toc8{Índice temático}\vss}
+\dest
+\vbox to22pt{\centerline{\fontone Índice temático}\toc1{Índice temático}\vss}
 \vskip 1pc plus1pc minus6pt
 %\vskip 5.87955pt % just to make exact room for columns
 
@@ -688,7 +689,7 @@ autores.
    \ifnum\lastpgno=\thispgno \rangetrue \else
     \ifrange \advance\lastpgno-1 --\number\lastpgno\fi
     \lastpgno=#4\rangefalse
-    , \pdfgoto{\ifnum#1=1 {\bf#4}\else #4\fi}{#2}%
+    , \goto{\ifnum#1=1 {\bf#4}\else #4\fi}{#2}%
    \fi\fi
  \else % \newkey<>\oldkey
   \ifrange --\number\lastpgno\fi
@@ -696,7 +697,7 @@ autores.
   \ifcase#1 {\tt\newkey}\or{\bf\newkey}\or{\sc\newkey}\or{\rm\newkey}\else
    {\it\Red \newkey\Black}\fi
  ,\space\space
- \pdfgoto{\ifnum#1=1 {\bf#4}\else #4\fi}{#2}\fi\fi\ignorespaces}
+ \goto{\ifnum#1=1 {\bf#4}\else #4\fi}{#2}\fi\fi\ignorespaces}
 
 \begindoublecolumns
 \parindent=12pt \rightskip=0pt plus 4pc \hyphenpenalty=250
@@ -706,22 +707,24 @@ autores.
 
 \vfill\break %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\pdflabel
-\vbox to22pt{\centerline{\fontone Índice}\toc8{Índice}\vss}
+\dest
+\vbox to22pt{\centerline{\fontone Índice}\toc1{Índice}\vss}
 \vskip 2pc plus1pc minus6pt
 
 % \tocline{level}{Title}{dest}{section}{page}
 \def\tocline#1{\ifcase#1 \let\next=\toclinezero \or
  \let\next=\toclineone \or \let\next=\toclinetwo
- \else \let\next=\toclineindex \fi \next}
+ \else \let\next=\toclineerror \fi \next}
 
 \def\toclinezero#1#2#3#4{\relax}
-\def\toclineone#1#2#3#4{\bigbreak
- \line{\bf \pdfgoto{#1}{#2}\hfil}\ignorespaces}
+\def\toclineone#1#2#3#4{\def\3{#3}%
+ \ifx\empty\3 \bigbreak \line{\bf \goto{#1}{#2}\hfil}\else
+ \par \contentsline{{\bf #1}}{#2}{}{#4}\fi
+ \ignorespaces}
 \def\toclinetwo#1#2#3#4{\par
- \contentsline{#1}{#2}{$\S#3$\quad}{#4}\ignorespaces}
-\def\toclineindex#1#2#3#4{\par
- \contentsline{{\bf #1}}{#2}{}{#4}\ignorespaces}
+ \contentsline{#1}{#2}{$#3$\quad}{#4}\ignorespaces}
+\def\toclineerror#1#2#3#4{\message{wrong tocline: #1, #2, #3, #4}%
+ \ignorespaces}
 
 \newdimen\tridig \setbox0=\hbox{$\S127$\quad}\tridig=\wd0
 
@@ -729,9 +732,9 @@ autores.
  \setbox0\hbox to\tridig{\hfil#3}%
  \dimen0=\hsize \advance\dimen0 by -\wd0
  \multiply\dimen0 by 8 \divide\dimen0 by 10
- \ifdim\dimen0>\wd2 \line{\box0 #1\tocleaders \pdfgoto{#4}{#2}}\else
+ \ifdim\dimen0>\wd2 \line{\box0 #1\tocleaders \goto{#4}{#2}}\else
   \line{\box0 \vtop{\hsize=\dimen0 \raggedright \normalbaselines
-   \let\\=\ \noindent #1\strut}\tocleaders \pdfgoto{#4}{#2}}\fi}
+   \let\\=\ \noindent #1\strut}\tocleaders \goto{#4}{#2}}\fi}
 \def\tocleaders{\leaders\hbox to\baselineskip{\hss\bf.\hss}\hfil}
 
 \raggedbottom \openup3pt
@@ -754,8 +757,9 @@ autores.
 
 \break
 
-\shipout\vbox{\background
-\pdfWhite
+\shipout\vbox{\ifcase\pdfoutput
+ \special{pdf: bgc [1 0 1 0]}\special{pdf: sc [0 0 0 0]}%
+ \else \background \pdfWhite \fi
 \hsize=5.5in
 \leftskip-0.55in
 \vskip-0.55in
@@ -802,12 +806,18 @@ Eso sí, para juzgarlas ha de leer este libro.
 
 \kern12bp
 
-\pdfBlack
 \input ean13
 \hbox{\kern-0.55in
-\pdfximage{cc-by-sa-www.pdf}\pdfrefximage\pdflastximage
+\ifcase\pdfoutput \special{pdf: sc [0 0 0 1]}%
+ \special{pdf:epdf (cc-by-sa-www.pdf)}\kern 43mm
+\else \pdfliteral{0 0 0 1 k 0 0 0 1 K}%
+ \pdfximage{cc-by-sa-www.pdf}\pdfrefximage\pdflastximage \fi
 \kern2.05in
-\pdfliteral{q}% save current graphic state in the stack
+\ifcase\pdfoutput
+ \special{pdf: content
+ q 0 0 0 0 k 0 0 0 1 K -5 -5 m 110 -5 l 110 92 l -5 92 l -5 -5 l b Q}%
+\else
+  \pdfliteral{q}% save current graphic state in the stack
   \pdfliteral{0 0 0 0 k 0 0 0 1 K}% set black stroke on white fill
   \pdfliteral{-5 -5 m}% moves to the origin
   \pdfliteral{110 -5 l}%
@@ -815,6 +825,7 @@ Eso sí, para juzgarlas ha de leer este libro.
   \pdfliteral{-5 92 l}%
   \pdfliteral{-5 -5 l}%
   \pdfliteral{b Q}% close, stroke, fill, and restore graphic state
+\fi
 \ISBN 978-1-4750-4270-2
 \barheight=2.5cm % this must be after \ISBN call
 \EAN 978-1475042702

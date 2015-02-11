@@ -4,26 +4,36 @@
 
 % pdf info
 
-\pdfcode
- \begingroup\corkfont
+\begingroup\corkfont
+ \ifcase\pdfoutput
+  \special{pdf: docinfo <<
+   /Author (© Ramón Casares 2002, 2012)
+   /Title (Sobre la libertad)
+   /Subject (La teoría de la subjetividad)
+   /Creator (Licencia http://creativecommons.org/licenses/by-sa/3.0/)
+   /Keywords (objeto problema significado símbolo sintaxis sujeto)
+  >>}
+ \else
   \pdfinfo{
    /Author (© Ramón Casares 2002, 2012)
    /Title (Sobre la libertad)
    /Subject (La teoría de la subjetividad)
    /Creator (Licencia http://creativecommons.org/licenses/by-sa/3.0/)
-   /Keywords (objeto problema significado símbolo sintaxis sujeto)}
- \endgroup
-\pdfendcode
+   /Keywords (objeto problema significado símbolo sintaxis sujeto)
+  }
+ \fi
+\endgroup
 
 % [0] Portada
 
-\pdflabel \toc0{Sobre la libertad}
+{\dest \let\secid\empty \toc0{Sobre la libertad}}
 
 \ifportada
-\shipout\vbox{\background
-\pdfWhite
-\hbox{}
-\vskip1.5in
+\ifcase\pdfoutput
+ \special{pdf: bgc [1 0 1 0]}\special{pdf: sc [0 0 0 0]}%
+\else \background \pdfWhite \fi
+\begingroup\nopagenumbers
+\hbox{}\vfill
 \centerline{\ptitlefont Sobre la}
 \vskip1pc
 \centerline{\ptitlefont libertad}
@@ -33,8 +43,12 @@
 \centerline{\psubtitlefont subjetividad}
 \vskip2pc
 \centerline{\pauthorfont Ramón Casares}
-\pdfBlack
-}
+\break
+\endgroup
+\advance\pageno-1
+\ifcase\pdfoutput
+ \special{pdf: bgc [0 0 0 0]}\special{pdf: sc [0 0 0 1]}%
+\else \pdfBlack \fi
 \fi
 
 % [1] Autor y título
@@ -68,10 +82,13 @@
 
 \null
 
-\def\URI#1#2{\leavevmode\pdfcode \pdfstartlink
-  attr {/Border [0 0 0]}
+\def\URI#1#2{\leavevmode
+\ifcase\pdfoutput
+ \special{html:<a href=\string"#2\string">}{\tt#1}%
+ \special{html:</a>}\else
+ \pdfstartlink attr {/Border [0 0 0]}
   user {/Subtype /Link /A << /Type /Action /S /URI /URI (#2) >>}%
- \pdfendcode{\tt#1}\pdfcode\pdfendlink\pdfendcode}
+ {\tt#1}\pdfendlink\fi}
 
 \vfill
  {\sl Sobre la libertad}\par
